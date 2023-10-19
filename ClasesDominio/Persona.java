@@ -1,6 +1,6 @@
 package ClasesDominio;
 
-public class Persona {
+public class Persona implements Comparable<Persona>{
     private String nombre;
     private long cedula;
     private String direccion;
@@ -25,5 +25,10 @@ public class Persona {
     }
     public String getDireccion(){
         return this.direccion;
+    }
+
+    @Override
+    public int compareTo(Persona o) {
+        return Long.compare(this.getCedula(),o.getCedula());
     }
 }
