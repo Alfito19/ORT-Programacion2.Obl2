@@ -1,4 +1,4 @@
-package ClasesDominio;
+package dominio;
 
 import java.util.*;
 

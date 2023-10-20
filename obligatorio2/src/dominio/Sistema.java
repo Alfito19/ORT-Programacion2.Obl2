@@ -1,4 +1,4 @@
-package ClasesDominio;
+package dominio;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
