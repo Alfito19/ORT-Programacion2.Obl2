@@ -37,6 +37,15 @@ public class Menu extends javax.swing.JFrame {
         btnHistoriaPostulante = new javax.swing.JToggleButton();
         btnConsultaTematica = new javax.swing.JToggleButton();
         btnFin = new javax.swing.JToggleButton();
+        menuMenu = new javax.swing.JMenuBar();
+        menuPersonas = new javax.swing.JMenu();
+        menuRegEvaluador = new javax.swing.JMenuItem();
+        menuAltaPostulante = new javax.swing.JMenuItem();
+        menuBajaPostulante = new javax.swing.JMenuItem();
+        menuHistoriaPostulante = new javax.swing.JMenuItem();
+        menuElementos = new javax.swing.JMenu();
+        menuRegistroPuesto = new javax.swing.JMenuItem();
+        menuRegistroTema = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,21 +53,25 @@ public class Menu extends javax.swing.JFrame {
         lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMenuTitulo.setText("Gestión de personal");
 
+        btnRegistroTematica.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroTematica.setText("Registro de temática");
         btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setPreferredSize(new java.awt.Dimension(150, 25));
 
+        btnAltaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnAltaPostulante.setText("Alta de postulante");
         btnAltaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
 
+        btnBajaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnBajaPostulante.setText("Baja de postulante");
         btnBajaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
 
+        btnRegistroEvaluador.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroEvaluador.setText("Registro de evaluador");
         btnRegistroEvaluador.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -69,6 +82,7 @@ public class Menu extends javax.swing.JFrame {
         btnIngresoEntrevista.setMinimumSize(new java.awt.Dimension(150, 25));
         btnIngresoEntrevista.setPreferredSize(new java.awt.Dimension(150, 25));
 
+        btnRegistroPuesto.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroPuesto.setText("Registro de puesto");
         btnRegistroPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -79,6 +93,7 @@ public class Menu extends javax.swing.JFrame {
         btnConsultaPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
         btnConsultaPuesto.setPreferredSize(new java.awt.Dimension(150, 25));
 
+        btnHistoriaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnHistoriaPostulante.setText("Historia de postulante");
         btnHistoriaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -93,6 +108,35 @@ public class Menu extends javax.swing.JFrame {
         btnFin.setMaximumSize(new java.awt.Dimension(150, 25));
         btnFin.setMinimumSize(new java.awt.Dimension(150, 25));
         btnFin.setPreferredSize(new java.awt.Dimension(150, 25));
+
+        menuPersonas.setText("Personas");
+
+        menuRegEvaluador.setText("Registro de evaluador");
+        menuPersonas.add(menuRegEvaluador);
+
+        menuAltaPostulante.setText("Alta de postulante");
+        menuPersonas.add(menuAltaPostulante);
+
+        menuBajaPostulante.setText("Baja de postulante");
+        menuBajaPostulante.setToolTipText("");
+        menuPersonas.add(menuBajaPostulante);
+
+        menuHistoriaPostulante.setText("Historia de postulante");
+        menuPersonas.add(menuHistoriaPostulante);
+
+        menuMenu.add(menuPersonas);
+
+        menuElementos.setText("Elementos");
+
+        menuRegistroPuesto.setText("Registro de puesto");
+        menuElementos.add(menuRegistroPuesto);
+
+        menuRegistroTema.setText("Registro de temática");
+        menuElementos.add(menuRegistroTema);
+
+        menuMenu.add(menuElementos);
+
+        setJMenuBar(menuMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,7 +196,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHistoriaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -206,5 +250,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnRegistroPuesto;
     private javax.swing.JToggleButton btnRegistroTematica;
     private javax.swing.JLabel lblMenuTitulo;
+    private javax.swing.JMenuItem menuAltaPostulante;
+    private javax.swing.JMenuItem menuBajaPostulante;
+    private javax.swing.JMenu menuElementos;
+    private javax.swing.JMenuItem menuHistoriaPostulante;
+    private javax.swing.JMenuBar menuMenu;
+    private javax.swing.JMenu menuPersonas;
+    private javax.swing.JMenuItem menuRegEvaluador;
+    private javax.swing.JMenuItem menuRegistroPuesto;
+    private javax.swing.JMenuItem menuRegistroTema;
     // End of variables declaration//GEN-END:variables
 }
