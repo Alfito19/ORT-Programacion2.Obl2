@@ -5,7 +5,7 @@ package ClasesDominio;
 
 import java.util.*;
 
-public class Puesto {
+public class Puesto{
     private String nombre;
     //remoto,hibrido o presencial
     private String tipo;

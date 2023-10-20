@@ -11,6 +11,7 @@ public class Postulante extends Persona{
     private String linkedIn;
     private String formato;
     private ArrayList<Habilidad> habilidades;
+    private ArrayList<Integer> puntajesEntrevistas;
 
     public Postulante(){
         super();
@@ -19,6 +20,7 @@ public class Postulante extends Persona{
         this.linkedIn = "sin definir";
         this.formato = "sin definir";
         this.habilidades = new ArrayList<>();
+        this.puntajesEntrevistas = new ArrayList<>();
     }
 
     public Postulante(String unNombre,long unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
@@ -28,6 +30,10 @@ public class Postulante extends Persona{
         this.linkedIn = link;
         this.formato = unFormato;
         this.habilidades = habs;
+        this.puntajesEntrevistas = new ArrayList<>();
     }
     
+    public void agregarPuntaje(int puntaje){
+        this.puntajesEntrevistas.add(puntaje);
+    }
 }
