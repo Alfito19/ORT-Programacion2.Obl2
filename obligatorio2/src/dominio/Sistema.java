@@ -44,7 +44,7 @@ public class Sistema {
     //retorna false si no pudo agregar al postulante
     public boolean altaPostulante(String unNombre,long unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
         boolean vuelta = this.cedulaUnica(unaCedula);
-        //antes de agregar veridica que sea el unico con esa cedula
+        //antes de agregar verifica que sea el unico con esa cedula
         if (vuelta){
             Postulante p = new Postulante(unNombre, unaCedula, unaDireccion, unTel, unMail, link, unFormato, habs);
             this.agregarPostulante(p);

@@ -9,15 +9,15 @@ public class Persona implements Comparable<Persona>{
     private String direccion;
 
     public Persona(){
-        this.nombre="Sin definir";
-        this.cedula=0;
-        this.direccion="Sin definir";
+        this.nombre = "Sin definir";
+        this.cedula = 0;
+        this.direccion = "Sin definir";
     }
 
     public Persona(String unNombre,long unaCedula,String unaDireccion){
-        this.nombre=unNombre;
-        this.cedula=unaCedula;
-        this.direccion=unaDireccion;
+        this.nombre = unNombre;
+        this.cedula = unaCedula;
+        this.direccion = unaDireccion;
     }
 
     public String getNombre(){

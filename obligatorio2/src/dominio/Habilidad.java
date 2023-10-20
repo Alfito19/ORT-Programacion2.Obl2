@@ -14,12 +14,12 @@ public class Habilidad {
         this.nivel=0;
     }
     public Habilidad(String unNombre,String unaDes){
-        this.nombre=unNombre;
+        this.nombre = unNombre;
         this.descripcion = unaDes;
         this.nivel = 0;
     }
     public Habilidad(String unNombre,String unaDes,int level){
-        this.nombre=unNombre;
+        this.nombre = unNombre;
         this.descripcion = unaDes;
         this.nivel = level;
     }
@@ -29,7 +29,7 @@ public class Habilidad {
     }
 
     public void setNivel(int level){
-        this.nivel=level;
+        this.nivel = level;
     }
     public int getNivel(){
         return this.nivel;

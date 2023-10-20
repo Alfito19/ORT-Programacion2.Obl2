@@ -16,14 +16,15 @@ public class Entrevista {
         this.entrevistado = unPost;
         this.puntaje = unPuntaje;
         this.comentario = unCom;
-        setIdentificador();
+//        setIdentificador();
         this.numeroEntrevista = getIdentificador();
     }
 
-    public static void setIdentificador(){
-        identificador++;
-    }
+//    public static void setIdentificador(){
+//        identificador++;
+//    }
+    
     public static int getIdentificador(){
-        return identificador;
+        return identificador++;
     }
 }
