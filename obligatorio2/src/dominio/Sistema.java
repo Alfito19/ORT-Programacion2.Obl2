@@ -47,12 +47,10 @@ public class Sistema {
         //antes de agregar verifica que sea el unico con esa cedula
         if (vuelta){
             Postulante p = new Postulante(unNombre, unaCedula, unaDireccion, unTel, unMail, link, unFormato, habs);
-            this.agregarPostulante(p);
+            this.listaPostulantes.add(p);
+            this.listaCedulas.add(unaCedula);
         }
         return vuelta;
-    }
-    public void agregarPostulante(Postulante unP){
-        this.listaPostulantes.add(unP);
     }
 
     public void eliminarPostulante(Postulante unP){
@@ -64,13 +62,68 @@ public class Sistema {
         if (vuelta){
             Evaluador e = new Evaluador(unNombre, unaCedula, unaDireccion, unIngreso);
             this.listaEvaluadores.add(e);
+            this.listaCedulas.add(unaCedula);
         }
         return vuelta;
+    }
+
+    public int indicePostulante(Postulante unP){
+        int indice = 0;
+        for(int i = 0; i<this.listaPostulantes.size();i++){
+            if (this.listaPostulantes.get(i).getCedula() == unP.getCedula()){
+                indice = i;
+            }
+        }
+        return indice;
     }
 
     public void agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
         Entrevista e = new Entrevista(unEval,unPos,aScore,unComentario);
         this.listaEntrevistas.add(e);
+        int indice = this.indicePostulante(unPos);
+        this.listaPostulantes.get(indice).agregarPuntaje(aScore);
     }
 
+    //retorna false si ya existe un puesto con ese nombre
+    public boolean agregarPuesto(String aName, String tipo, ArrayList<Habilidad> temas){
+        boolean vuelta = this.puestoUnico(aName);
+        if(vuelta){
+            Puesto nuevoPuesto = new Puesto(aName, tipo, temas);
+            this.listaPuestos.add(nuevoPuesto);
+        }
+        return vuelta;
+    }
+
+    public boolean puestoUnico(String nombrePuesto){
+        boolean cond = true;
+        for(Puesto p : this.listaPuestos){
+            if (p.getNombre().equalsIgnoreCase(nombrePuesto)){
+                cond = false;
+            }
+        }
+        return cond;
+    }
+
+    //falta ordenar lista en orden decreciente por puntaje de entrevistas
+    public ArrayList<Postulante> consultaPuesto(Puesto unP,int nivel){
+        ArrayList<Postulante> aptos = new ArrayList<>();
+        for (Postulante post : this.listaPostulantes){
+            if(this.cumpleCondiciones(post,unP,nivel)){
+                aptos.add(post);
+            }
+        }
+        return aptos;
+    }
+    //verifica que el postulante cumpla con todos los requisitos de todas las habilidades
+    public boolean cumpleCondiciones(Postulante p, Puesto unPuesto, int nivel){
+        boolean cond = true;
+        for (Habilidad h : unPuesto.getTemasRequeridos()){
+            for (Habilidad hPostulante : p.getHabilidades()){
+                if (hPostulante.getNombre().equalsIgnoreCase(h.getNombre()) && !(hPostulante.getNivel()>=nivel)){
+                    cond = false;
+                }
+            }
+        }
+        return cond;
+    }
 }
