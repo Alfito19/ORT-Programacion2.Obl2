@@ -45,7 +45,7 @@ public class Postulante extends Persona{
         this.puntajesEntrevistas.add(puntaje);
     }
     
-    public int compareTo(Postulante otroP){
+    public int compara(Postulante otroP){
         return otroP.getPuntajes().get(otroP.getPuntajes().size()-1) - this.getPuntajes().get(this.getPuntajes().size()-1);
     }
 }

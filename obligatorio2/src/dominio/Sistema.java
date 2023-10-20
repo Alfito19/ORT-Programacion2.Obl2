@@ -112,6 +112,11 @@ public class Sistema {
                 aptos.add(post);
             }
         }
+        //ordena la lista en orden descendente de puntaje de entrevistas
+        Comparator<Postulante> descendingComparator = (obj1, obj2) -> {
+            return obj1.compara(obj2);
+        };
+        Collections.sort(aptos, descendingComparator);
         return aptos;
     }
     //verifica que el postulante cumpla con todos los requisitos de todas las habilidades
@@ -125,5 +130,43 @@ public class Sistema {
             }
         }
         return cond;
+    }
+
+    //si la lista es vacia significa que el postulante no fue entrevistado
+    //este metodo se usa en Historia Postulante
+    public ArrayList<Entrevista> entrevistasPostulante(Postulante p ){
+        ArrayList<Entrevista> vuelta = new ArrayList<>();
+        for (Entrevista e : this.listaEntrevistas){
+            if (e.getEntrevistado().getCedula() == p.getCedula()){
+                vuelta.add(e);
+            }
+        }
+        return vuelta;
+    }
+
+    //devuelve lo siguiente:
+        //Cantidad de postulantes que tiene un nivel mayor a 5 en esta temática.
+        //Cantidad de puestos que buscan que requieran conocimiento en esta temática.
+    public String consultaTematica(Habilidad unaTematica){
+        String vuelta="";
+        int cantPostulantes=0;
+        int cantPuestos=0;
+        for (Postulante p : this.listaPostulantes){
+            for(Habilidad hP : p.getHabilidades()){
+                if(hP.getNombre().equalsIgnoreCase(unaTematica.getNombre()) && (hP.getNivel()>5)){
+                    cantPostulantes++;
+                }
+            }
+        }
+        for (Puesto puesto : this.listaPuestos){
+            for(Habilidad hPuesto : puesto.getTemasRequeridos()){
+                if (hPuesto.getNombre().equalsIgnoreCase(unaTematica.getNombre())){
+                    cantPuestos++;
+                }
+            }
+        }
+        vuelta = "Hay " + cantPostulantes + " postulantes que tienen un nivel mayor a 5 en " + unaTematica.getNombre() + "\n";
+        vuelta+= "Hay " + cantPuestos + " puestos que requieren conocimiento en " + unaTematica.getNombre();
+        return vuelta;
     }
 }
