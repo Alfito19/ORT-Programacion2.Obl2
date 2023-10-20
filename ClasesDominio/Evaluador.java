@@ -1,5 +1,8 @@
 package ClasesDominio;
 
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
 public class Evaluador extends Persona{
     private long ingreso;
 

@@ -1,5 +1,8 @@
 package ClasesDominio;
 
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
 public class Habilidad {
     private String nombre;
     private String descripcion;
@@ -19,6 +22,10 @@ public class Habilidad {
         this.nombre=unNombre;
         this.descripcion = unaDes;
         this.nivel = level;
+    }
+
+    public String getNombre(){
+        return this.nombre;
     }
 
     public void setNivel(int level){

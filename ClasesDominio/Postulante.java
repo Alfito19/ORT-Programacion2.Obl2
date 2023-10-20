@@ -2,6 +2,9 @@ package ClasesDominio;
 
 import java.util.*;
 
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
 public class Postulante extends Persona{
     private String telefono;
     private String mail;

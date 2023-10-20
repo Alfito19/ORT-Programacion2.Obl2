@@ -1,5 +1,8 @@
 package ClasesDominio;
 
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
 public class Persona implements Comparable<Persona>{
     private String nombre;
     private long cedula;
