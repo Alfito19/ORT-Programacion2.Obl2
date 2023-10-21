@@ -29,7 +29,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblHistorialPostulanteTitulo = new javax.swing.JLabel();
         lblPostulantes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaPostulantes = new javax.swing.JList<>();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
         lblDireccion = new javax.swing.JLabel();
@@ -64,12 +64,12 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 
         lblPostulantes.setText("Postulantes:");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaPostulantes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaPostulantes);
 
         lblNombre.setText("Nombre:");
 
@@ -300,7 +300,6 @@ public class HistoriaPostulante extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnBuscar;
     private javax.swing.JToggleButton btnReset;
     private javax.swing.JToggleButton btnSalir;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -324,6 +323,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
     private javax.swing.JLabel lblPostulanteTelefono;
     private javax.swing.JLabel lblPostulantes;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JList<String> listaPostulantes;
     private javax.swing.JTable tableTabla;
     private javax.swing.JTextField textBuscar;
     // End of variables declaration//GEN-END:variables
