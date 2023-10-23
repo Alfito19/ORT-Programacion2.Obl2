@@ -20,6 +20,23 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         this.sistema = unSistema;
         initComponents();
     }
+    
+//    public void mostrarPostulante(){
+//        cambiarDatosPostulantes();
+//    }
+    
+    public void cambiarDatosPostulantes(Postulante post) {
+        lblPostulanteNombre.setText(post.getNombre());
+        lblPostulanteCedula.setText(post.getCedula());
+        lblPostulanteDireccion.setText(post.getDireccion());
+        lblPostulanteTelefono.setText(post.getTelefono());
+        lblPostulanteMail.setText(post.getMail());
+        lblPostulanteLinkedin.setText(post.getLinkedIn());
+        lblPostulanteFormato.setText(post.getFormato());
+        for(int i = 0; i < post.getHabilidades().size(); i++){
+            listaExperiencia.put(post.getHabilidades().get(i));
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,7 +67,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblPostulanteLinkedin = new javax.swing.JLabel();
         lblPostulanteFormato = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        listaExperiencia = new javax.swing.JList<>();
         jSeparator1 = new javax.swing.JSeparator();
         lblBuscar = new javax.swing.JLabel();
         textBuscar = new javax.swing.JTextField();
@@ -105,12 +122,12 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 
         lblPostulanteFormato.setText("---");
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        listaExperiencia.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(listaExperiencia);
 
         lblBuscar.setText("Buscar:");
 
@@ -304,7 +321,6 @@ public class HistoriaPostulante extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnBuscar;
     private javax.swing.JToggleButton btnReset;
     private javax.swing.JToggleButton btnSalir;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -327,6 +343,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
     private javax.swing.JLabel lblPostulanteTelefono;
     private javax.swing.JLabel lblPostulantes;
     private javax.swing.JLabel lblTelefono;
+    private javax.swing.JList<String> listaExperiencia;
     private javax.swing.JList<String> listaPostulantes;
     private javax.swing.JTable tableTabla;
     private javax.swing.JTextField textBuscar;

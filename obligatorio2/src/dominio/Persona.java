@@ -5,16 +5,16 @@ package dominio;
 
 public class Persona implements Comparable<Persona>{
     private String nombre;
-    private long cedula;
+    private String cedula;
     private String direccion;
 
     public Persona(){
         this.nombre = "Sin definir";
-        this.cedula = 0;
+        this.cedula = "0";
         this.direccion = "Sin definir";
     }
 
-    public Persona(String unNombre,long unaCedula,String unaDireccion){
+    public Persona(String unNombre,String unaCedula,String unaDireccion){
         this.nombre = unNombre;
         this.cedula = unaCedula;
         this.direccion = unaDireccion;
@@ -23,7 +23,7 @@ public class Persona implements Comparable<Persona>{
     public String getNombre(){
         return this.nombre;
     }    
-    public long getCedula(){
+    public String getCedula(){
         return this.cedula;
     }
     public String getDireccion(){
@@ -32,6 +32,6 @@ public class Persona implements Comparable<Persona>{
 
     @Override
     public int compareTo(Persona o) {
-        return Long.compare(this.getCedula(),o.getCedula());
+        return Long.compare(Long.parseLong(this.getCedula()),Long.parseLong(o.getCedula()));
     }
 }

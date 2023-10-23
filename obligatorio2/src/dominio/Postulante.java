@@ -23,7 +23,7 @@ public class Postulante extends Persona{
         this.puntajesEntrevistas = new ArrayList<>();
     }
 
-    public Postulante(String unNombre,long unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
+    public Postulante(String unNombre,String unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
         super(unNombre,unaCedula,unaDireccion);
         this.telefono = unTel;
         this.mail = unMail;
@@ -31,6 +31,26 @@ public class Postulante extends Persona{
         this.formato = unFormato;
         this.habilidades = habs;
         this.puntajesEntrevistas = new ArrayList<>();
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public String getLinkedIn() {
+        return linkedIn;
+    }
+
+    public String getFormato() {
+        return formato;
+    }
+
+    public ArrayList<Integer> getPuntajesEntrevistas() {
+        return puntajesEntrevistas;
     }
     
     public ArrayList<Habilidad> getHabilidades(){
