@@ -9,7 +9,7 @@ public class Sistema {
     private ArrayList<Entrevista> listaEntrevistas;
     private ArrayList<Postulante> listaPostulantes;
     private ArrayList<Evaluador> listaEvaluadores;
-    private ArrayList<Long> listaCedulas;
+    private ArrayList<String> listaCedulas;
     private ArrayList<Habilidad> listaHabilidades;
     private ArrayList<Puesto> listaPuestos;
 
@@ -32,17 +32,17 @@ public class Sistema {
     }
 
     //verifica que la cedula de la persona a ingresar sea unica
-    public boolean cedulaUnica(long unaCedula){
+    public boolean cedulaUnica(String unaCedula){
         boolean cond = true;
-        for (Long c : listaCedulas){
-            if (c == unaCedula){
+        for (String c : listaCedulas){
+            if (c.equalsIgnoreCase(unaCedula)){
                 cond = false;
             }
         }
         return cond;
     }
     //retorna false si no pudo agregar al postulante
-    public boolean altaPostulante(String unNombre,long unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
+    public boolean altaPostulante(String unNombre,String unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
         boolean vuelta = this.cedulaUnica(unaCedula);
         //antes de agregar verifica que sea el unico con esa cedula
         if (vuelta){
@@ -57,7 +57,7 @@ public class Sistema {
         this.listaPostulantes.remove(unP);
     }
     //devuelve false si no lo puede agregar, y viceversa
-    public boolean agregarEvaluador(String unNombre,long unaCedula,String unaDireccion,long unIngreso){
+    public boolean agregarEvaluador(String unNombre,String unaCedula,String unaDireccion,long unIngreso){
         boolean vuelta = this.cedulaUnica(unaCedula);
         if (vuelta){
             Evaluador e = new Evaluador(unNombre, unaCedula, unaDireccion, unIngreso);
@@ -70,7 +70,7 @@ public class Sistema {
     public int indicePostulante(Postulante unP){
         int indice = 0;
         for(int i = 0; i<this.listaPostulantes.size();i++){
-            if (this.listaPostulantes.get(i).getCedula() == unP.getCedula()){
+            if (this.listaPostulantes.get(i).getCedula().equalsIgnoreCase(unP.getCedula())){
                 indice = i;
             }
         }
@@ -137,7 +137,7 @@ public class Sistema {
     public ArrayList<Entrevista> entrevistasPostulante(Postulante p ){
         ArrayList<Entrevista> vuelta = new ArrayList<>();
         for (Entrevista e : this.listaEntrevistas){
-            if (e.getEntrevistado().getCedula() == p.getCedula()){
+            if (e.getEntrevistado().getCedula().equalsIgnoreCase(p.getCedula())){
                 vuelta.add(e);
             }
         }
