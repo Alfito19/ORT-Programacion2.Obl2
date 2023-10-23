@@ -20,6 +20,7 @@ public class RegistroTematica extends javax.swing.JFrame {
     public RegistroTematica(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+        resetValoresTexto();
     }
 
     /**
