@@ -24,11 +24,21 @@ public class Sistema {
     //devuelve true si la tematica no existe y la pudo agregar correctamente
     public boolean agregarTematica(String unNombre,String unaDescripcion){
         Habilidad t = new Habilidad(unNombre,unaDescripcion);
-        boolean vuelta = !this.listaHabilidades.contains(t);
+        boolean vuelta = this.tematicaUnica(unNombre);
         if(vuelta){
             this.listaHabilidades.add(t);
         }
         return vuelta;
+    }
+    
+    public boolean tematicaUnica(String unNombre){
+        boolean cond = true;
+        for(Habilidad h : this.listaHabilidades){
+            if (h.getNombre().equalsIgnoreCase(unNombre)){
+                cond = false;
+            }
+        }
+        return cond;
     }
 
     //verifica que la cedula de la persona a ingresar sea unica
@@ -53,7 +63,9 @@ public class Sistema {
         return vuelta;
     }
 
-    public void eliminarPostulante(Postulante unP){
+    public void eliminarPostulante(int posicion){
+        Postulante unP = this.listaPostulantes.get(posicion);
+        this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
     }
     //devuelve false si no lo puede agregar, y viceversa
@@ -67,23 +79,35 @@ public class Sistema {
         return vuelta;
     }
 
-    public int indicePostulante(Postulante unP){
+    public int indicePostulante(String cedula){
         int indice = 0;
         for(int i = 0; i<this.listaPostulantes.size();i++){
-            if (this.listaPostulantes.get(i).getCedula().equalsIgnoreCase(unP.getCedula())){
+            if (this.listaPostulantes.get(i).getCedula().equalsIgnoreCase(cedula)){
                 indice = i;
             }
         }
         return indice;
     }
+    //se utiliza para eliminar al postulante seleccionado en la ventana EliminarPostulante
+    public String darCedula(String postulante){
+        return postulante.substring(postulante.indexOf("(")+1,postulante.indexOf(")"));
+    }
 
     public void agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
         Entrevista e = new Entrevista(unEval,unPos,aScore,unComentario);
         this.listaEntrevistas.add(e);
-        int indice = this.indicePostulante(unPos);
+        int indice = this.indicePostulante(unPos.getCedula());
         this.listaPostulantes.get(indice).agregarPuntaje(aScore);
     }
-
+    //elimina entrevista cuando se elimina postulante
+    public void eliminarEntrevistas(Postulante elPostulante){
+        for (Entrevista e : this.listaEntrevistas){
+            if (e.getEntrevistado().equals(elPostulante)){
+                this.listaEntrevistas.remove(e);
+            }
+        }
+    }
+    
     //retorna false si ya existe un puesto con ese nombre
     public boolean agregarPuesto(String aName, String tipo, ArrayList<Habilidad> temas){
         boolean vuelta = this.puestoUnico(aName);
@@ -134,7 +158,7 @@ public class Sistema {
 
     //si la lista es vacia significa que el postulante no fue entrevistado
     //este metodo se usa en Historia Postulante
-    public ArrayList<Entrevista> entrevistasPostulante(Postulante p ){
+    public ArrayList<Entrevista> entrevistasPostulante(Postulante p){
         ArrayList<Entrevista> vuelta = new ArrayList<>();
         for (Entrevista e : this.listaEntrevistas){
             if (e.getEntrevistado().getCedula().equalsIgnoreCase(p.getCedula())){
@@ -168,5 +192,16 @@ public class Sistema {
         vuelta = "Hay " + cantPostulantes + " postulantes que tienen un nivel mayor a 5 en " + unaTematica.getNombre() + "\n";
         vuelta+= "Hay " + cantPuestos + " puestos que requieren conocimiento en " + unaTematica.getNombre();
         return vuelta;
+    }    
+    
+    //se utiliza para mostrar postulantes con formato correcto
+    public String[] darPostulantes(){
+        String[] postulantes = new String[this.listaPostulantes.size()];
+        int i = 0;
+        for(Postulante p : this.listaPostulantes){
+            postulantes[i] = p.toString();
+            i++;
+        }
+        return postulantes;
     }
 }

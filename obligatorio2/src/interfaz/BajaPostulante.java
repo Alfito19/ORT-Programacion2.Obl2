@@ -19,6 +19,11 @@ public class BajaPostulante extends javax.swing.JFrame {
     public BajaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+        objetoAPantalla();
+    }
+    
+    public void objetoAPantalla(){
+        listPostulantes.setListData(sistema.darPostulantes());
     }
 
     /**
@@ -37,7 +42,6 @@ public class BajaPostulante extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
 
         lblBajaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblBajaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -59,6 +63,11 @@ public class BajaPostulante extends javax.swing.JFrame {
         btnEliminar.setMaximumSize(new java.awt.Dimension(100, 25));
         btnEliminar.setMinimumSize(new java.awt.Dimension(100, 25));
         btnEliminar.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,6 +104,13 @@ public class BajaPostulante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    //en la lista se tienen que guardar los objetos postulante
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String unP = listPostulantes.getSelectedValue();
+        sistema.eliminarPostulante(sistema.indicePostulante(sistema.darCedula(unP)));
+        objetoAPantalla();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     /**
      * @param args the command line arguments

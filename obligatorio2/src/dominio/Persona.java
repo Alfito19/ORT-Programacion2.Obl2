@@ -34,4 +34,9 @@ public class Persona implements Comparable<Persona>{
     public int compareTo(Persona o) {
         return Long.compare(Long.parseLong(this.getCedula()),Long.parseLong(o.getCedula()));
     }
+    
+    @Override
+    public String toString(){
+        return this.getNombre() + "(" + this.getCedula() + ")";
+    }
 }

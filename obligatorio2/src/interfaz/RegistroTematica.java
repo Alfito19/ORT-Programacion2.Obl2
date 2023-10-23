@@ -4,6 +4,7 @@
  */
 package interfaz;
 import dominio.*;
+import javax.swing.*;
 /**
  *
  * @author alfos
@@ -54,11 +55,21 @@ public class RegistroTematica extends javax.swing.JFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(100, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(100, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.setMaximumSize(new java.awt.Dimension(100, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(100, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         txtDescripcion.setColumns(20);
         txtDescripcion.setRows(5);
@@ -112,6 +123,31 @@ public class RegistroTematica extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String nombre = textNombre.getText();
+        String descripcion = txtDescripcion.getText();
+        if (nombre.equals("") || descripcion.equals("")){
+            JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
+               "Error de input", JOptionPane.ERROR_MESSAGE);
+        }
+        while(!sistema.agregarTematica(nombre, descripcion)){
+              JOptionPane.showMessageDialog(new JFrame(), "La tematica ingresada debe ser única",
+               "Tematica repetida", JOptionPane.ERROR_MESSAGE);
+        }
+        //resetear las cajas de texto luego de validos los datos
+        this.resetValoresTexto();
+        //faltaria poner a que ventana lleva esto;
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void resetValoresTexto(){
+        textNombre.setText("");
+        txtDescripcion.setText("");
+    }
+    
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+       this.resetValoresTexto();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
