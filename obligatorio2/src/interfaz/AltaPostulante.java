@@ -3,17 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package interfaz;
-
+import dominio.*;
 /**
  *
  * @author alfos
  */
 public class AltaPostulante extends javax.swing.JFrame {
-
+    private Sistema sistema;
     /**
      * Creates new form AltaPostulante
      */
     public AltaPostulante() {
+        initComponents();
+    }
+    public AltaPostulante(Sistema unSistema) {
+        this.sistema = unSistema;
         initComponents();
     }
 
@@ -70,7 +74,6 @@ public class AltaPostulante extends javax.swing.JFrame {
         radioRemoto.setText("Remoto");
 
         radioPresencial.setText("Presencial");
-        radioPresencial.setActionCommand("Presencial");
 
         radioMixto.setText("Mixto");
 

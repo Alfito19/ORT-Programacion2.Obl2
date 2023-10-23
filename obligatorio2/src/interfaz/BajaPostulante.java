@@ -3,17 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package interfaz;
-
+import dominio.*;
 /**
  *
  * @author alfos
  */
 public class BajaPostulante extends javax.swing.JFrame {
-
+    private Sistema sistema;
     /**
      * Creates new form BajaPostulante
      */
     public BajaPostulante() {
+        initComponents();
+    }
+    public BajaPostulante(Sistema unSistema) {
+        this.sistema = unSistema;
         initComponents();
     }
 

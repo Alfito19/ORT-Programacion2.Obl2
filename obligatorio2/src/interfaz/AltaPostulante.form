@@ -211,7 +211,6 @@
     <Component class="javax.swing.JRadioButton" name="radioPresencial">
       <Properties>
         <Property name="text" type="java.lang.String" value="Presencial"/>
-        <Property name="actionCommand" type="java.lang.String" value="Presencial"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="radioMixto">
