@@ -8,6 +8,8 @@ public class Obligatorio2 {
         Sistema controlador = new Sistema();
         Todo ventanas = new Todo(controlador);
         //hay que cambiar la clase todo y que solo habra menú, y desde ahí inicializar las otras ventanas
+        Menu vent = new Menu(controlador);
+        vent.setVisible(true);
     }
     
 }

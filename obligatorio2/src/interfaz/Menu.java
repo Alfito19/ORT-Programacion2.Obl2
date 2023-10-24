@@ -17,7 +17,7 @@ public class Menu extends javax.swing.JFrame {
         this.sistema = unSistema;
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,6 +59,11 @@ public class Menu extends javax.swing.JFrame {
         btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroTematicaActionPerformed(evt);
+            }
+        });
 
         btnAltaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnAltaPostulante.setText("Alta de postulante");
@@ -200,8 +205,15 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(514, 407));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistroTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroTematicaActionPerformed
+        // TODO add your handling code here:
+        RegistroTematica vent = new RegistroTematica(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroTematicaActionPerformed
 
     /**
      * @param args the command line arguments
