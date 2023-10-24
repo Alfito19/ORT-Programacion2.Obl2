@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -16,6 +18,10 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
     public ConsultaParaPuesto(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+    }
+    
+    public void objetoAPantalla(){
+        listaPuestos.setListData(sistema.getListaPuestos().toArray());
     }
 
     /**
@@ -55,6 +61,11 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
         lblNivel.setText("Nivel:");
 
         btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         jScrollPane2.setViewportView(listaPostulantes);
 
@@ -130,6 +141,19 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(491, 482));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        Puesto unPuesto = (Puesto) listaPuestos.getSelectedValue();
+        if(unPuesto == null){
+            JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
+               "Error de input", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            int nivel = (Integer)spinnerNivel.getValue();
+            listaPostulantes.setListData(sistema.consultaPuesto(unPuesto, nivel).toArray());
+            //faltaria darle funcionalidad a btnExportar
+        }
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
     /**
      * @param args the command line arguments

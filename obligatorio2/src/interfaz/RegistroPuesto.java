@@ -57,9 +57,9 @@ public class RegistroPuesto extends javax.swing.JFrame {
         lblNombrePuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombrePuesto.setText("Nombre del puesto:");
         getContentPane().add(lblNombrePuesto);
-        lblNombrePuesto.setBounds(39, 57, 150, 16);
+        lblNombrePuesto.setBounds(39, 57, 150, 17);
         getContentPane().add(textNombrePuesto);
-        textNombrePuesto.setBounds(195, 54, 266, 22);
+        textNombrePuesto.setBounds(195, 54, 266, 23);
 
         listaTemas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaTemas.setMaximumSize(new java.awt.Dimension(46, 90));
@@ -78,12 +78,12 @@ public class RegistroPuesto extends javax.swing.JFrame {
         lblTemasDisp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasDisp.setText("Temas disponibles");
         getContentPane().add(lblTemasDisp);
-        lblTemasDisp.setBounds(39, 94, 150, 16);
+        lblTemasDisp.setBounds(39, 94, 150, 17);
 
         lblTemasSel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasSel.setText("Temas seleccionados");
         getContentPane().add(lblTemasSel);
-        lblTemasSel.setBounds(311, 94, 150, 16);
+        lblTemasSel.setBounds(311, 94, 150, 17);
 
         btnAddRemove.setText("Agregar/Quitar");
         btnAddRemove.setPreferredSize(new java.awt.Dimension(108, 23));
@@ -92,19 +92,19 @@ public class RegistroPuesto extends javax.swing.JFrame {
 
         radioPresencial.setText("Presencial");
         getContentPane().add(radioPresencial);
-        radioPresencial.setBounds(279, 297, 74, 21);
+        radioPresencial.setBounds(279, 297, 83, 21);
 
         radioMixto.setText("Mixto");
         getContentPane().add(radioMixto);
-        radioMixto.setBounds(371, 297, 53, 21);
+        radioMixto.setBounds(371, 297, 55, 21);
 
         radioRemoto.setText("Remoto");
         getContentPane().add(radioRemoto);
-        radioRemoto.setBounds(195, 297, 66, 21);
+        radioRemoto.setBounds(195, 297, 68, 21);
 
         lblTipo.setText("Tipo de trabajo:");
         getContentPane().add(lblTipo);
-        lblTipo.setBounds(39, 299, 150, 16);
+        lblTipo.setBounds(39, 299, 150, 17);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));

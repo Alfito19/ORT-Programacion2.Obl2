@@ -22,6 +22,10 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 //        cambiarDatosPostulantes();
 //    }
     
+    public void cargarPostulantes(){
+        listaPostulantes.setListData(sistema.getListaPostulantes().toArray());
+    }
+    
     private void cambiarDatosPostulantes(Postulante post) {
         lblPostulanteNombre.setText(post.getNombre());
         lblPostulanteCedula.setText(post.getCedula());
@@ -30,15 +34,12 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblPostulanteMail.setText(post.getMail());
         lblPostulanteLinkedin.setText(post.getLinkedIn());
         lblPostulanteFormato.setText(post.getFormato());
-        listaExperiencia.setListData((String[]) post.darHabilidades().toArray());
+        listaExperiencia.setListData(post.darHabilidades().toArray());
     }
 
     private void listaPostulantesValueChanged(javax.swing.event.ListSelectionEvent evt){
-        String post = (String)listaPostulantes.getSelectedValue();
-     //Tenemos que saber como pasar de string a todo el postulante, no encontre como.//esto deberia resolver el problema
-        Postulante unPost = sistema.getPostulante(sistema.darCedula(post));
-        this.cambiarDatosPostulantes(unPost);
-
+        Postulante post = (Postulante)listaPostulantes.getSelectedValue();
+        this.cambiarDatosPostulantes(post);
     }
     
     

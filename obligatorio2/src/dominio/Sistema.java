@@ -63,8 +63,7 @@ public class Sistema {
         return vuelta;
     }
 
-    public void eliminarPostulante(int posicion){
-        Postulante unP = this.listaPostulantes.get(posicion);
+    public void eliminarPostulante(Postulante unP){
         this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
     }
@@ -91,10 +90,6 @@ public class Sistema {
     //devuelve el objeto postulante pasandole la cedula
     public Postulante getPostulante(String cedula){
         return this.listaPostulantes.get(this.indicePostulante(cedula));
-    }
-    //se utiliza para eliminar al postulante seleccionado en la ventana EliminarPostulante
-    public String darCedula(String postulante){
-        return postulante.substring(postulante.indexOf("(")+1,postulante.indexOf(")"));
     }
 
     public void agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
@@ -198,14 +193,27 @@ public class Sistema {
         return vuelta;
     }    
     
-    //se utiliza para mostrar postulantes con formato correcto
-    public String[] darPostulantes(){
-        String[] postulantes = new String[this.listaPostulantes.size()];
-        int i = 0;
-        for(Postulante p : this.listaPostulantes){
-            postulantes[i] = p.toString();
-            i++;
+    public ArrayList<Postulante> getListaPostulantes(){
+        ArrayList<Postulante> vuelta = new ArrayList<>();
+        for (Postulante p : this.listaPostulantes){
+            vuelta.add(p);
         }
-        return postulantes;
+        return vuelta;
     }
+    public ArrayList<Habilidad> getListaTematicas(){
+        ArrayList<Habilidad> vuelta = new ArrayList<>();
+        for(Habilidad h : this.listaHabilidades){
+            vuelta.add(h);
+        }
+        return vuelta;
+    }
+    
+    public ArrayList<Puesto> getListaPuestos(){
+        ArrayList<Puesto> vuelta = new ArrayList<>();
+        for(Puesto p : this.listaPuestos){
+            vuelta.add(p);
+        }
+        return vuelta;
+    }
+    
 }

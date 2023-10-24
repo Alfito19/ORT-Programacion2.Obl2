@@ -19,7 +19,7 @@ public class BajaPostulante extends javax.swing.JFrame {
     }
     
     public void objetoAPantalla(){
-        listPostulantes.setListData(sistema.darPostulantes());
+        listPostulantes.setListData(sistema.getListaPostulantes().toArray());
     }
 
     /**
@@ -104,8 +104,9 @@ public class BajaPostulante extends javax.swing.JFrame {
     
     //en la lista se tienen que guardar los objetos postulante
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String unP = (String)listPostulantes.getSelectedValue();
-        sistema.eliminarPostulante(sistema.indicePostulante(sistema.darCedula(unP)));
+        Postulante unP = (Postulante)listPostulantes.getSelectedValue();
+        //agregar try catch
+        sistema.eliminarPostulante(unP);
         objetoAPantalla();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
