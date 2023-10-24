@@ -54,7 +54,6 @@ public class Menu extends javax.swing.JFrame {
         lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMenuTitulo.setText("Gestión de personal");
 
-        btnRegistroTematica.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroTematica.setText("Registro de temática");
         btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -65,7 +64,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnAltaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnAltaPostulante.setText("Alta de postulante");
         btnAltaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -76,7 +74,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnBajaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnBajaPostulante.setText("Baja de postulante");
         btnBajaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -87,7 +84,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnRegistroEvaluador.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroEvaluador.setText("Registro de evaluador");
         btnRegistroEvaluador.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -108,7 +104,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnRegistroPuesto.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroPuesto.setText("Registro de puesto");
         btnRegistroPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
@@ -129,7 +124,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        btnHistoriaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnHistoriaPostulante.setText("Historia de postulante");
         btnHistoriaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));

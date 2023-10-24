@@ -29,9 +29,9 @@ public class IngresoEntrevista extends javax.swing.JFrame {
 
         lblIngresoEntrevistaTitulo = new javax.swing.JLabel();
         listaEvaluador = new javax.swing.JScrollPane();
-        listEvaluador = new javax.swing.JList<>();
+        listEvaluador = new javax.swing.JList();
         listaPostulante = new javax.swing.JScrollPane();
-        listPostulante = new javax.swing.JList<>();
+        listPostulante = new javax.swing.JList();
         lblEvaluador = new javax.swing.JLabel();
         lblPostulante = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -42,110 +42,74 @@ public class IngresoEntrevista extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         lblIngresoEntrevistaTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblIngresoEntrevistaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIngresoEntrevistaTitulo.setText("Ingreso de entrevista");
+        getContentPane().add(lblIngresoEntrevistaTitulo);
+        lblIngresoEntrevistaTitulo.setBounds(6, 6, 478, 30);
 
-        listEvaluador.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listEvaluador.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listEvaluador.setToolTipText("");
+        listEvaluador.setMaximumSize(new java.awt.Dimension(46, 90));
+        listEvaluador.setPreferredSize(new java.awt.Dimension(46, 90));
         listaEvaluador.setViewportView(listEvaluador);
 
-        listPostulante.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        getContentPane().add(listaEvaluador);
+        listaEvaluador.setBounds(46, 76, 191, 100);
+
+        listPostulante.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listPostulante.setMaximumSize(new java.awt.Dimension(46, 90));
         listaPostulante.setViewportView(listPostulante);
 
+        getContentPane().add(listaPostulante);
+        listaPostulante.setBounds(265, 76, 180, 100);
+
         lblEvaluador.setText("Evaluador");
+        getContentPane().add(lblEvaluador);
+        lblEvaluador.setBounds(46, 54, 180, 16);
 
         lblPostulante.setText("Postulante");
+        getContentPane().add(lblPostulante);
+        lblPostulante.setBounds(265, 54, 180, 16);
 
         textComentarios.setColumns(20);
         textComentarios.setRows(5);
         jScrollPane3.setViewportView(textComentarios);
 
+        getContentPane().add(jScrollPane3);
+        jScrollPane3.setBounds(46, 243, 399, 86);
+
         lblPuntaje.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPuntaje.setText("Puntaje de entrevista: (0-100)");
+        getContentPane().add(lblPuntaje);
+        lblPuntaje.setBounds(46, 197, 191, 16);
+        getContentPane().add(textPuntaje);
+        textPuntaje.setBounds(265, 194, 180, 22);
 
         lblComentarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblComentarios.setText("Comentarios:");
+        getContentPane().add(lblComentarios);
+        lblComentarios.setBounds(46, 222, 399, 16);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(46, 347, 120, 25);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        getContentPane().add(btnRegistrar);
+        btnRegistrar.setBounds(325, 347, 120, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIngresoEntrevistaTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addComponent(lblEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(lblPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblPuntaje, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(listaEvaluador))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(listaPostulante, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(textPuntaje)))
-                    .addComponent(jScrollPane3)
-                    .addComponent(lblComentarios, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(45, 45, 45))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblIngresoEntrevistaTitulo)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEvaluador)
-                    .addComponent(lblPostulante))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(listaEvaluador, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(listaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPuntaje)
-                    .addComponent(textPuntaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblComentarios)
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-
-        pack();
+        setSize(new java.awt.Dimension(504, 427));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -192,8 +156,8 @@ public class IngresoEntrevista extends javax.swing.JFrame {
     private javax.swing.JLabel lblIngresoEntrevistaTitulo;
     private javax.swing.JLabel lblPostulante;
     private javax.swing.JLabel lblPuntaje;
-    private javax.swing.JList<String> listEvaluador;
-    private javax.swing.JList<String> listPostulante;
+    private javax.swing.JList listEvaluador;
+    private javax.swing.JList listPostulante;
     private javax.swing.JScrollPane listaEvaluador;
     private javax.swing.JScrollPane listaPostulante;
     private javax.swing.JTextArea textComentarios;

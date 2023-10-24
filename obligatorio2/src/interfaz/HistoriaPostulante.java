@@ -54,7 +54,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblHistorialPostulanteTitulo = new javax.swing.JLabel();
         lblPostulantes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaPostulantes = new javax.swing.JList<>();
+        listaPostulantes = new javax.swing.JList();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
         lblDireccion = new javax.swing.JLabel();
@@ -71,7 +71,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblPostulanteLinkedin = new javax.swing.JLabel();
         lblPostulanteFormato = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        listaExperiencia = new javax.swing.JList<>();
+        listaExperiencia = new javax.swing.JList();
         jSeparator1 = new javax.swing.JSeparator();
         lblBuscar = new javax.swing.JLabel();
         textBuscar = new javax.swing.JTextField();
@@ -81,7 +81,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         tableTabla = new javax.swing.JTable();
         btnSalir = new javax.swing.JToggleButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblHistorialPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblHistorialPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -89,11 +89,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 
         lblPostulantes.setText("Postulantes:");
 
-        listaPostulantes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaPostulantes);
 
         lblNombre.setText("Nombre:");
@@ -126,11 +122,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 
         lblPostulanteFormato.setText("---");
 
-        listaExperiencia.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaExperiencia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(listaExperiencia);
 
         lblBuscar.setText("Buscar:");
@@ -200,7 +192,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
                             .addComponent(jSeparator1)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblPostulantes, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                                    .addComponent(lblPostulantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane1))
                                 .addGap(100, 100, 100)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -221,7 +213,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
                                     .addComponent(lblPostulanteNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblPostulanteCedula, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(lblPostulanteDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2))))
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE))))
                         .addGap(30, 30, 30))))
         );
         layout.setVerticalGroup(
@@ -280,10 +272,10 @@ public class HistoriaPostulante extends javax.swing.JFrame {
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSalir)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(714, 807));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -348,8 +340,8 @@ public class HistoriaPostulante extends javax.swing.JFrame {
     private javax.swing.JLabel lblPostulanteTelefono;
     private javax.swing.JLabel lblPostulantes;
     private javax.swing.JLabel lblTelefono;
-    private javax.swing.JList<String> listaExperiencia;
-    private javax.swing.JList<String> listaPostulantes;
+    private javax.swing.JList listaExperiencia;
+    private javax.swing.JList listaPostulantes;
     private javax.swing.JTable tableTabla;
     private javax.swing.JTextField textBuscar;
     // End of variables declaration//GEN-END:variables

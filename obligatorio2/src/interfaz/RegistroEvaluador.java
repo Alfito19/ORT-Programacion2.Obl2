@@ -41,7 +41,7 @@ public class RegistroEvaluador extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblAltaEvaluadorTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblAltaEvaluadorTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -135,10 +135,11 @@ public class RegistroEvaluador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(514, 417));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

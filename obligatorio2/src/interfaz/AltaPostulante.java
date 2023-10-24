@@ -40,6 +40,7 @@ public class AltaPostulante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoFormato = new javax.swing.ButtonGroup();
         lblAltaPostulanteTitulo = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
@@ -60,8 +61,7 @@ public class AltaPostulante extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblAltaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblAltaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -81,10 +81,13 @@ public class AltaPostulante extends javax.swing.JFrame {
 
         lblFormato.setText("Formato:");
 
+        grupoFormato.add(radioRemoto);
         radioRemoto.setText("Remoto");
 
+        grupoFormato.add(radioPresencial);
         radioPresencial.setText("Presencial");
 
+        grupoFormato.add(radioMixto);
         radioMixto.setText("Mixto");
 
         btnCancelar.setText("Cancelar");
@@ -105,7 +108,7 @@ public class AltaPostulante extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblAltaPostulanteTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE))
+                        .addComponent(lblAltaPostulanteTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(50, 50, 50)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,10 +194,11 @@ public class AltaPostulante extends javax.swing.JFrame {
                             .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(textLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(542, 464));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -236,6 +240,7 @@ public class AltaPostulante extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.ButtonGroup grupoFormato;
     private javax.swing.JLabel lblAltaPostulanteTitulo;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblDireccion;

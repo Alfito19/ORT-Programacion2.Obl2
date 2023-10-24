@@ -37,7 +37,7 @@ public class BajaPostulante extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblBajaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblBajaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -98,7 +98,8 @@ public class BajaPostulante extends javax.swing.JFrame {
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(514, 407));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
     //en la lista se tienen que guardar los objetos postulante

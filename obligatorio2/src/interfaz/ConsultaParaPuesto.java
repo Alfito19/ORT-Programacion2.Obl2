@@ -30,19 +30,18 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
         lblAltaPostulanteTitulo = new javax.swing.JLabel();
         lblPuestos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaPuestos = new javax.swing.JList<>();
+        listaPuestos = new javax.swing.JList();
         lblNivel = new javax.swing.JLabel();
         btnConsultar = new javax.swing.JToggleButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        listaPostulantes = new javax.swing.JList<>();
+        listaPostulantes = new javax.swing.JList();
         lblPostulantes = new javax.swing.JLabel();
         btnCancelar = new javax.swing.JButton();
         btnExportar = new javax.swing.JButton();
         spinnerNivel = new javax.swing.JSpinner();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 400));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblAltaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblAltaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -50,22 +49,13 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
 
         lblPuestos.setText("Puestos:");
 
-        listaPuestos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaPuestos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaPuestos);
 
         lblNivel.setText("Nivel:");
 
         btnConsultar.setText("Consultar");
 
-        listaPostulantes.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(listaPostulantes);
 
         lblPostulantes.setText("Postulantes:");
@@ -107,7 +97,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPostulantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 73, Short.MAX_VALUE)))
+                        .addGap(0, 50, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -134,10 +124,11 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(491, 482));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -186,8 +177,8 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
     private javax.swing.JLabel lblNivel;
     private javax.swing.JLabel lblPostulantes;
     private javax.swing.JLabel lblPuestos;
-    private javax.swing.JList<String> listaPostulantes;
-    private javax.swing.JList<String> listaPuestos;
+    private javax.swing.JList listaPostulantes;
+    private javax.swing.JList listaPuestos;
     private javax.swing.JSpinner spinnerNivel;
     // End of variables declaration//GEN-END:variables
 }

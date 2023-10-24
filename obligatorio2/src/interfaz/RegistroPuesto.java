@@ -31,9 +31,9 @@ public class RegistroPuesto extends javax.swing.JFrame {
         lblNombrePuesto = new javax.swing.JLabel();
         textNombrePuesto = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listaTemas = new javax.swing.JList<>();
+        listaTemas = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
-        listaTemasSelect = new javax.swing.JList<>();
+        listaTemasSelect = new javax.swing.JList();
         lblTemasDisp = new javax.swing.JLabel();
         lblTemasSel = new javax.swing.JLabel();
         btnAddRemove = new javax.swing.JToggleButton();
@@ -44,129 +44,84 @@ public class RegistroPuesto extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 500));
+        getContentPane().setLayout(null);
 
         lblRegistroPuestoTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblRegistroPuestoTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRegistroPuestoTitulo.setText("Registro de puesto");
+        getContentPane().add(lblRegistroPuestoTitulo);
+        lblRegistroPuestoTitulo.setBounds(6, 6, 488, 30);
 
         lblNombrePuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombrePuesto.setText("Nombre del puesto:");
+        getContentPane().add(lblNombrePuesto);
+        lblNombrePuesto.setBounds(39, 57, 150, 16);
+        getContentPane().add(textNombrePuesto);
+        textNombrePuesto.setBounds(195, 54, 266, 22);
 
-        listaTemas.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        listaTemas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaTemas.setMaximumSize(new java.awt.Dimension(46, 90));
         jScrollPane1.setViewportView(listaTemas);
 
-        listaTemasSelect.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(39, 116, 150, 130);
+
+        listaTemasSelect.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaTemasSelect.setMaximumSize(new java.awt.Dimension(46, 90));
         jScrollPane2.setViewportView(listaTemasSelect);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(311, 116, 150, 130);
 
         lblTemasDisp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasDisp.setText("Temas disponibles");
+        getContentPane().add(lblTemasDisp);
+        lblTemasDisp.setBounds(39, 94, 150, 16);
 
         lblTemasSel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasSel.setText("Temas seleccionados");
+        getContentPane().add(lblTemasSel);
+        lblTemasSel.setBounds(311, 94, 150, 16);
 
         btnAddRemove.setText("Agregar/Quitar");
         btnAddRemove.setPreferredSize(new java.awt.Dimension(108, 23));
+        getContentPane().add(btnAddRemove);
+        btnAddRemove.setBounds(195, 239, 110, 23);
 
         radioPresencial.setText("Presencial");
+        getContentPane().add(radioPresencial);
+        radioPresencial.setBounds(279, 297, 74, 21);
 
         radioMixto.setText("Mixto");
+        getContentPane().add(radioMixto);
+        radioMixto.setBounds(371, 297, 53, 21);
 
         radioRemoto.setText("Remoto");
+        getContentPane().add(radioRemoto);
+        radioRemoto.setBounds(195, 297, 66, 21);
 
         lblTipo.setText("Tipo de trabajo:");
+        getContentPane().add(lblTipo);
+        lblTipo.setBounds(39, 299, 150, 16);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        getContentPane().add(btnCancelar);
+        btnCancelar.setBounds(39, 350, 120, 25);
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        getContentPane().add(btnRegistrar);
+        btnRegistrar.setBounds(341, 350, 120, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblRegistroPuestoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblNombrePuesto, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(lblTemasDisp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(lblTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnAddRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblTemasSel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(radioRemoto)
-                                .addGap(18, 18, 18)
-                                .addComponent(radioPresencial)
-                                .addGap(18, 18, 18)
-                                .addComponent(radioMixto))
-                            .addComponent(textNombrePuesto))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblRegistroPuestoTitulo)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombrePuesto)
-                    .addComponent(textNombrePuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTemasDisp)
-                            .addComponent(lblTemasSel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnAddRemove, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radioRemoto)
-                    .addComponent(radioMixto)
-                    .addComponent(radioPresencial)
-                    .addComponent(lblTipo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
-        );
-
-        pack();
+        setSize(new java.awt.Dimension(514, 436));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -215,8 +170,8 @@ public class RegistroPuesto extends javax.swing.JFrame {
     private javax.swing.JLabel lblTemasDisp;
     private javax.swing.JLabel lblTemasSel;
     private javax.swing.JLabel lblTipo;
-    private javax.swing.JList<String> listaTemas;
-    private javax.swing.JList<String> listaTemasSelect;
+    private javax.swing.JList listaTemas;
+    private javax.swing.JList listaTemasSelect;
     private javax.swing.JRadioButton radioMixto;
     private javax.swing.JRadioButton radioPresencial;
     private javax.swing.JRadioButton radioRemoto;

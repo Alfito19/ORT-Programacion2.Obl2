@@ -162,9 +162,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnRegistroTematica">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Registro de tem&#xe1;tica"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
@@ -182,9 +179,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnAltaPostulante">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Alta de postulante"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
@@ -202,9 +196,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnBajaPostulante">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Baja de postulante"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
@@ -222,9 +213,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnRegistroEvaluador">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Registro de evaluador"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
@@ -259,9 +247,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnRegistroPuesto">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Registro de puesto"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
@@ -296,9 +281,6 @@
     </Component>
     <Component class="javax.swing.JToggleButton" name="btnHistoriaPostulante">
       <Properties>
-        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="ff" type="rgb"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Historia de postulante"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[150, 25]"/>
