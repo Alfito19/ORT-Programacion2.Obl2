@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
 import dominio.*;
-/**
- *
- * @author alfos
- */
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
+
 public class HistoriaPostulante extends javax.swing.JFrame {
     private Sistema sistema;
     /**
@@ -25,7 +22,7 @@ public class HistoriaPostulante extends javax.swing.JFrame {
 //        cambiarDatosPostulantes();
 //    }
     
-    public void cambiarDatosPostulantes(Postulante post) {
+    private void cambiarDatosPostulantes(Postulante post) {
         lblPostulanteNombre.setText(post.getNombre());
         lblPostulanteCedula.setText(post.getCedula());
         lblPostulanteDireccion.setText(post.getDireccion());
@@ -33,11 +30,17 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         lblPostulanteMail.setText(post.getMail());
         lblPostulanteLinkedin.setText(post.getLinkedIn());
         lblPostulanteFormato.setText(post.getFormato());
-        for(int i = 0; i < post.getHabilidades().size(); i++){
-            listaExperiencia.put(post.getHabilidades().get(i));
-        }
+        listaExperiencia.setListData((String[]) post.darHabilidades().toArray());
     }
 
+//    private void listaPostulantesValueChanged(Javax.swing.event.ListSelectionEvent evt){
+//        String post = (String)listaPostulantes.getSelectedValue();
+
+//        Tenemos que saber como pasar de string a todo el postulante, no encontre como.
+        
+//    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

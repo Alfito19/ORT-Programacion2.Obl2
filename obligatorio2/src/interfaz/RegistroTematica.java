@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
 import dominio.*;
-import javax.swing.*;
-/**
- *
- * @author alfos
- */
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
+
 public class RegistroTematica extends javax.swing.JFrame {
     private Sistema sistema;
     /**

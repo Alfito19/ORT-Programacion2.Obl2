@@ -56,6 +56,15 @@ public class Postulante extends Persona{
     public ArrayList<Habilidad> getHabilidades(){
         return this.habilidades;
     }
+    
+    public ArrayList<String> darHabilidades(){
+        ArrayList<String> listaAux = new ArrayList<>();
+        Iterator<Habilidad> it = this.getHabilidades().iterator();
+        while(it.hasNext()){
+            listaAux.add(it.next().toString());
+        }
+        return listaAux;
+    }
 
     public ArrayList<Integer> getPuntajes(){
         return this.puntajesEntrevistas;

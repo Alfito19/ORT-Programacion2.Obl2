@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
 import dominio.*;
-/**
- *
- * @author alfos
- */
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
+
 public class RegistroPuesto extends javax.swing.JFrame {
     private Sistema sistema;
     /**

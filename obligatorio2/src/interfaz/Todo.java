@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package interfaz;
 import dominio.*;
-/**
- *
- * @author joaquinhernandez
- */
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
+
 public class Todo {
     private AltaPostulante altaPostulante;
     private BajaPostulante bajaPostulante;
