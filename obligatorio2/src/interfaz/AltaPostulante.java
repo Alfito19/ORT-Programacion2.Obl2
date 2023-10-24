@@ -16,6 +16,20 @@ public class AltaPostulante extends javax.swing.JFrame {
         this.sistema = unSistema;
         initComponents();
     }
+    
+    private void btnRegistrar(java.awt.event.ActionEvent evt){
+        String nombre = this.textNombre.getText().trim();
+        String cedula = this.textCedula.getText().trim();
+        String direccion = this.textDireccion.getText().trim();
+        String telefono = this.textTelefono.getText().trim();
+        String mail = this.textMail.getText().trim();
+        String linkedin = this.textLinkedin.getText().trim();
+//        String formato = this.textFormato.getText().trim();
+        
+//        if(nombre.length > 0 &&...){
+//            controlador.registrarPostulante(nombre,cedula,direccion,telefono,mail,linkedin,formato);
+//        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
