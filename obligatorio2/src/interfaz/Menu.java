@@ -70,50 +70,95 @@ public class Menu extends javax.swing.JFrame {
         btnAltaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnAltaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAltaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnBajaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnBajaPostulante.setText("Baja de postulante");
         btnBajaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnBajaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBajaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnRegistroEvaluador.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroEvaluador.setText("Registro de evaluador");
         btnRegistroEvaluador.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroEvaluador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroEvaluadorActionPerformed(evt);
+            }
+        });
 
         btnIngresoEntrevista.setText("Ingreso de entrevista");
         btnIngresoEntrevista.setMaximumSize(new java.awt.Dimension(150, 25));
         btnIngresoEntrevista.setMinimumSize(new java.awt.Dimension(150, 25));
         btnIngresoEntrevista.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnIngresoEntrevista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresoEntrevistaActionPerformed(evt);
+            }
+        });
 
         btnRegistroPuesto.setBackground(new java.awt.Color(255, 102, 102));
         btnRegistroPuesto.setText("Registro de puesto");
         btnRegistroPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroPuestoActionPerformed(evt);
+            }
+        });
 
         btnConsultaPuesto.setText("Consulta para puesto");
         btnConsultaPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnConsultaPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
         btnConsultaPuesto.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnConsultaPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaPuestoActionPerformed(evt);
+            }
+        });
 
         btnHistoriaPostulante.setBackground(new java.awt.Color(255, 102, 102));
         btnHistoriaPostulante.setText("Historia de postulante");
         btnHistoriaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnHistoriaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoriaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnConsultaTematica.setText("Consulta por temática");
         btnConsultaTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnConsultaTematica.setMinimumSize(new java.awt.Dimension(150, 25));
         btnConsultaTematica.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnConsultaTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaTematicaActionPerformed(evt);
+            }
+        });
 
         btnFin.setText("Fin");
         btnFin.setMaximumSize(new java.awt.Dimension(150, 25));
         btnFin.setMinimumSize(new java.awt.Dimension(150, 25));
         btnFin.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinActionPerformed(evt);
+            }
+        });
 
         menuPersonas.setText("Personas");
 
@@ -214,6 +259,59 @@ public class Menu extends javax.swing.JFrame {
         RegistroTematica vent = new RegistroTematica(sistema);
         vent.setVisible(true);
     }//GEN-LAST:event_btnRegistroTematicaActionPerformed
+
+    private void btnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaTematicaActionPerformed
+        // TODO add your handling code here:
+//        consultaTematica vent = new consultaTematica(sistema);
+//        vent.setVisible(true);
+        
+    }//GEN-LAST:event_btnConsultaTematicaActionPerformed
+
+    private void btnAltaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaPostulanteActionPerformed
+        // TODO add your handling code here:
+        AltaPostulante vent = new AltaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnAltaPostulanteActionPerformed
+
+    private void btnBajaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBajaPostulanteActionPerformed
+        // TODO add your handling code here:
+        BajaPostulante vent = new BajaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnBajaPostulanteActionPerformed
+
+    private void btnRegistroEvaluadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroEvaluadorActionPerformed
+        // TODO add your handling code here:
+        RegistroEvaluador vent = new RegistroEvaluador(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroEvaluadorActionPerformed
+
+    private void btnIngresoEntrevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoEntrevistaActionPerformed
+        // TODO add your handling code here:
+        IngresoEntrevista vent = new IngresoEntrevista(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnIngresoEntrevistaActionPerformed
+
+    private void btnRegistroPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroPuestoActionPerformed
+        // TODO add your handling code here:
+        RegistroPuesto vent = new RegistroPuesto(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroPuestoActionPerformed
+
+    private void btnConsultaPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPuestoActionPerformed
+        // TODO add your handling code here:
+        ConsultaParaPuesto vent = new ConsultaParaPuesto(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnConsultaPuestoActionPerformed
+
+    private void btnHistoriaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoriaPostulanteActionPerformed
+        // TODO add your handling code here:
+        HistoriaPostulante vent = new HistoriaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnHistoriaPostulanteActionPerformed
+
+    private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFinActionPerformed
 
     /**
      * @param args the command line arguments
