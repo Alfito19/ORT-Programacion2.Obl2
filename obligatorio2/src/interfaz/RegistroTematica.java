@@ -124,8 +124,8 @@ public class RegistroTematica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        String nombre = textNombre.getText();
-        String descripcion = txtDescripcion.getText();
+        String nombre = textNombre.getText().trim();
+        String descripcion = txtDescripcion.getText().trim();
         if (nombre.equals("") || descripcion.equals("")){
             JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
                "Error de input", JOptionPane.ERROR_MESSAGE);
