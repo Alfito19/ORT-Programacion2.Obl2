@@ -27,4 +27,6 @@ public class Todo {
         this.registroPuesto = new RegistroPuesto(unSistema);
         this.registroTematica = new RegistroTematica(unSistema);
     }
+    
+    
 }

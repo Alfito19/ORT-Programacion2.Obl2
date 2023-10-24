@@ -33,12 +33,13 @@ public class HistoriaPostulante extends javax.swing.JFrame {
         listaExperiencia.setListData((String[]) post.darHabilidades().toArray());
     }
 
-//    private void listaPostulantesValueChanged(Javax.swing.event.ListSelectionEvent evt){
-//        String post = (String)listaPostulantes.getSelectedValue();
+    private void listaPostulantesValueChanged(javax.swing.event.ListSelectionEvent evt){
+        String post = (String)listaPostulantes.getSelectedValue();
+     //Tenemos que saber como pasar de string a todo el postulante, no encontre como.//esto deberia resolver el problema
+        Postulante unPost = sistema.getPostulante(sistema.darCedula(post));
+        this.cambiarDatosPostulantes(unPost);
 
-//        Tenemos que saber como pasar de string a todo el postulante, no encontre como.
-        
-//    }
+    }
     
     
     /**

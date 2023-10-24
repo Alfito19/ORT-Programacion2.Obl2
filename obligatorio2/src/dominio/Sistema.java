@@ -88,6 +88,10 @@ public class Sistema {
         }
         return indice;
     }
+    //devuelve el objeto postulante pasandole la cedula
+    public Postulante getPostulante(String cedula){
+        return this.listaPostulantes.get(this.indicePostulante(cedula));
+    }
     //se utiliza para eliminar al postulante seleccionado en la ventana EliminarPostulante
     public String darCedula(String postulante){
         return postulante.substring(postulante.indexOf("(")+1,postulante.indexOf(")"));
