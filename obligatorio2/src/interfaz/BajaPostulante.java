@@ -33,7 +33,7 @@ public class BajaPostulante extends javax.swing.JFrame {
 
         lblBajaPostulanteTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        listPostulantes = new javax.swing.JList<>();
+        listPostulantes = new javax.swing.JList();
         btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
 
@@ -43,10 +43,10 @@ public class BajaPostulante extends javax.swing.JFrame {
         lblBajaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBajaPostulanteTitulo.setText("Baja postulante");
 
-        listPostulantes.setModel(new javax.swing.AbstractListModel<String>() {
+        listPostulantes.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+            public Object getElementAt(int i) { return strings[i]; }
         });
         jScrollPane1.setViewportView(listPostulantes);
 
@@ -103,7 +103,7 @@ public class BajaPostulante extends javax.swing.JFrame {
     
     //en la lista se tienen que guardar los objetos postulante
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String unP = listPostulantes.getSelectedValue();
+        String unP = (String)listPostulantes.getSelectedValue();
         sistema.eliminarPostulante(sistema.indicePostulante(sistema.darCedula(unP)));
         objetoAPantalla();
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -148,6 +148,6 @@ public class BajaPostulante extends javax.swing.JFrame {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBajaPostulanteTitulo;
-    private javax.swing.JList<String> listPostulantes;
+    private javax.swing.JList listPostulantes;
     // End of variables declaration//GEN-END:variables
 }
