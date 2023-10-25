@@ -3,11 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package interfaz;
+<<<<<<< Updated upstream
 
 /**
  *
  * @author alfos
  */
+=======
+import dominio.*;
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
+>>>>>>> Stashed changes
 public class Menu extends javax.swing.JFrame {
 
     /**

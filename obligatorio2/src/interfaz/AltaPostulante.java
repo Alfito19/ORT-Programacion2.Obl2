@@ -16,6 +16,13 @@ public class AltaPostulante extends javax.swing.JFrame {
     public AltaPostulante() {
         initComponents();
     }
+<<<<<<< Updated upstream
+=======
+    public AltaPostulante(Sistema unSistema) {
+        this.sistema = unSistema;
+        initComponents();
+    }
+>>>>>>> Stashed changes
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -83,6 +90,11 @@ public class AltaPostulante extends javax.swing.JFrame {
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,6 +195,27 @@ public class AltaPostulante extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String nombre = this.textNombre.getText().trim();
+        String cedula = this.textCedula.getText().trim();
+        String direccion = this.textDireccion.getText().trim();
+        String telefono = this.textTelefono.getText().trim();
+        String mail = this.textMail.getText().trim();
+        String linkedin = this.textLinkedin.getText().trim();
+        String formato = "";
+        if(this.radioMixto.isSelected()){
+            formato = "Mixto";
+        }
+        else if(this.radioPresencial.isSelected()){
+            formato = "Presencial";
+        }
+        else{
+            formato = "Remoto";
+        }
+        
+        
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
