@@ -11,7 +11,7 @@ public class Evaluador extends Persona{
         this.ingreso = 0;
     }
 
-    public Evaluador(String unNombre,long unaCedula,String unaDireccion,long unIngreso){
+    public Evaluador(String unNombre,String unaCedula,String unaDireccion,long unIngreso){
         super(unNombre,unaCedula,unaDireccion);
         this.ingreso = unIngreso;
     }

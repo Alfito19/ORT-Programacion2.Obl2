@@ -27,4 +27,8 @@ public class Entrevista {
     public static int getIdentificador(){
         return identificador++;
     }
+
+    public Postulante getEntrevistado(){
+        return this.entrevistado;
+    }
 }

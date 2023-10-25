@@ -1,30 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
-<<<<<<< Updated upstream
 
-/**
- *
- * @author alfos
- */
-=======
 import dominio.*;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
->>>>>>> Stashed changes
-public class Menu extends javax.swing.JFrame {
 
+public class Menu extends javax.swing.JFrame {
+    private Sistema sistema;
     /**
      * Creates new form menu
      */
     public Menu() {
         initComponents();
     }
-
+    public Menu(Sistema unSistema) {
+        this.sistema = unSistema;
+        initComponents();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,6 +39,15 @@ public class Menu extends javax.swing.JFrame {
         btnHistoriaPostulante = new javax.swing.JToggleButton();
         btnConsultaTematica = new javax.swing.JToggleButton();
         btnFin = new javax.swing.JToggleButton();
+        menuMenu = new javax.swing.JMenuBar();
+        menuPersonas = new javax.swing.JMenu();
+        menuRegEvaluador = new javax.swing.JMenuItem();
+        menuAltaPostulante = new javax.swing.JMenuItem();
+        menuBajaPostulante = new javax.swing.JMenuItem();
+        menuHistoriaPostulante = new javax.swing.JMenuItem();
+        menuElementos = new javax.swing.JMenu();
+        menuRegistroPuesto = new javax.swing.JMenuItem();
+        menuRegistroTema = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,51 +59,130 @@ public class Menu extends javax.swing.JFrame {
         btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroTematicaActionPerformed(evt);
+            }
+        });
 
         btnAltaPostulante.setText("Alta de postulante");
         btnAltaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnAltaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnAltaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAltaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnBajaPostulante.setText("Baja de postulante");
         btnBajaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnBajaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnBajaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBajaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnRegistroEvaluador.setText("Registro de evaluador");
         btnRegistroEvaluador.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroEvaluador.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroEvaluador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroEvaluadorActionPerformed(evt);
+            }
+        });
 
         btnIngresoEntrevista.setText("Ingreso de entrevista");
         btnIngresoEntrevista.setMaximumSize(new java.awt.Dimension(150, 25));
         btnIngresoEntrevista.setMinimumSize(new java.awt.Dimension(150, 25));
         btnIngresoEntrevista.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnIngresoEntrevista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresoEntrevistaActionPerformed(evt);
+            }
+        });
 
         btnRegistroPuesto.setText("Registro de puesto");
         btnRegistroPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
         btnRegistroPuesto.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnRegistroPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistroPuestoActionPerformed(evt);
+            }
+        });
 
         btnConsultaPuesto.setText("Consulta para puesto");
         btnConsultaPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
         btnConsultaPuesto.setMinimumSize(new java.awt.Dimension(150, 25));
         btnConsultaPuesto.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnConsultaPuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaPuestoActionPerformed(evt);
+            }
+        });
 
         btnHistoriaPostulante.setText("Historia de postulante");
         btnHistoriaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setMinimumSize(new java.awt.Dimension(150, 25));
         btnHistoriaPostulante.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnHistoriaPostulante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHistoriaPostulanteActionPerformed(evt);
+            }
+        });
 
         btnConsultaTematica.setText("Consulta por temática");
         btnConsultaTematica.setMaximumSize(new java.awt.Dimension(150, 25));
         btnConsultaTematica.setMinimumSize(new java.awt.Dimension(150, 25));
         btnConsultaTematica.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnConsultaTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaTematicaActionPerformed(evt);
+            }
+        });
 
         btnFin.setText("Fin");
         btnFin.setMaximumSize(new java.awt.Dimension(150, 25));
         btnFin.setMinimumSize(new java.awt.Dimension(150, 25));
         btnFin.setPreferredSize(new java.awt.Dimension(150, 25));
+        btnFin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFinActionPerformed(evt);
+            }
+        });
+
+        menuPersonas.setText("Personas");
+
+        menuRegEvaluador.setText("Registro de evaluador");
+        menuPersonas.add(menuRegEvaluador);
+
+        menuAltaPostulante.setText("Alta de postulante");
+        menuPersonas.add(menuAltaPostulante);
+
+        menuBajaPostulante.setText("Baja de postulante");
+        menuBajaPostulante.setToolTipText("");
+        menuPersonas.add(menuBajaPostulante);
+
+        menuHistoriaPostulante.setText("Historia de postulante");
+        menuPersonas.add(menuHistoriaPostulante);
+
+        menuMenu.add(menuPersonas);
+
+        menuElementos.setText("Elementos");
+
+        menuRegistroPuesto.setText("Registro de puesto");
+        menuElementos.add(menuRegistroPuesto);
+
+        menuRegistroTema.setText("Registro de temática");
+        menuElementos.add(menuRegistroTema);
+
+        menuMenu.add(menuElementos);
+
+        setJMenuBar(menuMenu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -160,11 +242,71 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHistoriaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(514, 407));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistroTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroTematicaActionPerformed
+        // TODO add your handling code here:
+        RegistroTematica vent = new RegistroTematica(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroTematicaActionPerformed
+
+    private void btnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaTematicaActionPerformed
+        // TODO add your handling code here:
+//        consultaTematica vent = new consultaTematica(sistema);
+//        vent.setVisible(true);
+        
+    }//GEN-LAST:event_btnConsultaTematicaActionPerformed
+
+    private void btnAltaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaPostulanteActionPerformed
+        // TODO add your handling code here:
+        AltaPostulante vent = new AltaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnAltaPostulanteActionPerformed
+
+    private void btnBajaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBajaPostulanteActionPerformed
+        // TODO add your handling code here:
+        BajaPostulante vent = new BajaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnBajaPostulanteActionPerformed
+
+    private void btnRegistroEvaluadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroEvaluadorActionPerformed
+        // TODO add your handling code here:
+        RegistroEvaluador vent = new RegistroEvaluador(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroEvaluadorActionPerformed
+
+    private void btnIngresoEntrevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresoEntrevistaActionPerformed
+        // TODO add your handling code here:
+        IngresoEntrevista vent = new IngresoEntrevista(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnIngresoEntrevistaActionPerformed
+
+    private void btnRegistroPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroPuestoActionPerformed
+        // TODO add your handling code here:
+        RegistroPuesto vent = new RegistroPuesto(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroPuestoActionPerformed
+
+    private void btnConsultaPuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaPuestoActionPerformed
+        // TODO add your handling code here:
+        ConsultaParaPuesto vent = new ConsultaParaPuesto(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnConsultaPuestoActionPerformed
+
+    private void btnHistoriaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoriaPostulanteActionPerformed
+        // TODO add your handling code here:
+        HistoriaPostulante vent = new HistoriaPostulante(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnHistoriaPostulanteActionPerformed
+
+    private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,5 +356,14 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnRegistroPuesto;
     private javax.swing.JToggleButton btnRegistroTematica;
     private javax.swing.JLabel lblMenuTitulo;
+    private javax.swing.JMenuItem menuAltaPostulante;
+    private javax.swing.JMenuItem menuBajaPostulante;
+    private javax.swing.JMenu menuElementos;
+    private javax.swing.JMenuItem menuHistoriaPostulante;
+    private javax.swing.JMenuBar menuMenu;
+    private javax.swing.JMenu menuPersonas;
+    private javax.swing.JMenuItem menuRegEvaluador;
+    private javax.swing.JMenuItem menuRegistroPuesto;
+    private javax.swing.JMenuItem menuRegistroTema;
     // End of variables declaration//GEN-END:variables
 }

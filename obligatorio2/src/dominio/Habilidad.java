@@ -37,6 +37,10 @@ public class Habilidad {
 
     @Override
     public String toString(){
-        return this.nombre + "(" + this.nivel + ")";
+        String vuelta = this.nombre;
+        if (this.nivel!=0){
+            vuelta+= "(" + this.nivel + ")";
+        }
+        return vuelta;
     }
 }
