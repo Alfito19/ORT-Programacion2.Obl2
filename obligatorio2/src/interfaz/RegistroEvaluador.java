@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -17,7 +19,14 @@ public class RegistroEvaluador extends javax.swing.JFrame {
         this.sistema = unSistema;
         initComponents();
     }
-
+    
+    public void objetoAPantalla(){
+        textNombre.setText("");
+        textCedula.setText("");
+        textDireccion.setText("");
+        textTelefono.setText("");
+        textIngreso.setText("");
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +46,7 @@ public class RegistroEvaluador extends javax.swing.JFrame {
         textCedula = new javax.swing.JTextField();
         textDireccion = new javax.swing.JTextField();
         textTelefono = new javax.swing.JTextField();
-        textMail = new javax.swing.JTextField();
+        textIngreso = new javax.swing.JTextField();
         btnCancelar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
 
@@ -61,11 +70,21 @@ public class RegistroEvaluador extends javax.swing.JFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +101,7 @@ public class RegistroEvaluador extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textMail))
+                                .addComponent(textIngreso))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -130,17 +149,39 @@ public class RegistroEvaluador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMail)
-                    .addComponent(textMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textIngreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(114, 114, 114)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(514, 417));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        objetoAPantalla();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+    //agrega evaluador confirmando el correcto ingreso de datos y que este no este repetido 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String unNombre = textNombre.getText().trim();
+        String unaCedula = textCedula.getText().trim();
+        String unaDireccion = textDireccion.getText().trim();
+        String unTelefono = textTelefono.getText().trim();
+        String unIngreso = textIngreso.getText().trim();
+        if(unNombre.length()==0 || unaCedula.length()==0 || unaDireccion.length()==0 || unTelefono.length()==0 || unIngreso.length()==0){
+            JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
+               "Error de input", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            while(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
+                JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
+               "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,7 +230,7 @@ public class RegistroEvaluador extends javax.swing.JFrame {
     private javax.swing.JLabel lblTelefono;
     private javax.swing.JTextField textCedula;
     private javax.swing.JTextField textDireccion;
-    private javax.swing.JTextField textMail;
+    private javax.swing.JTextField textIngreso;
     private javax.swing.JTextField textNombre;
     private javax.swing.JTextField textTelefono;
     // End of variables declaration//GEN-END:variables
