@@ -5,9 +5,7 @@ import interfaz.*;
 public class Obligatorio2 {
 
     public static void main(String[] args) {
-        Sistema controlador = new Sistema();
-        //hay que cambiar la clase todo y que solo habra menú, y desde ahí inicializar las otras ventanas
-        Menu vent = new Menu(controlador);
+        PrimerConsulta vent = new PrimerConsulta();
         vent.setVisible(true);
     }
     

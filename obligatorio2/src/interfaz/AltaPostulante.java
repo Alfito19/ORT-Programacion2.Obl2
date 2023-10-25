@@ -12,23 +12,10 @@ public class AltaPostulante extends javax.swing.JFrame {
     public AltaPostulante() {
         initComponents();
     }
+
     public AltaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
-    }
-    
-    private void btnRegistrar(java.awt.event.ActionEvent evt){
-        String nombre = this.textNombre.getText().trim();
-        String cedula = this.textCedula.getText().trim();
-        String direccion = this.textDireccion.getText().trim();
-        String telefono = this.textTelefono.getText().trim();
-        String mail = this.textMail.getText().trim();
-        String linkedin = this.textLinkedin.getText().trim();
-//        String formato = this.textFormato.getText().trim();
-        
-//        if(nombre.length > 0 &&...){
-//            controlador.registrarPostulante(nombre,cedula,direccion,telefono,mail,linkedin,formato);
-//        }
     }
 
     /**
@@ -99,6 +86,11 @@ public class AltaPostulante extends javax.swing.JFrame {
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -200,6 +192,27 @@ public class AltaPostulante extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(542, 464));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String nombre = this.textNombre.getText().trim();
+        String cedula = this.textCedula.getText().trim();
+        String direccion = this.textDireccion.getText().trim();
+        String telefono = this.textTelefono.getText().trim();
+        String mail = this.textMail.getText().trim();
+        String linkedin = this.textLinkedin.getText().trim();
+        String formato = "";
+        if(this.radioMixto.isSelected()){
+            formato = "Mixto";
+        }
+        else if(this.radioPresencial.isSelected()){
+            formato = "Presencial";
+        }
+        else{
+            formato = "Remoto";
+        }
+        
+        
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

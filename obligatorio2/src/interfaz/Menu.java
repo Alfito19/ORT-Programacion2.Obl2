@@ -1,4 +1,5 @@
 package interfaz;
+
 import dominio.*;
 
 //Joaquin Hernandez (257620)
