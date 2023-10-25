@@ -147,6 +147,7 @@ public class RegistroTematica extends javax.swing.JFrame {
     
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
        this.resetValoresTexto();
+       dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**

@@ -5,7 +5,6 @@ import dominio.*;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-
 public class Menu extends javax.swing.JFrame {
     private Sistema sistema;
     /**
@@ -306,6 +305,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void btnFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_btnFinActionPerformed
 
     /**

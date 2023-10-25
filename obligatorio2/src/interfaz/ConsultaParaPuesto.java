@@ -75,6 +75,11 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnExportar.setText("Exportar");
         btnExportar.setMaximumSize(new java.awt.Dimension(120, 25));
@@ -154,6 +159,11 @@ public class ConsultaParaPuesto extends javax.swing.JFrame {
             //faltaria darle funcionalidad a btnExportar
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,19 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package interfaz;
+import dominio.*;
 
-/**
- *
- * @author joaquinhernandez
- */
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
+
 public class AltaPostulanteExperiencia extends javax.swing.JFrame {
 
+     private Sistema sistema;
     /**
-     * Creates new form AltaPostulanteExperiencia
+     * Creates new form menu
      */
     public AltaPostulanteExperiencia() {
+        initComponents();
+    }
+    public AltaPostulanteExperiencia(Sistema unSistema) {
+        this.sistema = unSistema;
         initComponents();
     }
 
@@ -32,14 +33,14 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 515, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 274, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(414, 307));
+        setSize(new java.awt.Dimension(529, 281));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

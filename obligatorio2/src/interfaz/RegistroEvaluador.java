@@ -162,7 +162,7 @@ public class RegistroEvaluador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        objetoAPantalla();
+        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
     //agrega evaluador confirmando el correcto ingreso de datos y que este no este repetido 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

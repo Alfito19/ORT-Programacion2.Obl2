@@ -81,6 +81,11 @@ public class AltaPostulante extends javax.swing.JFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         btnRegistrar.setText("Registrar");
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
@@ -194,25 +199,45 @@ public class AltaPostulante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        String nombre = this.textNombre.getText().trim();
-        String cedula = this.textCedula.getText().trim();
-        String direccion = this.textDireccion.getText().trim();
-        String telefono = this.textTelefono.getText().trim();
-        String mail = this.textMail.getText().trim();
-        String linkedin = this.textLinkedin.getText().trim();
-        String formato = "";
-        if(this.radioMixto.isSelected()){
-            formato = "Mixto";
+        try{
+            String nombre = this.textNombre.getText().trim();
+            String cedula = this.textCedula.getText().trim();
+            String direccion = this.textDireccion.getText().trim();
+            String telefono = this.textTelefono.getText().trim();
+            String mail = this.textMail.getText().trim();
+            String linkedin = this.textLinkedin.getText().trim();
+            String formato = "";
+            if(this.radioMixto.isSelected()){
+                formato = "Mixto";
+            }
+            else if(this.radioPresencial.isSelected()){
+                formato = "Presencial";
+            }
+            else if(this.radioRemoto.isSelected()){
+                formato = "Remoto";
+            }
+            if(!(nombre.isEmpty() && cedula.isEmpty() && direccion.isEmpty() && telefono.isEmpty() && mail.isEmpty() && linkedin.isEmpty())){
+                try{
+                    Long.parseLong(cedula);
+                    AltaPostulanteExperiencia vent = new AltaPostulanteExperiencia(sistema);
+                    vent.setVisible(true);
+                }
+                catch(Exception e){
+                    //Ventana de error
+                }
+            }
         }
-        else if(this.radioPresencial.isSelected()){
-            formato = "Presencial";
+        catch(Exception e){
+            //Ventana de error
         }
-        else{
-            formato = "Remoto";
-        }
+        
         
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

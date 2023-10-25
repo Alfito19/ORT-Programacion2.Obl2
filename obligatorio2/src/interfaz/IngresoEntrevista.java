@@ -98,6 +98,11 @@ public class IngresoEntrevista extends javax.swing.JFrame {
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCancelar);
         btnCancelar.setBounds(46, 347, 120, 25);
 
@@ -111,6 +116,11 @@ public class IngresoEntrevista extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(504, 427));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
