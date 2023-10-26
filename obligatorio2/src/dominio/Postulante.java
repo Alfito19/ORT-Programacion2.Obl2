@@ -32,7 +32,7 @@ public class Postulante extends Persona{
         this.habilidades = habs;
         this.puntajesEntrevistas = new ArrayList<>();
     }
-
+    
     public String getTelefono() {
         return telefono;
     }
@@ -55,6 +55,24 @@ public class Postulante extends Persona{
     
     public ArrayList<Habilidad> getHabilidades(){
         return this.habilidades;
+    }
+    
+    public boolean habilidadNoEsta(Habilidad unaHabilidad){
+        boolean cond = true;
+        for(Habilidad h : this.habilidades){
+            if (h.getNombre().equalsIgnoreCase(unaHabilidad.getNombre())){
+                cond = false;
+            }
+        }
+        return cond;
+    }
+        
+    public void agregarHabilidad(Habilidad unaHabilidad, int nivel) {
+        this.habilidades.add(new Habilidad((String)unaHabilidad.getNombre(),(String)unaHabilidad.getDescripcion(),nivel));    
+    }
+    
+    public void quitarHabilidad(Habilidad unaHabilidad){
+        this.habilidades.remove(unaHabilidad);
     }
     
     public ArrayList<String> darHabilidades(){

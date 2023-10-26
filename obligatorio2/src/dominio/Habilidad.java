@@ -1,6 +1,9 @@
 package dominio;
 
 //Joaquin Hernandez (257620)
+
+import java.util.Objects;
+
 //Alfonso Saizar (305968)
 
 public class Habilidad {
@@ -27,6 +30,10 @@ public class Habilidad {
     public String getNombre(){
         return this.nombre;
     }
+    
+    public String getDescripcion(){
+        return this.descripcion;
+    }
 
     public void setNivel(int level){
         this.nivel = level;
@@ -39,8 +46,16 @@ public class Habilidad {
     public String toString(){
         String vuelta = this.nombre;
         if (this.nivel!=0){
-            vuelta+= "(" + this.nivel + ")";
+            vuelta+= " (" + this.nivel + ")";
         }
         return vuelta;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Habilidad habilidad = (Habilidad) o;
+        return Objects.equals(nombre, habilidad.nombre);
     }
 }

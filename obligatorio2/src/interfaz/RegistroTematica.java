@@ -40,7 +40,6 @@ public class RegistroTematica extends javax.swing.JFrame {
         txtDescripcion = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 300));
 
         lblRegistoTematicaTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblRegistoTematicaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -67,6 +66,12 @@ public class RegistroTematica extends javax.swing.JFrame {
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        textNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textNombreActionPerformed(evt);
             }
         });
 
@@ -138,6 +143,8 @@ public class RegistroTematica extends javax.swing.JFrame {
         //resetear las cajas de texto luego de validos los datos
         this.resetValoresTexto();
         //faltaria poner a que ventana lleva esto;
+        sistema.agregarTematica(nombre, descripcion);
+        dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void resetValoresTexto(){
@@ -146,9 +153,12 @@ public class RegistroTematica extends javax.swing.JFrame {
     }
     
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-       this.resetValoresTexto();
        dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void textNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textNombreActionPerformed
 
     /**
      * @param args the command line arguments

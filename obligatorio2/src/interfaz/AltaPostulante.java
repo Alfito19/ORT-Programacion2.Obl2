@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.util.ArrayList;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -46,7 +47,7 @@ public class AltaPostulante extends javax.swing.JFrame {
         radioPresencial = new javax.swing.JRadioButton();
         radioMixto = new javax.swing.JRadioButton();
         btnCancelar = new javax.swing.JButton();
-        btnRegistrar = new javax.swing.JButton();
+        btnSiguiente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -87,13 +88,13 @@ public class AltaPostulante extends javax.swing.JFrame {
             }
         });
 
-        btnRegistrar.setText("Registrar");
-        btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
-        btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
-        btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
-        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+        btnSiguiente.setText("Siguiente");
+        btnSiguiente.setMaximumSize(new java.awt.Dimension(120, 25));
+        btnSiguiente.setMinimumSize(new java.awt.Dimension(120, 25));
+        btnSiguiente.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActionPerformed(evt);
+                btnSiguienteActionPerformed(evt);
             }
         });
 
@@ -147,7 +148,7 @@ public class AltaPostulante extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(50, 50, 50)))))
                 .addContainerGap())
         );
@@ -189,7 +190,7 @@ public class AltaPostulante extends javax.swing.JFrame {
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(textLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
@@ -198,7 +199,7 @@ public class AltaPostulante extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+    private void btnSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguienteActionPerformed
         try{
             String nombre = this.textNombre.getText().trim();
             String cedula = this.textCedula.getText().trim();
@@ -219,21 +220,25 @@ public class AltaPostulante extends javax.swing.JFrame {
             if(!(nombre.isEmpty() && cedula.isEmpty() && direccion.isEmpty() && telefono.isEmpty() && mail.isEmpty() && linkedin.isEmpty())){
                 try{
                     Long.parseLong(cedula);
-                    AltaPostulanteExperiencia vent = new AltaPostulanteExperiencia(sistema);
+                    Postulante post = new Postulante(nombre, (""+cedula), direccion, telefono, mail, linkedin, formato, new ArrayList<>());
+                    AltaPostulanteExperiencia vent = new AltaPostulanteExperiencia(sistema,post);
                     vent.setVisible(true);
+                    dispose();
                 }
                 catch(Exception e){
                     //Ventana de error
+                    System.out.println("La cedula debe ser un numero");
                 }
             }
         }
         catch(Exception e){
             //Ventana de error
+            System.out.println("Datos inmpletos");
         }
         
         
         
-    }//GEN-LAST:event_btnRegistrarActionPerformed
+    }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         dispose();
@@ -277,7 +282,7 @@ public class AltaPostulante extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup grupoFormato;
     private javax.swing.JLabel lblAltaPostulanteTitulo;
     private javax.swing.JLabel lblCedula;

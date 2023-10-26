@@ -83,7 +83,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnRegistrar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnSiguiente" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -139,7 +139,7 @@
                       <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnCancelar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSiguiente" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="textLinkedin" min="-2" max="-2" attributes="0"/>
@@ -250,9 +250,9 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRegistrar">
+    <Component class="javax.swing.JButton" name="btnSiguiente">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="text" type="java.lang.String" value="Siguiente"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[120, 25]"/>
         </Property>
@@ -264,7 +264,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSiguienteActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
