@@ -192,7 +192,13 @@ public class Sistema {
         vuelta+= "Hay " + cantPuestos + " puestos que requieren conocimiento en " + unaTematica.getNombre();
         return vuelta;
     }    
-    
+    public ArrayList<Evaluador> getListaEvaluadores(){
+        ArrayList<Evaluador> vuelta = new ArrayList<>();
+        for (Evaluador e : this.listaEvaluadores){
+            vuelta.add(e);
+        }
+        return vuelta;
+    }
     public ArrayList<Postulante> getListaPostulantes(){
         ArrayList<Postulante> vuelta = new ArrayList<>();
         for (Postulante p : this.listaPostulantes){

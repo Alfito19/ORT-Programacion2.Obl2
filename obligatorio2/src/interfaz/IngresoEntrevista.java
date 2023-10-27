@@ -1,5 +1,8 @@
 package interfaz;
 import dominio.*;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -16,6 +19,13 @@ public class IngresoEntrevista extends javax.swing.JFrame {
     public IngresoEntrevista(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+    }
+    public void objetoAPantalla(){
+        listEvaluador.setListData(sistema.getListaEvaluadores().toArray());
+        listPostulante.setListData(sistema.getListaPostulantes().toArray());
+        textPuntaje.setText("");
+        textComentarios.setText("");
+        
     }
 
     /**
@@ -69,30 +79,30 @@ public class IngresoEntrevista extends javax.swing.JFrame {
 
         lblEvaluador.setText("Evaluador");
         getContentPane().add(lblEvaluador);
-        lblEvaluador.setBounds(46, 54, 180, 16);
+        lblEvaluador.setBounds(46, 54, 180, 17);
 
         lblPostulante.setText("Postulante");
         getContentPane().add(lblPostulante);
-        lblPostulante.setBounds(265, 54, 180, 16);
+        lblPostulante.setBounds(265, 54, 180, 17);
 
         textComentarios.setColumns(20);
         textComentarios.setRows(5);
         jScrollPane3.setViewportView(textComentarios);
 
         getContentPane().add(jScrollPane3);
-        jScrollPane3.setBounds(46, 243, 399, 86);
+        jScrollPane3.setBounds(46, 243, 399, 91);
 
         lblPuntaje.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblPuntaje.setText("Puntaje de entrevista: (0-100)");
         getContentPane().add(lblPuntaje);
-        lblPuntaje.setBounds(46, 197, 191, 16);
+        lblPuntaje.setBounds(46, 197, 191, 17);
         getContentPane().add(textPuntaje);
-        textPuntaje.setBounds(265, 194, 180, 22);
+        textPuntaje.setBounds(265, 194, 180, 23);
 
         lblComentarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblComentarios.setText("Comentarios:");
         getContentPane().add(lblComentarios);
-        lblComentarios.setBounds(46, 222, 399, 16);
+        lblComentarios.setBounds(46, 222, 399, 17);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
@@ -110,6 +120,11 @@ public class IngresoEntrevista extends javax.swing.JFrame {
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnRegistrar);
         btnRegistrar.setBounds(325, 347, 120, 25);
 
@@ -121,6 +136,40 @@ public class IngresoEntrevista extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        try{
+            Evaluador unEval = (Evaluador)listEvaluador.getSelectedValue();
+            Postulante unPost = (Postulante)listPostulante.getSelectedValue();
+            String puntaje = textPuntaje.getText().trim();
+            String comentarios = textComentarios.getText().trim();
+            if(unEval == null || unPost == null || puntaje.length()==0 || comentarios.length()==0){
+                JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
+               "Error de input", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                try{
+                    Integer.parseInt(puntaje);
+                    //Una vez chequeado que puntaje es numero, se genera la entrevista
+                    sistema.agregarEntrevista(unEval,unPost,Integer.parseInt(puntaje),comentarios);
+                     JOptionPane.showMessageDialog(new JFrame(), "La entrevista fue ingresada con exito",
+                            "Entrevista ingresada", JOptionPane.INFORMATION_MESSAGE);
+                     this.objetoAPantalla();
+                }    
+                //En caso de que puntaje no sea un numero entrara en la siguiente excepcion
+                catch(Exception e){
+                    //Ventana de error
+                    JOptionPane.showMessageDialog(new JFrame(), "El puntaje ingresado debe ser un número",
+               "Error de input", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(new JFrame(), "Error de input",
+               "", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

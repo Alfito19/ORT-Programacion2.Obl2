@@ -241,7 +241,7 @@ public class AltaPostulante extends javax.swing.JFrame {
             //En caso de que los datos no esten completos entrara en la siguiente excepcion
             else{
                 //Ventana de error
-                System.out.println("Datos inmpletos");
+                System.out.println("Datos incompletos");
             }
         }
         //En caso de que los datos no esten completos entrara en la siguiente excepcion
