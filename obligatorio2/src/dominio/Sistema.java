@@ -66,7 +66,6 @@ public class Sistema {
     public void eliminarPostulante(Postulante unP){
         this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
-        System.out.println(unP.getNombre() + " Eliminado");
     }
     //devuelve false si no lo puede agregar, y viceversa
     public boolean agregarEvaluador(String unNombre,String unaCedula,String unaDireccion,long unIngreso){
