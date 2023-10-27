@@ -211,7 +211,9 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try{
-            postulante.quitarHabilidad((Habilidad)this.listaExperiencia.getSelectedValue());
+            //a ver si funca
+            Habilidad h = (Habilidad)this.listaExperiencia.getSelectedValue();
+            postulante.quitarHabilidad(h);
             mostrarExperiencia();
 //NO FUNCA LPM :D
         }
