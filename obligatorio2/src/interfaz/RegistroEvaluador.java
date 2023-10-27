@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -176,11 +177,27 @@ public class RegistroEvaluador extends javax.swing.JFrame {
                "Error de input", JOptionPane.ERROR_MESSAGE);
         }
         else{
-            while(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
-                JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
-               "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
-            }
+             try{
+                    Long.parseLong(unaCedula);
+                    Long.parseLong(unIngreso);
+                    //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
+                    if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
+                        JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
+                            "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(new JFrame(), "El evaluador fue ingresado correctamente",
+                            "Evaluador 'ingresado", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                    dispose();
+                }
+                //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
+            catch(Exception e){
+                //Ventana de error
+                System.out.println("La cedula e ingreso deben ser numeros");
+            }            
         }
+        objetoAPantalla();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
