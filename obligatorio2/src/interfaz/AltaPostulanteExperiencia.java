@@ -1,10 +1,13 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 import java.util.Iterator;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
-public class AltaPostulanteExperiencia extends javax.swing.JFrame {
+public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable{
 
      private Sistema sistema;
      private Postulante postulante;
@@ -189,17 +192,24 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame {
             //En caso de que el postulante ya tenga la habilidad retorna el siguiente error
             else{
                 //Ventana de error
-                System.out.println("Ya esta ingresada");
+                JOptionPane.showMessageDialog(new JFrame(), "Habilidad ya ingesada",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         catch(Exception e){
             //Ventana de error
-            System.out.println("Error en al agregar");
+            JOptionPane.showMessageDialog(new JFrame(), "Error al agregar",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        sistema.altaPostulante(postulante);
+        try{
+            sistema.altaPostulante(postulante); 
+        }
+        catch(Exception e){
+            System.out.println("error");
+        }
         dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -214,7 +224,6 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame {
             Habilidad h = (Habilidad)this.listaExperiencia.getSelectedValue();
             postulante.quitarHabilidad(h);
             mostrarExperiencia();
-//NO FUNCA LPM :D
         }
         catch(Exception e){
             //Ventana de error

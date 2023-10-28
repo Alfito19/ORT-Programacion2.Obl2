@@ -1,11 +1,12 @@
 package dominio;
 
+import java.io.Serializable;
 import java.util.*;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class Postulante extends Persona{
+public class Postulante extends Persona implements Serializable{
     private String telefono;
     private String mail;
     private String linkedIn;

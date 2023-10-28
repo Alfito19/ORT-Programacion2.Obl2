@@ -3,9 +3,10 @@ package dominio;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Sistema {
+public class Sistema implements Serializable {
     private ArrayList<Entrevista> listaEntrevistas;
     private ArrayList<Postulante> listaPostulantes;
     private ArrayList<Evaluador> listaEvaluadores;

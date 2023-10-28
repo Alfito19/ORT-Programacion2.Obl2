@@ -2,11 +2,12 @@ package dominio;
 
 //Joaquin Hernandez (257620)
 
+import java.io.Serializable;
 import java.util.Objects;
 
 //Alfonso Saizar (305968)
 
-public class Habilidad {
+public class Habilidad implements Serializable {
     private String nombre;
     private String descripcion;
     private int nivel;

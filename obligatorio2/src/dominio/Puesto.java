@@ -3,9 +3,10 @@ package dominio;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Puesto{
+public class Puesto implements Serializable{
     private String nombre;
     //remoto,hibrido o presencial
     private String tipo;

@@ -1,9 +1,12 @@
 package dominio;
 
 //Joaquin Hernandez (257620)
+
+import java.io.Serializable;
+
 //Alfonso Saizar (305968)
 
-public class Entrevista {
+public class Entrevista implements Serializable {
     private Evaluador evaluador;
     private Postulante entrevistado;
     private int puntaje;

@@ -1,10 +1,11 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class PrimerConsulta extends javax.swing.JFrame {
+public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
 
     /**
      * Creates new form PrimerConsulta

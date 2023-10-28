@@ -1,9 +1,12 @@
 package dominio;
 
 //Joaquin Hernandez (257620)
+
+import java.io.Serializable;
+
 //Alfonso Saizar (305968)
 
-public class Persona implements Comparable<Persona>{
+public class Persona implements Comparable<Persona>, Serializable{
     private String nombre;
     private String cedula;
     private String direccion;
