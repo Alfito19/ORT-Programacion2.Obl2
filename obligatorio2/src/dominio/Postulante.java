@@ -73,7 +73,13 @@ public class Postulante extends Persona implements Serializable{
     }
     
     public void quitarHabilidad(Habilidad unaHabilidad){
-        this.habilidades.remove(unaHabilidad);
+        boolean cond = true;
+        for(int i = 0; i<this.habilidades.size() && cond;i++){
+            if (this.habilidades.get(i).getNombre().equalsIgnoreCase(unaHabilidad.getNombre())){
+                this.habilidades.remove(this.habilidades.get(i));
+                cond = false;
+            }
+        }
     }
     
     public ArrayList<String> darHabilidades(){

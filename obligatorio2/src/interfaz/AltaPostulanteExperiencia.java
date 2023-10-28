@@ -214,8 +214,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        sistema.eliminarPostulante(postulante);
-//No se como hacer que se borre el postulante si se saca con la X
+    //No se como hacer que se borre el postulante si se saca con la X
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
