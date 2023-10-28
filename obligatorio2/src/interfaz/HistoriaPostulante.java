@@ -1,11 +1,12 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
 
-public class HistoriaPostulante extends javax.swing.JFrame {
+public class HistoriaPostulante extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
     /**
      * Creates new form HistoriaPostulante

@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -8,7 +9,7 @@ import javax.swing.JOptionPane;
 //Alfonso Saizar (305968)
 
 
-public class RegistroEvaluador extends javax.swing.JFrame {
+public class RegistroEvaluador extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
     /**
      * Creates new form AltaPostulante

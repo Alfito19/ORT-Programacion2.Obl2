@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class AltaPostulante extends javax.swing.JFrame {
+public class AltaPostulante extends javax.swing.JFrame implements Serializable{
     private Sistema sistema;
 
     public AltaPostulante() {
@@ -218,11 +219,6 @@ public class AltaPostulante extends javax.swing.JFrame {
                 formato = "Remoto";
                 puede = true;
             }
-            //En caso de que el formato no sea seleccionado devolvemos error "DEBE SELECCIONAR FORMATO"
-            else{
-                //Ventana de error
-                System.out.println("Debe seleccionar formato");
-            }
             
             //Si todos los datos estan completos intentaremos pasar a long la cedula, verificando asi si es numero.
             if(puede && !(nombre.isEmpty() || cedula.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || mail.isEmpty() || linkedin.isEmpty())){
@@ -242,19 +238,22 @@ public class AltaPostulante extends javax.swing.JFrame {
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
                 catch(Exception e){
                     //Ventana de error
-                    System.out.println("La cedula debe ser un numero");
+                    JOptionPane.showMessageDialog(new JFrame(), "La cedula debe ser un numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
             //En caso de que los datos no esten completos entrara en la siguiente excepcion
             else{
                 //Ventana de error
-                System.out.println("Datos incompletos");
+                JOptionPane.showMessageDialog(new JFrame(), "Los datos estan incompletos",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
         //En caso de que los datos no esten completos entrara en la siguiente excepcion
         catch(Exception e){
             //Ventana de error
-            System.out.println("Datos inmpletos");
+            JOptionPane.showMessageDialog(new JFrame(), "Datos incompletos",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
         
         

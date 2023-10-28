@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -7,7 +8,7 @@ import javax.swing.JOptionPane;
 //Alfonso Saizar (305968)
 
 
-public class RegistroTematica extends javax.swing.JFrame {
+public class RegistroTematica extends javax.swing.JFrame implements Serializable{
     private Sistema sistema;
     /**
      * Creates new form RegistroTematica
