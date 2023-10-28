@@ -1,6 +1,8 @@
 package interfaz;
 import dominio.*;
 import java.io.Serializable;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -80,11 +82,13 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
         try{
             Postulante unP = (Postulante)listaPostulantes.getSelectedValue();
             sistema.eliminarPostulante(unP);
+            JOptionPane.showMessageDialog(new JFrame(), "El postulante fue eliminado correctamente",
+            "Postulante eliminado", JOptionPane.INFORMATION_MESSAGE);
         }
         //En caso de que no poder obtener el postulante o eliminarlo entra al siguiente catch
         catch(Exception e){
-            //Ventana de error
-            System.out.println("Debe seleccionar formato");
+            JOptionPane.showMessageDialog(new JFrame(), "Error al eliminar el postulante",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
         //Muestra nuevamente todos los postulantes (actualizado, sin el postulante eliminado)
         objetoAPantalla();
