@@ -257,8 +257,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
 
     private void btnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaTematicaActionPerformed
         // TODO add your handling code here:
-//        consultaTematica vent = new consultaTematica(sistema);
-//        vent.setVisible(true);
+        ConsultaPorTematica vent = new ConsultaPorTematica(sistema);
+        vent.setVisible(true);
         
     }//GEN-LAST:event_btnConsultaTematicaActionPerformed
 
