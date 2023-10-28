@@ -33,5 +33,10 @@ public class Puesto implements Serializable{
     public ArrayList<Habilidad> getTemasRequeridos(){
         return this.temasRequeridos;
     }
+    
+    @Override
+    public String toString(){
+        return this.nombre;
+    }
 
 }

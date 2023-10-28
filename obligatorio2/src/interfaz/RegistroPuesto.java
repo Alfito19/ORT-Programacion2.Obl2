@@ -37,8 +37,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         listaTemas.setListData(sistema.getListaTematicas().toArray());
     }
     
-    public void usoSelect(){
-        Habilidad h = (Habilidad)listaTemas.getSelectedValue();
+    public void usoSelect(Habilidad h){
         if(!seleccionados.contains(h)){
             this.seleccionados.add(h);    
         }
@@ -88,9 +87,9 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         lblNombrePuesto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombrePuesto.setText("Nombre del puesto:");
         getContentPane().add(lblNombrePuesto);
-        lblNombrePuesto.setBounds(39, 57, 150, 16);
+        lblNombrePuesto.setBounds(39, 57, 150, 17);
         getContentPane().add(textNombrePuesto);
-        textNombrePuesto.setBounds(195, 54, 266, 22);
+        textNombrePuesto.setBounds(195, 54, 266, 23);
 
         listaTemas.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaTemas.setMaximumSize(new java.awt.Dimension(46, 90));
@@ -109,12 +108,12 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         lblTemasDisp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasDisp.setText("Temas disponibles");
         getContentPane().add(lblTemasDisp);
-        lblTemasDisp.setBounds(39, 94, 150, 16);
+        lblTemasDisp.setBounds(39, 94, 150, 17);
 
         lblTemasSel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTemasSel.setText("Temas seleccionados");
         getContentPane().add(lblTemasSel);
-        lblTemasSel.setBounds(311, 94, 150, 16);
+        lblTemasSel.setBounds(311, 94, 150, 17);
 
         btnAddRemove.setText("Agregar/Quitar");
         btnAddRemove.setPreferredSize(new java.awt.Dimension(108, 23));
@@ -129,21 +128,21 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         btnsTipo.add(radioPresencial);
         radioPresencial.setText("Presencial");
         getContentPane().add(radioPresencial);
-        radioPresencial.setBounds(279, 297, 76, 21);
+        radioPresencial.setBounds(279, 297, 83, 21);
 
         btnsTipo.add(radioMixto);
         radioMixto.setText("Mixto");
         getContentPane().add(radioMixto);
-        radioMixto.setBounds(371, 297, 54, 21);
+        radioMixto.setBounds(371, 297, 55, 21);
 
         btnsTipo.add(radioRemoto);
         radioRemoto.setText("Remoto");
         getContentPane().add(radioRemoto);
-        radioRemoto.setBounds(195, 297, 65, 21);
+        radioRemoto.setBounds(195, 297, 68, 21);
 
         lblTipo.setText("Tipo de trabajo:");
         getContentPane().add(lblTipo);
-        lblTipo.setBounds(39, 299, 150, 16);
+        lblTipo.setBounds(39, 299, 150, 17);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
@@ -180,8 +179,12 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
 
     private void btnAddRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRemoveActionPerformed
         // TODO add your handling code here:
-        if (listaTemas.getSelectedValue()!=null){
-            this.usoSelect();
+        //esto permite quitar elementos seleccionados teniendolos solo seleccionados desde la listaTemasSelect
+        if (listaTemas.getSelectedValue()!=null && listaTemasSelect.getSelectedValue()==null){
+            this.usoSelect((Habilidad)listaTemas.getSelectedValue());
+        }
+        else if (listaTemasSelect.getSelectedValue()!=null){
+            this.usoSelect((Habilidad)listaTemasSelect.getSelectedValue());
         }
         else{
             JOptionPane.showMessageDialog(null, "Debe seleccionar una tematica", "Error"
@@ -224,7 +227,8 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         }
         catch(Exception e){
             //Ventana de error
-            System.out.println("Error en al agregar");
+            JOptionPane.showMessageDialog(null, "Error al agregar"
+                            , "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
