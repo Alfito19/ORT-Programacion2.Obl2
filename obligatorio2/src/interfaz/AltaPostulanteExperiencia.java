@@ -208,26 +208,26 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             sistema.altaPostulante(postulante); 
         }
         catch(Exception e){
-            System.out.println("error");
+            JOptionPane.showMessageDialog(new JFrame(), "Error al registrar el postulante",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
         dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-    //No se como hacer que se borre el postulante si se saca con la X
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         try{
             //a ver si funca
-            Habilidad h = (Habilidad)this.listaExperiencia.getSelectedValue();
+            Habilidad h = (Habilidad)listaExperiencia.getSelectedValue();
             postulante.quitarHabilidad(h);
             mostrarExperiencia();
         }
         catch(Exception e){
-            //Ventana de error
-            System.out.println("No se puede eliminar");
+            JOptionPane.showMessageDialog(new JFrame(), "Error al eliminar",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
