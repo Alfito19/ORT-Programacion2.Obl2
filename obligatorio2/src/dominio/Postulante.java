@@ -72,20 +72,14 @@ public class Postulante extends Persona{
     }
     
     public void quitarHabilidad(Habilidad unaHabilidad){
-        boolean cond = true;
-        for(int i = 0; i<this.habilidades.size() && cond;i++){
-            if (this.habilidades.get(i).getNombre().equalsIgnoreCase(unaHabilidad.getNombre())){
-                this.habilidades.remove(this.habilidades.get(i));
-                cond = false;
-            }
-        }
+        this.habilidades.remove(unaHabilidad);
     }
     
-    public ArrayList<String> darHabilidades(){
-        ArrayList<String> listaAux = new ArrayList<>();
+    public ArrayList<Habilidad> darHabilidades(){
+        ArrayList<Habilidad> listaAux = new ArrayList<>();
         Iterator<Habilidad> it = this.getHabilidades().iterator();
         while(it.hasNext()){
-            listaAux.add(it.next().toString());
+            listaAux.add(it.next());
         }
         return listaAux;
     }
