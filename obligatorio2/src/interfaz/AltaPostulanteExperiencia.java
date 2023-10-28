@@ -205,13 +205,15 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         try{
-            sistema.altaPostulante(postulante); 
+            sistema.altaPostulante(postulante);
+            JOptionPane.showMessageDialog(new JFrame(), "El postulante fue ingresado correctamente",
+            "Postulante ingresado", JOptionPane.INFORMATION_MESSAGE);
+            dispose();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(new JFrame(), "Error al registrar el postulante",
             "Error", JOptionPane.ERROR_MESSAGE);
         }
-        dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

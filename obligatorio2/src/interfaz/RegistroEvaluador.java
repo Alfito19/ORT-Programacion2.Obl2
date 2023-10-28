@@ -188,7 +188,7 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
                     }
                     else{
                         JOptionPane.showMessageDialog(new JFrame(), "El evaluador fue ingresado correctamente",
-                            "Evaluador 'ingresado", JOptionPane.INFORMATION_MESSAGE);
+                            "Evaluador ingresado", JOptionPane.INFORMATION_MESSAGE);
                     }
                     dispose();
                 }

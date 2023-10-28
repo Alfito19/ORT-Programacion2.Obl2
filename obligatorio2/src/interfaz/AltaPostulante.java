@@ -231,7 +231,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
                         dispose();
                     }
                     else{
-                        JOptionPane.showMessageDialog(new JFrame(), "Ese postulante ya existe",
+                        JOptionPane.showMessageDialog(new JFrame(), "Ya existe un ingreso con esa cedula",
                         "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
