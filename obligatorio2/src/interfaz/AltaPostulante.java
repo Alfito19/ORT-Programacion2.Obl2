@@ -1,6 +1,8 @@
 package interfaz;
 import dominio.*;
 import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -226,11 +228,16 @@ public class AltaPostulante extends javax.swing.JFrame {
             if(puede && !(nombre.isEmpty() || cedula.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || mail.isEmpty() || linkedin.isEmpty())){
                 try{
                     Long.parseLong(cedula);
-                    //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
-                    sistema.altaPostulante(nombre, (""+cedula), direccion, telefono, mail, linkedin, formato, new ArrayList<>());
-                    AltaPostulanteExperiencia vent = new AltaPostulanteExperiencia(sistema,sistema.getPostulante(cedula));
-                    vent.setVisible(true);
-                    dispose();
+                    //Una vez chequeado que cedula es numero y unica en sistema, abrimos la ventana de habilidades/experiencia del usuario pasando los datos recopilados y cerramos la ventana de alta de postulante.
+                    if(sistema.cedulaUnica(cedula)){
+                        AltaPostulanteExperiencia vent = new AltaPostulanteExperiencia(sistema,new Postulante(nombre, (""+cedula), direccion, telefono, mail, linkedin, formato, new ArrayList<>()));
+                        vent.setVisible(true);
+                        dispose();
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(new JFrame(), "Ese postulante ya existe",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
                 catch(Exception e){

@@ -132,19 +132,21 @@ public class RegistroTematica extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         String nombre = textNombre.getText().trim();
         String descripcion = txtDescripcion.getText().trim();
+        boolean canDispose = false;
         if (nombre.equals("") || descripcion.equals("")){
             JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
                "Error de input", JOptionPane.ERROR_MESSAGE);
         }
-        while(!sistema.agregarTematica(nombre, descripcion)){
+        if(!sistema.agregarTematica(nombre, descripcion)){
               JOptionPane.showMessageDialog(new JFrame(), "La tematica ingresada debe ser única",
                "Tematica repetida", JOptionPane.ERROR_MESSAGE);
         }
-        //resetear las cajas de texto luego de validos los datos
-        this.resetValoresTexto();
-        //faltaria poner a que ventana lleva esto;
-        sistema.agregarTematica(nombre, descripcion);
-        dispose();
+        else{
+            canDispose = true;
+        }
+        if(canDispose){
+            dispose();
+        }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void resetValoresTexto(){

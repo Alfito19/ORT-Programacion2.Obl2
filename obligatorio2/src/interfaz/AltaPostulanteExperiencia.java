@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
-
 public class AltaPostulanteExperiencia extends javax.swing.JFrame {
 
      private Sistema sistema;
@@ -200,6 +199,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        sistema.altaPostulante(postulante);
         dispose();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
