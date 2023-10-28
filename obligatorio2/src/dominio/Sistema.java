@@ -62,6 +62,10 @@ public class Sistema {
         }
         return vuelta;
     }
+    public void altaPostulante(Postulante p){
+        this.listaPostulantes.add(p);
+        this.listaCedulas.add(p.getCedula());
+    }
 
     public void eliminarPostulante(Postulante unP){
         this.eliminarEntrevistas(unP);
