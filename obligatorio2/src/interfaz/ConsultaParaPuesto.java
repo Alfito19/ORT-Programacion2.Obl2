@@ -19,6 +19,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
     public ConsultaParaPuesto(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+        objetoAPantalla();
     }
     
     public void objetoAPantalla(){
@@ -68,6 +69,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
             }
         });
 
+        listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane2.setViewportView(listaPostulantes);
 
         lblPostulantes.setText("Postulantes:");
@@ -86,6 +88,8 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         btnExportar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnExportar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnExportar.setPreferredSize(new java.awt.Dimension(120, 25));
+
+        spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

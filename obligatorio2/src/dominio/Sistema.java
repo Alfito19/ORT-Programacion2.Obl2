@@ -141,10 +141,12 @@ public class Sistema implements Serializable {
             }
         }
         //ordena la lista en orden descendente de puntaje de entrevistas
-        Comparator<Postulante> descendingComparator = (obj1, obj2) -> {
-            return obj1.compara(obj2);
-        };
-        Collections.sort(aptos, descendingComparator);
+        if(aptos.isEmpty()){
+            Comparator<Postulante> descendingComparator = (obj1, obj2) -> {
+                return obj1.compara(obj2);
+            };
+            Collections.sort(aptos, descendingComparator);
+        }
         return aptos;
     }
     //verifica que el postulante cumpla con todos los requisitos de todas las habilidades

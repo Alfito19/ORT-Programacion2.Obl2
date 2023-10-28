@@ -1,6 +1,8 @@
 package interfaz;
 import dominio.*;
+import java.awt.Desktop;
 import java.io.Serializable;
+import java.net.URI;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -150,6 +152,11 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteMail.setBounds(469, 182, 199, 16);
 
         lblPostulanteLinkedin.setText("---");
+        lblPostulanteLinkedin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblPostulanteLinkedinMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblPostulanteLinkedin);
         lblPostulanteLinkedin.setBounds(469, 210, 199, 16);
 
@@ -234,6 +241,18 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         Postulante post = (Postulante)listaPostulantes.getSelectedValue();
         cambiarDatosPostulantes(post);
     }//GEN-LAST:event_listaPostulantesValueChanged
+
+    private void lblPostulanteLinkedinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostulanteLinkedinMouseClicked
+//        try {
+//            String url = lblPostulanteLinkedin.getText();
+//            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+//                url = "http://" + url;
+//            }
+//            Desktop.getDesktop().browse(new URI(url));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+    }//GEN-LAST:event_lblPostulanteLinkedinMouseClicked
 
 
     public static void main(String args[]) {

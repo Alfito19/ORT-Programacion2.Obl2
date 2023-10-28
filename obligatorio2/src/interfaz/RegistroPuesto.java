@@ -37,12 +37,6 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         listaTemas.setListData(sistema.getListaTematicas().toArray());
     }
     
-    public void resetValues(){
-        textNombrePuesto.setText("");
-        this.seleccionados = new ArrayList<>();
-        objetoAPantalla();
-    }
-    
     public void usoSelect(){
         Habilidad h = (Habilidad)listaTemas.getSelectedValue();
         if(!seleccionados.contains(h)){
@@ -191,7 +185,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         }
         else{
             JOptionPane.showMessageDialog(null, "Debe seleccionar una tematica", "Error"
-                    , JOptionPane.ERROR_MESSAGE);
+                , JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddRemoveActionPerformed
 
@@ -225,7 +219,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
                     JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente denuevo"
                             , "Error", JOptionPane.ERROR_MESSAGE);
                 }
-                this.resetValues();
+                dispose();
             }
         }
         catch(Exception e){

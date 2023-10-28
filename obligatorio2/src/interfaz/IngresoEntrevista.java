@@ -20,6 +20,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
     public IngresoEntrevista(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+        objetoAPantalla();
     }
     public void objetoAPantalla(){
         listEvaluador.setListData(sistema.getListaEvaluadores().toArray());
