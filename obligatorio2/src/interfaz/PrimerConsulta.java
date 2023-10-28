@@ -1,6 +1,12 @@
 package interfaz;
 import dominio.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -90,12 +96,26 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecuperarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecuperarDatosActionPerformed
-        // TODO add your handling code here:
-        
+        try {
+            ObjectInputStream in = new
+            ObjectInputStream(
+            Files.newInputStream(Paths.get("datos.ser")));
+            Sistema controlador = (Sistema) in.readObject();
+            Menu vent = new Menu(controlador);
+            vent.setVisible(true);
+            dispose();
+            in.close();
+        } catch (IOException|ClassNotFoundException e) {
+            JOptionPane.showMessageDialog(new JFrame(), "No se pudo recuperar correctamente, se iniciara un sistema vacio",
+            "Error de recuperacion", JOptionPane.ERROR_MESSAGE);
+            Sistema controlador = new Sistema();
+            Menu vent = new Menu(controlador);
+            vent.setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btnRecuperarDatosActionPerformed
 
     private void btnNuevoArchivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoArchivoActionPerformed
-        // TODO add your handling code here:
         Sistema controlador = new Sistema();
         Menu vent = new Menu(controlador);
         vent.setVisible(true);

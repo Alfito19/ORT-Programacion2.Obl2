@@ -1,7 +1,13 @@
 package interfaz;
 
 import dominio.*;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -39,21 +45,20 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         btnHistoriaPostulante = new javax.swing.JToggleButton();
         btnConsultaTematica = new javax.swing.JToggleButton();
         btnFin = new javax.swing.JToggleButton();
-        menuMenu = new javax.swing.JMenuBar();
-        menuPersonas = new javax.swing.JMenu();
-        menuRegEvaluador = new javax.swing.JMenuItem();
-        menuAltaPostulante = new javax.swing.JMenuItem();
-        menuBajaPostulante = new javax.swing.JMenuItem();
-        menuHistoriaPostulante = new javax.swing.JMenuItem();
-        menuElementos = new javax.swing.JMenu();
-        menuRegistroPuesto = new javax.swing.JMenuItem();
-        menuRegistroTema = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
+        getContentPane().setLayout(null);
 
         lblMenuTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMenuTitulo.setText("Gestión de personal");
+        getContentPane().add(lblMenuTitulo);
+        lblMenuTitulo.setBounds(6, 17, 486, 30);
 
         btnRegistroTematica.setText("Registro de temática");
         btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -64,6 +69,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnRegistroTematicaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistroTematica);
+        btnRegistroTematica.setBounds(80, 87, 150, 25);
 
         btnAltaPostulante.setText("Alta de postulante");
         btnAltaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -74,6 +81,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnAltaPostulanteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAltaPostulante);
+        btnAltaPostulante.setBounds(80, 142, 150, 25);
 
         btnBajaPostulante.setText("Baja de postulante");
         btnBajaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -84,6 +93,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnBajaPostulanteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnBajaPostulante);
+        btnBajaPostulante.setBounds(268, 142, 150, 25);
 
         btnRegistroEvaluador.setText("Registro de evaluador");
         btnRegistroEvaluador.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -94,6 +105,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnRegistroEvaluadorActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistroEvaluador);
+        btnRegistroEvaluador.setBounds(80, 197, 150, 25);
 
         btnIngresoEntrevista.setText("Ingreso de entrevista");
         btnIngresoEntrevista.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -104,6 +117,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnIngresoEntrevistaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnIngresoEntrevista);
+        btnIngresoEntrevista.setBounds(268, 197, 150, 25);
 
         btnRegistroPuesto.setText("Registro de puesto");
         btnRegistroPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -114,6 +129,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnRegistroPuestoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnRegistroPuesto);
+        btnRegistroPuesto.setBounds(80, 252, 150, 25);
 
         btnConsultaPuesto.setText("Consulta para puesto");
         btnConsultaPuesto.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -124,6 +141,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnConsultaPuestoActionPerformed(evt);
             }
         });
+        getContentPane().add(btnConsultaPuesto);
+        btnConsultaPuesto.setBounds(268, 252, 150, 25);
 
         btnHistoriaPostulante.setText("Historia de postulante");
         btnHistoriaPostulante.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -134,6 +153,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnHistoriaPostulanteActionPerformed(evt);
             }
         });
+        getContentPane().add(btnHistoriaPostulante);
+        btnHistoriaPostulante.setBounds(80, 307, 150, 25);
 
         btnConsultaTematica.setText("Consulta por temática");
         btnConsultaTematica.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -144,6 +165,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnConsultaTematicaActionPerformed(evt);
             }
         });
+        getContentPane().add(btnConsultaTematica);
+        btnConsultaTematica.setBounds(268, 87, 150, 25);
 
         btnFin.setText("Fin");
         btnFin.setMaximumSize(new java.awt.Dimension(150, 25));
@@ -154,96 +177,8 @@ public class Menu extends javax.swing.JFrame implements Serializable {
                 btnFinActionPerformed(evt);
             }
         });
-
-        menuPersonas.setText("Personas");
-
-        menuRegEvaluador.setText("Registro de evaluador");
-        menuPersonas.add(menuRegEvaluador);
-
-        menuAltaPostulante.setText("Alta de postulante");
-        menuPersonas.add(menuAltaPostulante);
-
-        menuBajaPostulante.setText("Baja de postulante");
-        menuBajaPostulante.setToolTipText("");
-        menuPersonas.add(menuBajaPostulante);
-
-        menuHistoriaPostulante.setText("Historia de postulante");
-        menuPersonas.add(menuHistoriaPostulante);
-
-        menuMenu.add(menuPersonas);
-
-        menuElementos.setText("Elementos");
-
-        menuRegistroPuesto.setText("Registro de puesto");
-        menuElementos.add(menuRegistroPuesto);
-
-        menuRegistroTema.setText("Registro de temática");
-        menuElementos.add(menuRegistroTema);
-
-        menuMenu.add(menuElementos);
-
-        setJMenuBar(menuMenu);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegistroPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(btnConsultaPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegistroTematica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnConsultaTematica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnHistoriaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAltaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBajaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegistroEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnIngresoEntrevista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(80, 80, 80))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblMenuTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(lblMenuTitulo)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistroTematica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConsultaTematica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAltaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBajaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistroEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIngresoEntrevista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnConsultaPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistroPuesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnHistoriaPostulante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
-        );
+        getContentPane().add(btnFin);
+        btnFin.setBounds(268, 307, 150, 25);
 
         setSize(new java.awt.Dimension(514, 407));
         setLocationRelativeTo(null);
@@ -309,6 +244,21 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         dispose();
     }//GEN-LAST:event_btnFinActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        try {
+            ObjectOutputStream out = new
+            ObjectOutputStream(
+            Files.newOutputStream(Paths.get("datos.ser")));
+            out.writeObject(sistema);
+            out.close();
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(new JFrame(), "Error al guardar el archivo",
+            "Error al guardar el archivo", JOptionPane.ERROR_MESSAGE);
+        }
+
+    }//GEN-LAST:event_formWindowClosed
+
     /**
      * @param args the command line arguments
      */
@@ -357,14 +307,5 @@ public class Menu extends javax.swing.JFrame implements Serializable {
     private javax.swing.JToggleButton btnRegistroPuesto;
     private javax.swing.JToggleButton btnRegistroTematica;
     private javax.swing.JLabel lblMenuTitulo;
-    private javax.swing.JMenuItem menuAltaPostulante;
-    private javax.swing.JMenuItem menuBajaPostulante;
-    private javax.swing.JMenu menuElementos;
-    private javax.swing.JMenuItem menuHistoriaPostulante;
-    private javax.swing.JMenuBar menuMenu;
-    private javax.swing.JMenu menuPersonas;
-    private javax.swing.JMenuItem menuRegEvaluador;
-    private javax.swing.JMenuItem menuRegistroPuesto;
-    private javax.swing.JMenuItem menuRegistroTema;
     // End of variables declaration//GEN-END:variables
 }
