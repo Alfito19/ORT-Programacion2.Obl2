@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
+
 public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable{
 
      private Sistema sistema;
@@ -40,18 +41,19 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTema = new javax.swing.JLabel();
-        lblNivel = new javax.swing.JLabel();
-        spinnerNivel = new javax.swing.JSpinner();
-        btnAgregar = new javax.swing.JToggleButton();
-        comboTemas = new javax.swing.JComboBox();
-        jSeparator1 = new javax.swing.JSeparator();
-        lblExperiencia = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btnRegistrar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaExperiencia = new javax.swing.JList();
-        btnRegistrar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
+        lblExperiencia = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnAgregar = new javax.swing.JToggleButton();
+        spinnerNivel = new javax.swing.JSpinner();
+        lblNivel = new javax.swing.JLabel();
+        comboTemas = new javax.swing.JComboBox();
+        lblTema = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -60,32 +62,15 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             }
         });
 
-        lblTema.setText("Tema:");
+        jPanel1.setBackground(new java.awt.Color(44, 54, 57));
+        jPanel1.setLayout(null);
 
-        lblNivel.setText("Nivel:");
-
-        spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-
-        btnAgregar.setText("Agregar");
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
-
-        lblExperiencia.setText("Experiencia");
-
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-
-        listaExperiencia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(listaExperiencia);
-
+        btnRegistrar.setBackground(new java.awt.Color(63, 78, 79));
+        btnRegistrar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(220, 215, 201));
         btnRegistrar.setText("Registrar");
+        btnRegistrar.setBorderPainted(false);
+        btnRegistrar.setFocusPainted(false);
         btnRegistrar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(120, 25));
@@ -94,8 +79,15 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
                 btnRegistrarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegistrar);
+        btnRegistrar.setBounds(500, 330, 220, 40);
 
+        btnCancelar.setBackground(new java.awt.Color(63, 78, 79));
+        btnCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(220, 215, 201));
         btnCancelar.setText("Cancelar");
+        btnCancelar.setBorderPainted(false);
+        btnCancelar.setFocusPainted(false);
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
@@ -104,78 +96,98 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(80, 330, 220, 40);
+
+        btnEliminar.setBackground(new java.awt.Color(63, 78, 79));
+        btnEliminar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(220, 215, 201));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setFocusPainted(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEliminar);
+        btnEliminar.setBounds(110, 230, 150, 40);
+
+        jScrollPane1.setBorder(null);
+
+        listaExperiencia.setBackground(new java.awt.Color(63, 78, 79));
+        listaExperiencia.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        listaExperiencia.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        listaExperiencia.setForeground(new java.awt.Color(220, 215, 201));
+        listaExperiencia.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaExperiencia.setSelectionBackground(new java.awt.Color(220, 215, 201));
+        listaExperiencia.setSelectionForeground(new java.awt.Color(63, 78, 79));
+        jScrollPane1.setViewportView(listaExperiencia);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(300, 180, 350, 110);
+
+        lblExperiencia.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblExperiencia.setForeground(new java.awt.Color(220, 215, 201));
+        lblExperiencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExperiencia.setText("EXPERIENCIA");
+        lblExperiencia.setToolTipText("");
+        jPanel1.add(lblExperiencia);
+        lblExperiencia.setBounds(110, 190, 150, 25);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(20, 150, 760, 10);
+
+        btnAgregar.setBackground(new java.awt.Color(63, 78, 79));
+        btnAgregar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(220, 215, 201));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setFocusPainted(false);
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregar);
+        btnAgregar.setBounds(465, 90, 150, 40);
+
+        spinnerNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerNivel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(spinnerNivel);
+        spinnerNivel.setBounds(295, 90, 130, 25);
+
+        lblNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblNivel.setForeground(new java.awt.Color(220, 215, 201));
+        lblNivel.setText("NIVEL:");
+        jPanel1.add(lblNivel);
+        lblNivel.setBounds(180, 90, 100, 25);
+
+        comboTemas.setBackground(new java.awt.Color(63, 78, 79));
+        comboTemas.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        comboTemas.setForeground(new java.awt.Color(220, 215, 201));
+        comboTemas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(comboTemas);
+        comboTemas.setBounds(295, 40, 320, 25);
+
+        lblTema.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblTema.setForeground(new java.awt.Color(220, 215, 201));
+        lblTema.setText("TEMA:");
+        jPanel1.add(lblTema);
+        lblTema.setBounds(180, 40, 100, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jSeparator1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(36, 36, 36)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblNivel)
-                                        .addComponent(lblTema))
-                                    .addGap(51, 51, 51)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(spinnerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(69, 69, 69)
-                                            .addComponent(btnAgregar))
-                                        .addComponent(comboTemas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(30, 30, 30)
-                                            .addComponent(lblExperiencia))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btnEliminar)))
-                                    .addGap(32, 32, 32)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 52, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTema)
-                    .addComponent(comboTemas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNivel)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(spinnerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAgregar)))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblExperiencia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(529, 281));
+        setSize(new java.awt.Dimension(816, 428));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -278,6 +290,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     private javax.swing.JToggleButton btnEliminar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JComboBox comboTemas;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblExperiencia;

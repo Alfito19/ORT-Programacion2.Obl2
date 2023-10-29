@@ -28,40 +28,43 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lblBajaPostulanteTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPostulantes = new javax.swing.JList();
-        btnCancelar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        lblBajaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(44, 54, 57));
+        jPanel1.setLayout(null);
+
+        lblBajaPostulanteTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        lblBajaPostulanteTitulo.setForeground(new java.awt.Color(220, 215, 201));
         lblBajaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBajaPostulanteTitulo.setText("Baja postulante");
-        getContentPane().add(lblBajaPostulanteTitulo);
-        lblBajaPostulanteTitulo.setBounds(6, 6, 488, 30);
+        lblBajaPostulanteTitulo.setText("BAJA POSTULANTE");
+        jPanel1.add(lblBajaPostulanteTitulo);
+        lblBajaPostulanteTitulo.setBounds(0, 20, 650, 29);
 
+        jScrollPane1.setBorder(null);
+
+        listaPostulantes.setBackground(new java.awt.Color(63, 78, 79));
+        listaPostulantes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        listaPostulantes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        listaPostulantes.setForeground(new java.awt.Color(220, 215, 201));
         listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(listaPostulantes);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(80, 68, 340, 181);
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(100, 80, 450, 181);
 
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setMaximumSize(new java.awt.Dimension(100, 25));
-        btnCancelar.setMinimumSize(new java.awt.Dimension(100, 25));
-        btnCancelar.setPreferredSize(new java.awt.Dimension(100, 25));
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCancelar);
-        btnCancelar.setBounds(80, 299, 100, 25);
-
+        btnEliminar.setBackground(new java.awt.Color(63, 78, 79));
+        btnEliminar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(220, 215, 201));
         btnEliminar.setText("Eliminar");
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setFocusPainted(false);
         btnEliminar.setMaximumSize(new java.awt.Dimension(100, 25));
         btnEliminar.setMinimumSize(new java.awt.Dimension(100, 25));
         btnEliminar.setPreferredSize(new java.awt.Dimension(100, 25));
@@ -70,10 +73,38 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
                 btnEliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(320, 299, 100, 25);
+        jPanel1.add(btnEliminar);
+        btnEliminar.setBounds(370, 300, 220, 40);
 
-        setSize(new java.awt.Dimension(514, 407));
+        btnCancelar.setBackground(new java.awt.Color(63, 78, 79));
+        btnCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(220, 215, 201));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setBorderPainted(false);
+        btnCancelar.setFocusPainted(false);
+        btnCancelar.setMaximumSize(new java.awt.Dimension(100, 25));
+        btnCancelar.setMinimumSize(new java.awt.Dimension(100, 25));
+        btnCancelar.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(60, 300, 220, 40);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        );
+
+        setSize(new java.awt.Dimension(666, 408));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
@@ -134,6 +165,7 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblBajaPostulanteTitulo;
     private javax.swing.JList listaPostulantes;

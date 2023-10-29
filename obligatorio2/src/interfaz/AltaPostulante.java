@@ -25,66 +25,79 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
     private void initComponents() {
 
         grupoFormato = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
         lblAltaPostulanteTitulo = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
-        lblCedula = new javax.swing.JLabel();
-        lblDireccion = new javax.swing.JLabel();
-        lblTelefono = new javax.swing.JLabel();
-        lblMail = new javax.swing.JLabel();
-        lblLinkedin = new javax.swing.JLabel();
-        lblFormato = new javax.swing.JLabel();
         textNombre = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
         textCedula = new javax.swing.JTextField();
+        lblCedula = new javax.swing.JLabel();
         textDireccion = new javax.swing.JTextField();
-        textTelefono = new javax.swing.JTextField();
-        textMail = new javax.swing.JTextField();
-        textLinkedin = new javax.swing.JTextField();
+        btnSiguiente = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        radioMixto = new javax.swing.JRadioButton();
         radioRemoto = new javax.swing.JRadioButton();
         radioPresencial = new javax.swing.JRadioButton();
-        radioMixto = new javax.swing.JRadioButton();
-        btnCancelar = new javax.swing.JButton();
-        btnSiguiente = new javax.swing.JButton();
+        lblFormato = new javax.swing.JLabel();
+        lblLinkedin = new javax.swing.JLabel();
+        textLinkedin = new javax.swing.JTextField();
+        textMail = new javax.swing.JTextField();
+        lblMail = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        textTelefono = new javax.swing.JTextField();
+        lblDireccion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblAltaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(44, 54, 57));
+        jPanel1.setLayout(null);
+
+        lblAltaPostulanteTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        lblAltaPostulanteTitulo.setForeground(new java.awt.Color(220, 215, 201));
         lblAltaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAltaPostulanteTitulo.setText("Alta postulante");
+        lblAltaPostulanteTitulo.setText("ALTA POSTULANTE");
+        jPanel1.add(lblAltaPostulanteTitulo);
+        lblAltaPostulanteTitulo.setBounds(0, 20, 800, 29);
 
-        lblNombre.setText("Nombre:");
+        textNombre.setBackground(new java.awt.Color(63, 78, 79));
+        textNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textNombre.setForeground(new java.awt.Color(220, 215, 201));
+        textNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        textNombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPanel1.add(textNombre);
+        textNombre.setBounds(290, 110, 325, 25);
 
-        lblCedula.setText("Cédula:");
+        lblNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(220, 215, 201));
+        lblNombre.setText("NOMBRE:");
+        jPanel1.add(lblNombre);
+        lblNombre.setBounds(180, 110, 100, 25);
 
-        lblDireccion.setText("Dirección:");
+        textCedula.setBackground(new java.awt.Color(63, 78, 79));
+        textCedula.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textCedula.setForeground(new java.awt.Color(220, 215, 201));
+        textCedula.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(textCedula);
+        textCedula.setBounds(290, 160, 325, 25);
 
-        lblTelefono.setText("Teléfono:");
+        lblCedula.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblCedula.setForeground(new java.awt.Color(220, 215, 201));
+        lblCedula.setText("CÉDULA:");
+        jPanel1.add(lblCedula);
+        lblCedula.setBounds(180, 160, 100, 25);
 
-        lblMail.setText("Mail:");
+        textDireccion.setBackground(new java.awt.Color(63, 78, 79));
+        textDireccion.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textDireccion.setForeground(new java.awt.Color(220, 215, 201));
+        textDireccion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(textDireccion);
+        textDireccion.setBounds(290, 210, 325, 25);
 
-        lblLinkedin.setText("Linkedin:");
-
-        lblFormato.setText("Formato:");
-
-        grupoFormato.add(radioRemoto);
-        radioRemoto.setText("Remoto");
-
-        grupoFormato.add(radioPresencial);
-        radioPresencial.setText("Presencial");
-
-        grupoFormato.add(radioMixto);
-        radioMixto.setText("Mixto");
-
-        btnCancelar.setText("Cancelar");
-        btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
-        btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
-        btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-
+        btnSiguiente.setBackground(new java.awt.Color(63, 78, 79));
+        btnSiguiente.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(220, 215, 201));
         btnSiguiente.setText("Siguiente");
+        btnSiguiente.setBorderPainted(false);
+        btnSiguiente.setFocusPainted(false);
         btnSiguiente.setMaximumSize(new java.awt.Dimension(120, 25));
         btnSiguiente.setMinimumSize(new java.awt.Dimension(120, 25));
         btnSiguiente.setPreferredSize(new java.awt.Dimension(120, 25));
@@ -93,105 +106,118 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
                 btnSiguienteActionPerformed(evt);
             }
         });
+        jPanel1.add(btnSiguiente);
+        btnSiguiente.setBounds(500, 530, 220, 40);
+
+        btnCancelar.setBackground(new java.awt.Color(63, 78, 79));
+        btnCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(220, 215, 201));
+        btnCancelar.setText("Cancelar");
+        btnCancelar.setBorderPainted(false);
+        btnCancelar.setFocusPainted(false);
+        btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
+        btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
+        btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(80, 530, 220, 40);
+
+        radioMixto.setBackground(new java.awt.Color(44, 54, 57));
+        grupoFormato.add(radioMixto);
+        radioMixto.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        radioMixto.setForeground(new java.awt.Color(220, 215, 201));
+        radioMixto.setText("Mixto");
+        jPanel1.add(radioMixto);
+        radioMixto.setBounds(530, 410, 70, 25);
+
+        radioRemoto.setBackground(new java.awt.Color(44, 54, 57));
+        grupoFormato.add(radioRemoto);
+        radioRemoto.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        radioRemoto.setForeground(new java.awt.Color(220, 215, 201));
+        radioRemoto.setText("Remoto");
+        jPanel1.add(radioRemoto);
+        radioRemoto.setBounds(310, 410, 90, 25);
+
+        radioPresencial.setBackground(new java.awt.Color(44, 54, 57));
+        grupoFormato.add(radioPresencial);
+        radioPresencial.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        radioPresencial.setForeground(new java.awt.Color(220, 215, 201));
+        radioPresencial.setText("Presencial");
+        radioPresencial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioPresencialActionPerformed(evt);
+            }
+        });
+        jPanel1.add(radioPresencial);
+        radioPresencial.setBounds(410, 410, 110, 25);
+
+        lblFormato.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblFormato.setForeground(new java.awt.Color(220, 215, 201));
+        lblFormato.setText("FORMATO:");
+        jPanel1.add(lblFormato);
+        lblFormato.setBounds(180, 410, 100, 25);
+
+        lblLinkedin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblLinkedin.setForeground(new java.awt.Color(220, 215, 201));
+        lblLinkedin.setText("LINKEDIN:");
+        jPanel1.add(lblLinkedin);
+        lblLinkedin.setBounds(180, 360, 100, 25);
+
+        textLinkedin.setBackground(new java.awt.Color(63, 78, 79));
+        textLinkedin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textLinkedin.setForeground(new java.awt.Color(220, 215, 201));
+        textLinkedin.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(textLinkedin);
+        textLinkedin.setBounds(290, 360, 325, 25);
+
+        textMail.setBackground(new java.awt.Color(63, 78, 79));
+        textMail.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textMail.setForeground(new java.awt.Color(220, 215, 201));
+        textMail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(textMail);
+        textMail.setBounds(290, 310, 325, 25);
+
+        lblMail.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblMail.setForeground(new java.awt.Color(220, 215, 201));
+        lblMail.setText("MAIL:");
+        jPanel1.add(lblMail);
+        lblMail.setBounds(180, 310, 100, 25);
+
+        lblTelefono.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblTelefono.setForeground(new java.awt.Color(220, 215, 201));
+        lblTelefono.setText("TELÉFONO:");
+        jPanel1.add(lblTelefono);
+        lblTelefono.setBounds(180, 260, 100, 25);
+
+        textTelefono.setBackground(new java.awt.Color(63, 78, 79));
+        textTelefono.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        textTelefono.setForeground(new java.awt.Color(220, 215, 201));
+        textTelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(textTelefono);
+        textTelefono.setBounds(290, 260, 325, 25);
+
+        lblDireccion.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblDireccion.setForeground(new java.awt.Color(220, 215, 201));
+        lblDireccion.setText("DIRECCIÓN:");
+        jPanel1.add(lblDireccion);
+        lblDireccion.setBounds(180, 210, 100, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblAltaPostulanteTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblFormato, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(radioRemoto)
-                                .addGap(30, 30, 30)
-                                .addComponent(radioPresencial)
-                                .addGap(30, 30, 30)
-                                .addComponent(radioMixto)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblMail, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textMail))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textTelefono))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textDireccion))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textCedula))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textNombre))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textLinkedin))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(50, 50, 50)))))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblAltaPostulanteTitulo)
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
-                    .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCedula)
-                    .addComponent(textCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDireccion)
-                    .addComponent(textDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTelefono)
-                    .addComponent(textTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMail)
-                    .addComponent(textMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblLinkedin)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblFormato)
-                            .addComponent(radioRemoto)
-                            .addComponent(radioPresencial)
-                            .addComponent(radioMixto))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnSiguiente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(textLinkedin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(542, 464));
+        setSize(new java.awt.Dimension(816, 658));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -264,6 +290,10 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
+    private void radioPresencialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioPresencialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioPresencialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -304,6 +334,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.ButtonGroup grupoFormato;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAltaPostulanteTitulo;
     private javax.swing.JLabel lblCedula;
     private javax.swing.JLabel lblDireccion;

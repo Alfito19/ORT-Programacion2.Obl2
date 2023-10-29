@@ -7,7 +7,6 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-
 public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
     /**
@@ -35,46 +34,51 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         lblAltaPostulanteTitulo = new javax.swing.JLabel();
-        lblPuestos = new javax.swing.JLabel();
+        btnExportar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPuestos = new javax.swing.JList();
-        lblNivel = new javax.swing.JLabel();
-        btnConsultar = new javax.swing.JToggleButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaPostulantes = new javax.swing.JList();
+        jSeparator1 = new javax.swing.JSeparator();
         lblPostulantes = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
-        btnExportar = new javax.swing.JButton();
+        lblNivel = new javax.swing.JLabel();
         spinnerNivel = new javax.swing.JSpinner();
+        lblPuestos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblAltaPostulanteTitulo.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(44, 54, 57));
+        jPanel1.setLayout(null);
+
+        lblAltaPostulanteTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        lblAltaPostulanteTitulo.setForeground(new java.awt.Color(220, 215, 201));
         lblAltaPostulanteTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblAltaPostulanteTitulo.setText("Consulta para puesto");
+        lblAltaPostulanteTitulo.setText("CONSULTA PARA PUESTO");
+        jPanel1.add(lblAltaPostulanteTitulo);
+        lblAltaPostulanteTitulo.setBounds(0, 20, 800, 30);
 
-        lblPuestos.setText("Puestos:");
+        btnExportar.setBackground(new java.awt.Color(63, 78, 79));
+        btnExportar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnExportar.setForeground(new java.awt.Color(220, 215, 201));
+        btnExportar.setText("Exportar");
+        btnExportar.setBorderPainted(false);
+        btnExportar.setFocusPainted(false);
+        btnExportar.setMaximumSize(new java.awt.Dimension(120, 25));
+        btnExportar.setMinimumSize(new java.awt.Dimension(120, 25));
+        btnExportar.setPreferredSize(new java.awt.Dimension(120, 25));
+        jPanel1.add(btnExportar);
+        btnExportar.setBounds(500, 500, 220, 40);
 
-        listaPuestos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(listaPuestos);
-
-        lblNivel.setText("Nivel:");
-
-        btnConsultar.setText("Consultar");
-        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultarActionPerformed(evt);
-            }
-        });
-
-        listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(listaPostulantes);
-
-        lblPostulantes.setText("Postulantes:");
-
+        btnCancelar.setBackground(new java.awt.Color(63, 78, 79));
+        btnCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnCancelar.setForeground(new java.awt.Color(220, 215, 201));
         btnCancelar.setText("Cancelar");
+        btnCancelar.setBorderPainted(false);
+        btnCancelar.setFocusPainted(false);
         btnCancelar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnCancelar.setPreferredSize(new java.awt.Dimension(120, 25));
@@ -83,72 +87,91 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
                 btnCancelarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(80, 500, 220, 40);
 
-        btnExportar.setText("Exportar");
-        btnExportar.setMaximumSize(new java.awt.Dimension(120, 25));
-        btnExportar.setMinimumSize(new java.awt.Dimension(120, 25));
-        btnExportar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnConsultar.setBackground(new java.awt.Color(63, 78, 79));
+        btnConsultar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnConsultar.setForeground(new java.awt.Color(220, 215, 201));
+        btnConsultar.setText("Consultar");
+        btnConsultar.setBorderPainted(false);
+        btnConsultar.setFocusPainted(false);
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConsultar);
+        btnConsultar.setBounds(460, 230, 150, 40);
 
+        jScrollPane1.setBorder(null);
+
+        listaPuestos.setBackground(new java.awt.Color(63, 78, 79));
+        listaPuestos.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        listaPuestos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        listaPuestos.setForeground(new java.awt.Color(220, 215, 201));
+        listaPuestos.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaPuestos.setSelectionBackground(new java.awt.Color(220, 215, 201));
+        listaPuestos.setSelectionForeground(new java.awt.Color(63, 78, 79));
+        jScrollPane1.setViewportView(listaPuestos);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(190, 100, 420, 110);
+
+        jScrollPane2.setBorder(null);
+
+        listaPostulantes.setBackground(new java.awt.Color(63, 78, 79));
+        listaPostulantes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        listaPostulantes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        listaPostulantes.setForeground(new java.awt.Color(220, 215, 201));
+        listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listaPostulantes.setSelectionBackground(new java.awt.Color(220, 215, 201));
+        listaPostulantes.setSelectionForeground(new java.awt.Color(63, 78, 79));
+        jScrollPane2.setViewportView(listaPostulantes);
+
+        jPanel1.add(jScrollPane2);
+        jScrollPane2.setBounds(190, 330, 420, 120);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(20, 290, 760, 10);
+
+        lblPostulantes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblPostulantes.setForeground(new java.awt.Color(220, 215, 201));
+        lblPostulantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPostulantes.setText("POSTULANTES:");
+        jPanel1.add(lblPostulantes);
+        lblPostulantes.setBounds(190, 310, 420, 16);
+
+        lblNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblNivel.setForeground(new java.awt.Color(220, 215, 201));
+        lblNivel.setText("NIVEL:");
+        jPanel1.add(lblNivel);
+        lblNivel.setBounds(190, 240, 100, 25);
+
+        spinnerNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerNivel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
+        jPanel1.add(spinnerNivel);
+        spinnerNivel.setBounds(320, 240, 103, 22);
+
+        lblPuestos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblPuestos.setForeground(new java.awt.Color(220, 215, 201));
+        lblPuestos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPuestos.setText("PUESTOS:");
+        jPanel1.add(lblPuestos);
+        lblPuestos.setBounds(190, 80, 420, 16);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lblAltaPostulanteTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblPuestos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(spinnerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPostulantes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(0, 50, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblAltaPostulanteTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPuestos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNivel)
-                    .addComponent(btnConsultar)
-                    .addComponent(spinnerNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(lblPostulantes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(491, 482));
+        setSize(new java.awt.Dimension(816, 608));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -209,6 +232,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
     private javax.swing.JButton btnCancelar;
     private javax.swing.JToggleButton btnConsultar;
     private javax.swing.JButton btnExportar;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
