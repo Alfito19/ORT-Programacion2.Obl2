@@ -168,7 +168,7 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(666, 458));
+        setSize(new java.awt.Dimension(664, 457));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

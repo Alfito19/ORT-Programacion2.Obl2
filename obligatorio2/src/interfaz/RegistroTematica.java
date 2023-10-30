@@ -127,7 +127,7 @@ public class RegistroTematica extends javax.swing.JFrame implements Serializable
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(666, 408));
+        setSize(new java.awt.Dimension(664, 407));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

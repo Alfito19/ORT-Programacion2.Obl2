@@ -115,7 +115,7 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(616, 458));
+        setSize(new java.awt.Dimension(614, 457));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

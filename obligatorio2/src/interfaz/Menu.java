@@ -28,7 +28,6 @@ public class Menu extends javax.swing.JFrame implements Serializable {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnConsultaTematica = new javax.swing.JToggleButton();
         btnBajaPostulante = new javax.swing.JToggleButton();
         btnIngresoEntrevista = new javax.swing.JToggleButton();
         btnConsultaPuesto = new javax.swing.JToggleButton();
@@ -37,11 +36,11 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         btnRegistroPuesto = new javax.swing.JToggleButton();
         btnRegistroEvaluador = new javax.swing.JToggleButton();
         btnAltaPostulante = new javax.swing.JToggleButton();
-        btnRegistroTematica = new javax.swing.JToggleButton();
         lblMenuTitulo = new javax.swing.JLabel();
+        btnRegistroTematica = new javax.swing.JButton();
+        btnConsultaTematica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 650));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -51,23 +50,6 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 715));
         jPanel1.setLayout(null);
-
-        btnConsultaTematica.setBackground(new java.awt.Color(63, 78, 79));
-        btnConsultaTematica.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnConsultaTematica.setForeground(new java.awt.Color(220, 215, 201));
-        btnConsultaTematica.setText("Consulta por temática");
-        btnConsultaTematica.setBorderPainted(false);
-        btnConsultaTematica.setFocusPainted(false);
-        btnConsultaTematica.setMaximumSize(new java.awt.Dimension(150, 25));
-        btnConsultaTematica.setMinimumSize(new java.awt.Dimension(150, 25));
-        btnConsultaTematica.setPreferredSize(new java.awt.Dimension(150, 25));
-        btnConsultaTematica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultaTematicaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnConsultaTematica);
-        btnConsultaTematica.setBounds(450, 150, 220, 40);
 
         btnBajaPostulante.setBackground(new java.awt.Color(63, 78, 79));
         btnBajaPostulante.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -205,16 +187,19 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         jPanel1.add(btnAltaPostulante);
         btnAltaPostulante.setBounds(130, 230, 220, 40);
 
+        lblMenuTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
+        lblMenuTitulo.setForeground(new java.awt.Color(220, 215, 201));
+        lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMenuTitulo.setText("NOMBRE DE APP");
+        jPanel1.add(lblMenuTitulo);
+        lblMenuTitulo.setBounds(10, 40, 790, 29);
+
         btnRegistroTematica.setBackground(new java.awt.Color(63, 78, 79));
         btnRegistroTematica.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         btnRegistroTematica.setForeground(new java.awt.Color(220, 215, 201));
         btnRegistroTematica.setText("Registro de temática");
         btnRegistroTematica.setBorderPainted(false);
-        btnRegistroTematica.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRegistroTematica.setFocusPainted(false);
-        btnRegistroTematica.setMaximumSize(new java.awt.Dimension(150, 25));
-        btnRegistroTematica.setMinimumSize(new java.awt.Dimension(150, 25));
-        btnRegistroTematica.setPreferredSize(new java.awt.Dimension(150, 25));
         btnRegistroTematica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistroTematicaActionPerformed(evt);
@@ -223,12 +208,19 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         jPanel1.add(btnRegistroTematica);
         btnRegistroTematica.setBounds(130, 150, 220, 40);
 
-        lblMenuTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
-        lblMenuTitulo.setForeground(new java.awt.Color(220, 215, 201));
-        lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMenuTitulo.setText("NOMBRE DE APP");
-        jPanel1.add(lblMenuTitulo);
-        lblMenuTitulo.setBounds(10, 40, 790, 29);
+        btnConsultaTematica.setBackground(new java.awt.Color(63, 78, 79));
+        btnConsultaTematica.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnConsultaTematica.setForeground(new java.awt.Color(220, 215, 201));
+        btnConsultaTematica.setText("Consulta por temática");
+        btnConsultaTematica.setBorderPainted(false);
+        btnConsultaTematica.setFocusPainted(false);
+        btnConsultaTematica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaTematicaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnConsultaTematica);
+        btnConsultaTematica.setBounds(450, 150, 220, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,22 +233,9 @@ public class Menu extends javax.swing.JFrame implements Serializable {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(816, 658));
+        setSize(new java.awt.Dimension(814, 657));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegistroTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroTematicaActionPerformed
-        // TODO add your handling code here:
-        RegistroTematica vent = new RegistroTematica(sistema);
-        vent.setVisible(true);
-    }//GEN-LAST:event_btnRegistroTematicaActionPerformed
-
-    private void btnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaTematicaActionPerformed
-        // TODO add your handling code here:
-        ConsultaPorTematica vent = new ConsultaPorTematica(sistema);
-        vent.setVisible(true);
-        
-    }//GEN-LAST:event_btnConsultaTematicaActionPerformed
 
     private void btnAltaPostulanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAltaPostulanteActionPerformed
         // TODO add your handling code here:
@@ -320,6 +299,16 @@ public class Menu extends javax.swing.JFrame implements Serializable {
 
     }//GEN-LAST:event_formWindowClosed
 
+    private void btnRegistroTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroTematicaActionPerformed
+        RegistroTematica vent = new RegistroTematica(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnRegistroTematicaActionPerformed
+
+    private void btnConsultaTematicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaTematicaActionPerformed
+        ConsultaPorTematica vent = new ConsultaPorTematica(sistema);
+        vent.setVisible(true);
+    }//GEN-LAST:event_btnConsultaTematicaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -360,13 +349,13 @@ public class Menu extends javax.swing.JFrame implements Serializable {
     private javax.swing.JToggleButton btnAltaPostulante;
     private javax.swing.JToggleButton btnBajaPostulante;
     private javax.swing.JToggleButton btnConsultaPuesto;
-    private javax.swing.JToggleButton btnConsultaTematica;
+    private javax.swing.JButton btnConsultaTematica;
     private javax.swing.JToggleButton btnFin;
     private javax.swing.JToggleButton btnHistoriaPostulante;
     private javax.swing.JToggleButton btnIngresoEntrevista;
     private javax.swing.JToggleButton btnRegistroEvaluador;
     private javax.swing.JToggleButton btnRegistroPuesto;
-    private javax.swing.JToggleButton btnRegistroTematica;
+    private javax.swing.JButton btnRegistroTematica;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblMenuTitulo;
     // End of variables declaration//GEN-END:variables

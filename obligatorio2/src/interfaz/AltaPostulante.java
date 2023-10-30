@@ -217,7 +217,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(816, 658));
+        setSize(new java.awt.Dimension(814, 657));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

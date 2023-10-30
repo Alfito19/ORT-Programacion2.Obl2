@@ -171,7 +171,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(816, 608));
+        setSize(new java.awt.Dimension(814, 607));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

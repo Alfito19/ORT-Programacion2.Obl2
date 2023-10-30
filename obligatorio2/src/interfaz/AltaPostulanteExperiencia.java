@@ -187,7 +187,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(816, 428));
+        setSize(new java.awt.Dimension(814, 427));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

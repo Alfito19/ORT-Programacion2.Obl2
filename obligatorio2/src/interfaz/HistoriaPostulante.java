@@ -323,7 +323,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(816, 858));
+        setSize(new java.awt.Dimension(814, 857));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
