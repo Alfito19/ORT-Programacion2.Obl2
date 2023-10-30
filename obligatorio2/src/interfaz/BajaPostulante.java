@@ -113,8 +113,6 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
         try{
             Postulante unP = (Postulante)listaPostulantes.getSelectedValue();
             sistema.eliminarPostulante(unP);
-            JOptionPane.showMessageDialog(new JFrame(), "El postulante fue eliminado correctamente",
-            "Postulante eliminado", JOptionPane.INFORMATION_MESSAGE);
         }
         //En caso de que no poder obtener el postulante o eliminarlo entra al siguiente catch
         catch(Exception e){

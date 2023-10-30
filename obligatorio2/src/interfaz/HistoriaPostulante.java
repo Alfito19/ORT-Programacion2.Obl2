@@ -328,7 +328,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        
+      
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 

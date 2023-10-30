@@ -16,6 +16,7 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
     public ConsultaPorTematica(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
+        objetoAPantalla();
     }
     
     public void objetoAPantalla(){
