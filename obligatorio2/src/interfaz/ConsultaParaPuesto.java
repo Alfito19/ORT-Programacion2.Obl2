@@ -1,14 +1,18 @@
 package interfaz;
 import dominio.*;
+import java.io.IOException;
 import java.io.Serializable;
+import java.util.Formatter;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
 public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
+    private ArrayList<Postulante> consultActual;
     /**
      * Creates new form ConsultaParaPuesto
      */
@@ -17,6 +21,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
     }
     public ConsultaParaPuesto(Sistema unSistema) {
         this.sistema = unSistema;
+        this.consultActual = new ArrayList<>();
         initComponents();
         objetoAPantalla();
     }
@@ -70,6 +75,11 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         btnExportar.setMaximumSize(new java.awt.Dimension(120, 25));
         btnExportar.setMinimumSize(new java.awt.Dimension(120, 25));
         btnExportar.setPreferredSize(new java.awt.Dimension(120, 25));
+        btnExportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExportarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnExportar);
         btnExportar.setBounds(500, 500, 220, 40);
 
@@ -184,6 +194,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         else{
             int nivel = (Integer)spinnerNivel.getValue();
             listaPostulantes.setListData(sistema.consultaPuesto(unPuesto, nivel).toArray());
+            this.consultActual = sistema.consultaPuesto(unPuesto, nivel);
             //faltaria darle funcionalidad a btnExportar
         }
     }//GEN-LAST:event_btnConsultarActionPerformed
@@ -192,6 +203,28 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
+        // TODO add your handling code here:
+        try{
+            if(this.consultActual.isEmpty()){
+                JOptionPane.showMessageDialog(new JFrame(), "No hay elementos para exportar",
+               "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                Formatter arch = new Formatter("PostulantesAptos.txt");
+                for(Postulante p : this.consultActual){
+                    arch.format("%s%n",p);
+                }                
+                arch.close();
+                objetoAPantalla();
+            }
+        }
+        catch(IOException e){
+            JOptionPane.showMessageDialog(new JFrame(), "Error",
+               "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnExportarActionPerformed
 
     /**
      * @param args the command line arguments

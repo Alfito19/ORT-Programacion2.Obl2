@@ -275,11 +275,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
                     tipo = "Mixto";
                 }
                 //uso un if para marcar si el trabajo ingresado es valido o no
-                if(sistema.agregarPuesto(nombre,tipo,this.getSeleccionados())){
-                    JOptionPane.showMessageDialog(null, "Puesto ingresado correctamente"
-                            , "Error", JOptionPane.INFORMATION_MESSAGE);
-                }
-                else{
+                if(!sistema.agregarPuesto(nombre,tipo,this.getSeleccionados())){                   
                     JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente denuevo"
                             , "Error", JOptionPane.ERROR_MESSAGE);
                 }
