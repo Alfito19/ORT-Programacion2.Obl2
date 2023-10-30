@@ -193,27 +193,19 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
                     //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
                     if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
                         JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
-                            "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
-                    }
-                    else{
-                        JOptionPane.showMessageDialog(new JFrame(), "El evaluador fue ingresado correctamente",
-                            "Evaluador ingresado", JOptionPane.INFORMATION_MESSAGE);
+                        "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
                     }
                     dispose();
                 }
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
             catch(Exception e){
                 //Ventana de error
-                JOptionPane.showMessageDialog(new JFrame(), "La cedula e ingreso deben ser numeros",
-                            "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(new JFrame(), "La cedula y año de ingreso deben ser numeros",
+                "Error", JOptionPane.ERROR_MESSAGE);
             }            
         }
-        objetoAPantalla();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

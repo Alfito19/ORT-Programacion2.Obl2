@@ -32,9 +32,10 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listTematicas = new javax.swing.JList();
         btnConsulta = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
+        lblResultado2 = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
         lblTemasDisp = new javax.swing.JLabel();
+        lblResultado1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,12 +77,12 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         jPanel1.add(btnConsulta);
         btnConsulta.setBounds(400, 145, 150, 40);
 
-        lblResultado.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        lblResultado.setForeground(new java.awt.Color(220, 215, 201));
-        lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblResultado.setText("Seleccione un tema.");
-        jPanel1.add(lblResultado);
-        lblResultado.setBounds(50, 250, 500, 90);
+        lblResultado2.setBackground(new java.awt.Color(44, 54, 57));
+        lblResultado2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblResultado2.setForeground(new java.awt.Color(220, 215, 201));
+        lblResultado2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(lblResultado2);
+        lblResultado2.setBounds(50, 290, 500, 30);
 
         btnSalir.setBackground(new java.awt.Color(63, 78, 79));
         btnSalir.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -104,6 +105,14 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         jPanel1.add(lblTemasDisp);
         lblTemasDisp.setBounds(60, 70, 320, 25);
 
+        lblResultado1.setBackground(new java.awt.Color(44, 54, 57));
+        lblResultado1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblResultado1.setForeground(new java.awt.Color(220, 215, 201));
+        lblResultado1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblResultado1.setText("Seleccione un tema.");
+        jPanel1.add(lblResultado1);
+        lblResultado1.setBounds(50, 260, 500, 30);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,7 +132,8 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Habilidad unaT = (Habilidad)listTematicas.getSelectedValue();
-            lblResultado.setText(sistema.consultaTematica(unaT));
+            lblResultado1.setText(sistema.consultaTematicaPostulantes(unaT));
+            lblResultado2.setText(sistema.consultaTematicaPuestos(unaT));
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(new JFrame(), "Debe seleccionar una tematica",
@@ -177,7 +187,8 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblResultado1;
+    private javax.swing.JLabel lblResultado2;
     private javax.swing.JLabel lblTemasDisp;
     private javax.swing.JList listTematicas;
     // End of variables declaration//GEN-END:variables

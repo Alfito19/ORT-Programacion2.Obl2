@@ -22,6 +22,7 @@ public class Sistema implements Serializable {
         listaCedulas = new ArrayList<>();
         listaPuestos= new ArrayList<>();
     }
+    
     //devuelve true si la tematica no existe y la pudo agregar correctamente
     public boolean agregarTematica(String unNombre,String unaDescripcion){
         Habilidad t = new Habilidad(unNombre,unaDescripcion);
@@ -52,6 +53,7 @@ public class Sistema implements Serializable {
         }
         return cond;
     }
+    
     //retorna false si no pudo agregar al postulante
     public boolean altaPostulante(String unNombre,String unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
         boolean vuelta = this.cedulaUnica(unaCedula);
@@ -63,6 +65,7 @@ public class Sistema implements Serializable {
         }
         return vuelta;
     }
+    
     public void altaPostulante(Postulante p){
         this.listaPostulantes.add(p);
         this.listaCedulas.add(p.getCedula());
@@ -72,6 +75,7 @@ public class Sistema implements Serializable {
         this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
     }
+    
     //devuelve false si no lo puede agregar, y viceversa
     public boolean agregarEvaluador(String unNombre,String unaCedula,String unaDireccion,long unIngreso){
         boolean vuelta = this.cedulaUnica(unaCedula);
@@ -92,6 +96,7 @@ public class Sistema implements Serializable {
         }
         return indice;
     }
+    
     //devuelve el objeto postulante pasandole la cedula
     public Postulante getPostulante(String cedula){
         return this.listaPostulantes.get(this.indicePostulante(cedula));
@@ -103,6 +108,7 @@ public class Sistema implements Serializable {
         int indice = this.indicePostulante(unPos.getCedula());
         this.listaPostulantes.get(indice).agregarPuntaje(aScore);
     }
+    
     //elimina entrevista cuando se elimina postulante
     public void eliminarEntrevistas(Postulante elPostulante){
         for (Entrevista e : this.listaEntrevistas){
@@ -149,6 +155,7 @@ public class Sistema implements Serializable {
         }
         return aptos;
     }
+    
     //verifica que el postulante cumpla con todos los requisitos de todas las habilidades
     public boolean cumpleCondiciones(Postulante p, Puesto unPuesto, int nivel){
         boolean cond = true;
@@ -177,10 +184,9 @@ public class Sistema implements Serializable {
     //devuelve lo siguiente:
         //Cantidad de postulantes que tiene un nivel mayor a 5 en esta temática.
         //Cantidad de puestos que buscan que requieran conocimiento en esta temática.
-    public String consultaTematica(Habilidad unaTematica){
+    public String consultaTematicaPostulantes(Habilidad unaTematica){
         String vuelta="";
         int cantPostulantes=0;
-        int cantPuestos=0;
         for (Postulante p : this.listaPostulantes){
             for(Habilidad hP : p.getHabilidades()){
                 if(hP.getNombre().equalsIgnoreCase(unaTematica.getNombre()) && (hP.getNivel()>5)){
@@ -188,6 +194,13 @@ public class Sistema implements Serializable {
                 }
             }
         }
+        vuelta = "Hay " + cantPostulantes + " postulantes que tienen un nivel mayor a 5 en " + unaTematica.getNombre() + "\n";
+        return vuelta;
+    }
+    
+    public String consultaTematicaPuestos(Habilidad unaTematica){
+        String vuelta="";
+        int cantPuestos=0;
         for (Puesto puesto : this.listaPuestos){
             for(Habilidad hPuesto : puesto.getTemasRequeridos()){
                 if (hPuesto.getNombre().equalsIgnoreCase(unaTematica.getNombre())){
@@ -195,10 +208,10 @@ public class Sistema implements Serializable {
                 }
             }
         }
-        vuelta = "Hay " + cantPostulantes + " postulantes que tienen un nivel mayor a 5 en " + unaTematica.getNombre() + "\n";
         vuelta+= "Hay " + cantPuestos + " puestos que requieren conocimiento en " + unaTematica.getNombre();
         return vuelta;
-    }    
+    }
+    
     public ArrayList<Evaluador> getListaEvaluadores(){
         ArrayList<Evaluador> vuelta = new ArrayList<>();
         for (Evaluador e : this.listaEvaluadores){
@@ -206,6 +219,7 @@ public class Sistema implements Serializable {
         }
         return vuelta;
     }
+    
     public ArrayList<Postulante> getListaPostulantes(){
         ArrayList<Postulante> vuelta = new ArrayList<>();
         for (Postulante p : this.listaPostulantes){
@@ -213,6 +227,7 @@ public class Sistema implements Serializable {
         }
         return vuelta;
     }
+    
     public ArrayList<Habilidad> getListaTematicas(){
         ArrayList<Habilidad> vuelta = new ArrayList<>();
         for(Habilidad h : this.listaHabilidades){
