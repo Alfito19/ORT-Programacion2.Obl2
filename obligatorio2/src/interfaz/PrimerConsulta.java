@@ -85,10 +85,10 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(616, 308));
+        setSize(new java.awt.Dimension(614, 307));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

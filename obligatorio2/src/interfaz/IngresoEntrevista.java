@@ -1,7 +1,6 @@
 package interfaz;
 import dominio.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -208,21 +207,21 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
                     Integer.parseInt(puntaje);
                     //Una vez chequeado que puntaje es numero, se genera la entrevista
                     sistema.agregarEntrevista(unEval,unPost,Integer.parseInt(puntaje),comentarios);
-                     JOptionPane.showMessageDialog(new JFrame(), "La entrevista fue ingresada con exito",
-                            "Entrevista ingresada", JOptionPane.INFORMATION_MESSAGE);
-                     this.objetoAPantalla();
+                    JOptionPane.showMessageDialog(new JFrame(), "La entrevista fue ingresada con exito",
+                        "Entrevista ingresada", JOptionPane.INFORMATION_MESSAGE);
+                    this.objetoAPantalla();
                 }    
                 //En caso de que puntaje no sea un numero entrara en la siguiente excepcion
                 catch(Exception e){
                     //Ventana de error
                     JOptionPane.showMessageDialog(new JFrame(), "El puntaje ingresado debe ser un número",
-               "Error de input", JOptionPane.ERROR_MESSAGE);
+                    "Error de input", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(new JFrame(), "Error de input",
-               "", JOptionPane.ERROR_MESSAGE);
+            "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
