@@ -206,23 +206,16 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
         // TODO add your handling code here:
-        try{
-            if(this.consultActual.isEmpty()){
-                JOptionPane.showMessageDialog(new JFrame(), "No hay elementos para exportar",
-               "Error", JOptionPane.ERROR_MESSAGE);
+        if (this.consultActual.isEmpty()) {
+            JOptionPane.showMessageDialog(new JFrame(), "No hay elementos para exportar",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            ArchivoGrabacion arch = new ArchivoGrabacion("PostulantesAptos");
+            for(Postulante p : this.consultActual){
+                arch.grabarLinea(p.toString());
             }
-            else{
-                Formatter arch = new Formatter("PostulantesAptos.txt");
-                for(Postulante p : this.consultActual){
-                    arch.format("%s%n",p);
-                }                
-                arch.close();
-                objetoAPantalla();
-            }
-        }
-        catch(IOException e){
-            JOptionPane.showMessageDialog(new JFrame(), "Error",
-               "Error", JOptionPane.ERROR_MESSAGE);
+            arch.cerrar();
+            objetoAPantalla();
         }
     }//GEN-LAST:event_btnExportarActionPerformed
 
