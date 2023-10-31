@@ -210,7 +210,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
             JOptionPane.showMessageDialog(new JFrame(), "No hay elementos para exportar",
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
-            ArchivoGrabacion arch = new ArchivoGrabacion("PostulantesAptos");
+            ArchivoGrabacion arch = new ArchivoGrabacion("PostulantesAptos.txt");
             for(Postulante p : this.consultActual){
                 arch.grabarLinea(p.toString());
             }
