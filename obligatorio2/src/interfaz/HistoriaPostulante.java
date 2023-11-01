@@ -3,6 +3,7 @@ import dominio.*;
 import java.awt.Desktop;
 import java.io.Serializable;
 import java.net.URI;
+import java.util.ArrayList;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -89,6 +90,11 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         btnReset.setText("Resetear");
         btnReset.setBorderPainted(false);
         btnReset.setFocusPainted(false);
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnReset);
         btnReset.setBounds(600, 430, 150, 40);
 
@@ -348,6 +354,19 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
 //            e.printStackTrace();
 //        }
     }//GEN-LAST:event_lblPostulanteLinkedinMouseClicked
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        lblPostulanteNombre.setText("---");
+        lblPostulanteCedula.setText("---");
+        lblPostulanteDireccion.setText("---");
+        lblPostulanteTelefono.setText("---");
+        lblPostulanteMail.setText("---");
+        lblPostulanteLinkedin.setText("---");
+        lblPostulanteFormato.setText("---");
+        listaExperiencia.setListData((new ArrayList<>()).toArray());
+        cargarPostulantes();
+    }//GEN-LAST:event_btnResetActionPerformed
 
 
     public static void main(String args[]) {
