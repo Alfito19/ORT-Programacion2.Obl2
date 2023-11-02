@@ -180,6 +180,17 @@ public class Sistema implements Serializable {
         }
         return vuelta;
     }
+    
+    //metodo que retorna entrevistas con palabra determinada
+    public ArrayList<Entrevista> entrevistasPal(ArrayList<Entrevista> entrevistasPost, String pal){
+        ArrayList<Entrevista> vuelta = new ArrayList<>();
+        for(Entrevista e : entrevistasPost){
+            if(e.getComentario().toLowerCase().contains(pal.toLowerCase())){
+                vuelta.add(e);
+            }
+        }
+        return vuelta;
+    }
 
     //devuelve lo siguiente:
         //Cantidad de postulantes que tiene un nivel mayor a 5 en esta temática.

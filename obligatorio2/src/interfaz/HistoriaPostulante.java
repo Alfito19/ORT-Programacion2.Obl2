@@ -6,6 +6,8 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -24,17 +26,17 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         initComponents();
         cargarPostulantes();
-        llenarTabla();
+        llenarTabla(sistema.getListaEntrevistas());
     }
     
-    public void llenarTabla(){        
+    public void llenarTabla(ArrayList<Entrevista> list){        
         DefaultTableModel modeloDefault = new DefaultTableModel();
         modeloDefault.addColumn("Nro.");
         modeloDefault.addColumn("Evaluador");
         modeloDefault.addColumn("Puntaje");
         modeloDefault.addColumn("Comentarios");
-        for(int i = 0; i < sistema.getListaEntrevistas().size(); i++){
-            Entrevista entrevista = sistema.getListaEntrevistas().get(i);
+        for(int i = 0; i < list.size(); i++){
+            Entrevista entrevista = list.get(i);
             modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
         }
         tableTabla.setModel(modeloDefault);
@@ -122,6 +124,11 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         btnBuscar.setText("Buscar");
         btnBuscar.setBorderPainted(false);
         btnBuscar.setFocusPainted(false);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnBuscar);
         btnBuscar.setBounds(440, 430, 150, 40);
 
@@ -377,8 +384,38 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setText("---");
         lblPostulanteFormato.setText("---");
         listaExperiencia.setListData((new ArrayList<>()).toArray());
+        textBuscar.setText("");
+        this.llenarTabla(sistema.getListaEntrevistas());
         cargarPostulantes();
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        // TODO add your handling code here:
+        try{
+            String pal = textBuscar.getText().trim();
+            Postulante p = (Postulante)listaPostulantes.getSelectedValue();
+            if(pal.length()==0 || listaPostulantes.getSelectedValue()==null){
+                JOptionPane.showMessageDialog(new JFrame(), "Ningun campo debe quedar vacío",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                ArrayList<Entrevista> entrevistasPost = sistema.entrevistasPostulante(p);
+                if (entrevistasPost.isEmpty()){
+                    JOptionPane.showMessageDialog(new JFrame(), "El postulante no tiene entrevistas registradas",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                else{
+                    ArrayList<Entrevista> entFilter = sistema.entrevistasPal(entrevistasPost, pal);
+                    this.llenarTabla(entFilter);
+                }
+            }
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(new JFrame(), "Error al mostrar",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     public static void main(String args[]) {
