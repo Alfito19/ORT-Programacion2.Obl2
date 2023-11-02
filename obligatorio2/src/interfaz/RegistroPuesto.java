@@ -59,7 +59,6 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         listaTemasSelect = new javax.swing.JList();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaTemas = new javax.swing.JList();
-        btnAddRemove = new javax.swing.JToggleButton();
         lblTipo = new javax.swing.JLabel();
         radioRemoto = new javax.swing.JRadioButton();
         radioPresencial = new javax.swing.JRadioButton();
@@ -67,9 +66,9 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         btnRegistrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         lblRegistroPuestoTitulo = new javax.swing.JLabel();
+        btnAddRemove = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
@@ -131,21 +130,6 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(70, 200, 250, 180);
-
-        btnAddRemove.setBackground(new java.awt.Color(63, 78, 79));
-        btnAddRemove.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnAddRemove.setForeground(new java.awt.Color(220, 215, 201));
-        btnAddRemove.setText("Agregar / Quitar");
-        btnAddRemove.setBorderPainted(false);
-        btnAddRemove.setFocusPainted(false);
-        btnAddRemove.setPreferredSize(new java.awt.Dimension(108, 23));
-        btnAddRemove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddRemoveActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAddRemove);
-        btnAddRemove.setBounds(325, 340, 150, 40);
 
         lblTipo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         lblTipo.setForeground(new java.awt.Color(220, 215, 201));
@@ -218,6 +202,19 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         jPanel1.add(lblRegistroPuestoTitulo);
         lblRegistroPuestoTitulo.setBounds(0, 20, 800, 30);
 
+        btnAddRemove.setBackground(new java.awt.Color(63, 78, 79));
+        btnAddRemove.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnAddRemove.setForeground(new java.awt.Color(220, 215, 201));
+        btnAddRemove.setText("Agregar / Quitar");
+        btnAddRemove.setBorderPainted(false);
+        btnAddRemove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddRemoveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAddRemove);
+        btnAddRemove.setBounds(325, 340, 150, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -237,21 +234,6 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnAddRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRemoveActionPerformed
-        // TODO add your handling code here:
-        //esto permite quitar elementos seleccionados teniendolos solo seleccionados desde la listaTemasSelect
-        if (listaTemas.getSelectedValue()!=null && listaTemasSelect.getSelectedValue()==null){
-            this.usoSelect((Habilidad)listaTemas.getSelectedValue());
-        }
-        else if (listaTemasSelect.getSelectedValue()!=null){
-            this.usoSelect((Habilidad)listaTemasSelect.getSelectedValue());
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una tematica", "Error"
-                , JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnAddRemoveActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
@@ -289,6 +271,20 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void btnAddRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRemoveActionPerformed
+        //esto permite quitar elementos seleccionados teniendolos solo seleccionados desde la listaTemasSelect
+        if (listaTemas.getSelectedValue()!=null && listaTemasSelect.getSelectedValue()==null){
+            this.usoSelect((Habilidad)listaTemas.getSelectedValue());
+        }
+        else if (listaTemasSelect.getSelectedValue()!=null){
+            this.usoSelect((Habilidad)listaTemasSelect.getSelectedValue());
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una tematica", "Error"
+                , JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAddRemoveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -325,7 +321,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnAddRemove;
+    private javax.swing.JButton btnAddRemove;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.ButtonGroup btnsTipo;

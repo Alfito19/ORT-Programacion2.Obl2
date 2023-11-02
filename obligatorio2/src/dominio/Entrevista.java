@@ -20,18 +20,34 @@ public class Entrevista implements Serializable {
         this.puntaje = unPuntaje;
         this.comentario = unCom;
 //        setIdentificador();
-        this.numeroEntrevista = getIdentificador();
+        this.numeroEntrevista = setIdentificador();
     }
 
 //    public static void setIdentificador(){
 //        identificador++;
 //    }
     
-    public static int getIdentificador(){
-        return identificador++;
+    public static int setIdentificador(){
+        return ++identificador;
     }
 
     public Postulante getEntrevistado(){
         return this.entrevistado;
+    }
+    
+    public String getEvaluador(){
+        return this.evaluador.toString();
+    }
+    
+    public int getPuntaje(){
+        return this.puntaje;
+    }
+    
+    public int getIdentificador(){
+        return this.numeroEntrevista;
+    }
+    
+    public String getComentario(){
+        return this.comentario;
     }
 }

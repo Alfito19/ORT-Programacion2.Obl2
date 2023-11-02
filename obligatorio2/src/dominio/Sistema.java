@@ -220,6 +220,14 @@ public class Sistema implements Serializable {
         return vuelta;
     }
     
+    public ArrayList<Entrevista> getListaEntrevistas(){
+        ArrayList<Entrevista> vuelta = new ArrayList<>();
+        for (Entrevista e : this.listaEntrevistas){
+            vuelta.add(e);
+        }
+        return vuelta;
+    }
+    
     public ArrayList<Postulante> getListaPostulantes(){
         ArrayList<Postulante> vuelta = new ArrayList<>();
         for (Postulante p : this.listaPostulantes){

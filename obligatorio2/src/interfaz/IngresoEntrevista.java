@@ -204,9 +204,9 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
             }
             else{
                 try{
-                    Integer.parseInt(puntaje);
+                    int puntaje2 = Integer.parseInt(puntaje);
                     //Una vez chequeado que puntaje es numero, se genera la entrevista
-                    this.objetoAPantalla();
+                    sistema.agregarEntrevista(unEval, unPost, puntaje2, comentarios);
                     dispose();
                 }    
                 //En caso de que puntaje no sea un numero entrara en la siguiente excepcion

@@ -4,6 +4,10 @@ import java.awt.Desktop;
 import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -20,6 +24,20 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         initComponents();
         cargarPostulantes();
+        llenarTabla();
+    }
+    
+    public void llenarTabla(){        
+        DefaultTableModel modeloDefault = new DefaultTableModel();
+        modeloDefault.addColumn("Nro.");
+        modeloDefault.addColumn("Evaluador");
+        modeloDefault.addColumn("Puntaje");
+        modeloDefault.addColumn("Comentarios");
+        for(int i = 0; i < sistema.getListaEntrevistas().size(); i++){
+            Entrevista entrevista = sistema.getListaEntrevistas().get(i);
+            modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
+        }
+        tableTabla.setModel(modeloDefault);
     }
 
     public void cargarPostulantes(){
@@ -232,20 +250,13 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
 
         jScrollPane3.setBorder(null);
 
-        tableTabla.setAutoCreateColumnsFromModel(false);
+        tableTabla.setAutoCreateRowSorter(true);
         tableTabla.setBackground(new java.awt.Color(63, 78, 79));
         tableTabla.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
         tableTabla.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         tableTabla.setForeground(new java.awt.Color(220, 215, 201));
         tableTabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
                 {null, null, null, null}
             },
             new String [] {
@@ -253,7 +264,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -267,6 +278,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                 return canEdit [columnIndex];
             }
         });
+        tableTabla.setToolTipText("");
         tableTabla.setGridColor(new java.awt.Color(63, 78, 79));
         tableTabla.setRowHeight(25);
         tableTabla.setSelectionBackground(new java.awt.Color(63, 78, 79));
