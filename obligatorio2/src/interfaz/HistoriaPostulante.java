@@ -55,6 +55,8 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setText(post.getLinkedIn());
         lblPostulanteFormato.setText(post.getFormato());
         listaExperiencia.setListData(post.darHabilidades().toArray());
+        this.llenarTabla(sistema.entrevistasPostulante(post));
+        textBuscar.setText("");
     }
     
     @SuppressWarnings("unchecked")
