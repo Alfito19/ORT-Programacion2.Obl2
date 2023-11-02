@@ -1,5 +1,6 @@
 package interfaz;
 import dominio.*;
+import java.awt.Color;
 import java.awt.Desktop;
 import java.io.Serializable;
 import java.net.URI;
@@ -53,6 +54,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteTelefono.setText(post.getTelefono());
         lblPostulanteMail.setText(post.getMail());
         lblPostulanteLinkedin.setText(post.getLinkedIn());
+        lblPostulanteLinkedin.setForeground(new Color(51,102,255));
         lblPostulanteFormato.setText(post.getFormato());
         listaExperiencia.setListData(post.darHabilidades().toArray());
         this.llenarTabla(sistema.entrevistasPostulante(post));
@@ -65,8 +67,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
 
         jPanel1 = new javax.swing.JPanel();
         lblHistorialPostulanteTitulo = new javax.swing.JLabel();
-        btnReset = new javax.swing.JToggleButton();
-        btnBuscar = new javax.swing.JToggleButton();
         lblPostulanteNombre = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblCedula = new javax.swing.JLabel();
@@ -93,6 +93,8 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         jScrollPane1 = new javax.swing.JScrollPane();
         listaPostulantes = new javax.swing.JList();
         lblPostulantes = new javax.swing.JLabel();
+        btnBuscar = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -105,34 +107,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblHistorialPostulanteTitulo.setText("HISTORIAL DE POSTULANTE");
         jPanel1.add(lblHistorialPostulanteTitulo);
         lblHistorialPostulanteTitulo.setBounds(0, 20, 800, 29);
-
-        btnReset.setBackground(new java.awt.Color(63, 78, 79));
-        btnReset.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnReset.setForeground(new java.awt.Color(220, 215, 201));
-        btnReset.setText("Resetear");
-        btnReset.setBorderPainted(false);
-        btnReset.setFocusPainted(false);
-        btnReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnResetActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnReset);
-        btnReset.setBounds(600, 430, 150, 40);
-
-        btnBuscar.setBackground(new java.awt.Color(63, 78, 79));
-        btnBuscar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(220, 215, 201));
-        btnBuscar.setText("Buscar");
-        btnBuscar.setBorderPainted(false);
-        btnBuscar.setFocusPainted(false);
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnBuscar);
-        btnBuscar.setBounds(440, 430, 150, 40);
 
         lblPostulanteNombre.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         lblPostulanteNombre.setForeground(new java.awt.Color(220, 215, 201));
@@ -203,6 +177,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         lblPostulanteLinkedin.setForeground(new java.awt.Color(220, 215, 201));
         lblPostulanteLinkedin.setText("---");
+        lblPostulanteLinkedin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblPostulanteLinkedin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblPostulanteLinkedinMouseClicked(evt);
@@ -339,6 +314,34 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         jPanel1.add(lblPostulantes);
         lblPostulantes.setBounds(50, 90, 290, 25);
 
+        btnBuscar.setBackground(new java.awt.Color(63, 78, 79));
+        btnBuscar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(220, 215, 201));
+        btnBuscar.setText("Buscar");
+        btnBuscar.setBorderPainted(false);
+        btnBuscar.setFocusPainted(false);
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnBuscar);
+        btnBuscar.setBounds(440, 430, 150, 40);
+
+        btnReset.setBackground(new java.awt.Color(63, 78, 79));
+        btnReset.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(220, 215, 201));
+        btnReset.setText("Resetear");
+        btnReset.setBorderPainted(false);
+        btnReset.setFocusPainted(false);
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnReset);
+        btnReset.setBounds(600, 430, 150, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -347,10 +350,10 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 850, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 869, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(814, 857));
+        setSize(new java.awt.Dimension(814, 877));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -365,34 +368,18 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_listaPostulantesValueChanged
 
     private void lblPostulanteLinkedinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostulanteLinkedinMouseClicked
-//        try {
-//            String url = lblPostulanteLinkedin.getText();
-//            if (!url.startsWith("http://") && !url.startsWith("https://")) {
-//                url = "http://" + url;
-//            }
-//            Desktop.getDesktop().browse(new URI(url));
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            String url = lblPostulanteLinkedin.getText();
+            if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                url = "http://" + url;
+            }
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_lblPostulanteLinkedinMouseClicked
 
-    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
-        lblPostulanteNombre.setText("---");
-        lblPostulanteCedula.setText("---");
-        lblPostulanteDireccion.setText("---");
-        lblPostulanteTelefono.setText("---");
-        lblPostulanteMail.setText("---");
-        lblPostulanteLinkedin.setText("---");
-        lblPostulanteFormato.setText("---");
-        listaExperiencia.setListData((new ArrayList<>()).toArray());
-        textBuscar.setText("");
-        this.llenarTabla(sistema.getListaEntrevistas());
-        cargarPostulantes();
-    }//GEN-LAST:event_btnResetActionPerformed
-
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
         try{
             String pal = textBuscar.getText().trim();
             Postulante p = (Postulante)listaPostulantes.getSelectedValue();
@@ -418,6 +405,20 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                             "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        lblPostulanteNombre.setText("---");
+        lblPostulanteCedula.setText("---");
+        lblPostulanteDireccion.setText("---");
+        lblPostulanteTelefono.setText("---");
+        lblPostulanteMail.setText("---");
+        lblPostulanteLinkedin.setText("---");
+        lblPostulanteFormato.setText("---");
+        listaExperiencia.setListData((new ArrayList<>()).toArray());
+        textBuscar.setText("");
+        this.llenarTabla(sistema.getListaEntrevistas());
+        cargarPostulantes();
+    }//GEN-LAST:event_btnResetActionPerformed
 
 
     public static void main(String args[]) {
@@ -453,8 +454,8 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnBuscar;
-    private javax.swing.JToggleButton btnReset;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnReset;
     private javax.swing.JToggleButton btnSalir;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
