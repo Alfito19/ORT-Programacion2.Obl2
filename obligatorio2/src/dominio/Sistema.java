@@ -3,6 +3,7 @@ package dominio;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
+import java.awt.Label;
 import java.io.Serializable;
 import java.util.*;
 

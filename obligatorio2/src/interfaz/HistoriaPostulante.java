@@ -27,10 +27,10 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         initComponents();
         cargarPostulantes();
-        llenarTabla(sistema.getListaEntrevistas());
+        llenarTabla(sistema.getListaEntrevistas(),"");
     }
     
-    public void llenarTabla(ArrayList<Entrevista> list){        
+    public void llenarTabla(ArrayList<Entrevista> list, String pal){        
         DefaultTableModel modeloDefault = new DefaultTableModel();
         modeloDefault.addColumn("Nro.");
         modeloDefault.addColumn("Evaluador");
@@ -38,7 +38,16 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         modeloDefault.addColumn("Comentarios");
         for(int i = 0; i < list.size(); i++){
             Entrevista entrevista = list.get(i);
-            modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
+            if(pal==""){
+                modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
+            }
+            else{
+                int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
+                String medio = entrevista.getComentario().substring(0,index)+" ";
+                medio.concat("<b><font color='red'>" + pal + "</font></b>" + " ");
+                medio.concat(entrevista.getComentario().substring(index+1));
+                modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),medio});
+            }
         }
         tableTabla.setModel(modeloDefault);
     }
@@ -57,7 +66,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setForeground(new Color(51,102,255));
         lblPostulanteFormato.setText(post.getFormato());
         listaExperiencia.setListData(post.darHabilidades().toArray());
-        this.llenarTabla(sistema.entrevistasPostulante(post));
+        this.llenarTabla(sistema.entrevistasPostulante(post),"");
         textBuscar.setText("");
     }
     
@@ -395,7 +404,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                 }
                 else{
                     ArrayList<Entrevista> entFilter = sistema.entrevistasPal(entrevistasPost, pal);
-                    this.llenarTabla(entFilter);
+                    this.llenarTabla(entFilter,pal);
                 }
             }
             
@@ -416,7 +425,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteFormato.setText("---");
         listaExperiencia.setListData((new ArrayList<>()).toArray());
         textBuscar.setText("");
-        this.llenarTabla(sistema.getListaEntrevistas());
+        this.llenarTabla(sistema.getListaEntrevistas(),"");
         cargarPostulantes();
     }//GEN-LAST:event_btnResetActionPerformed
 
