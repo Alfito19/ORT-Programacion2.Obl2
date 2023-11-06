@@ -217,7 +217,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         try{
-            sistema.altaPostulante(postulante);
+            sistema.agregarPostulante(postulante);
             dispose();
         }
         catch(Exception e){

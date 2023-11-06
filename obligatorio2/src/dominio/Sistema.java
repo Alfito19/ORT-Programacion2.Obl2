@@ -67,11 +67,11 @@ public class Sistema implements Serializable {
         return vuelta;
     }
     
-    public void altaPostulante(Postulante p){
+    public void agregarPostulante(Postulante p){
         this.listaPostulantes.add(p);
         this.listaCedulas.add(p.getCedula());
     }
-
+    
     public void eliminarPostulante(Postulante unP){
         this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
