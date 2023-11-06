@@ -40,8 +40,15 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             pal = textBuscar.getText();
             for(int i = 0; i < list.size(); i++){
                 Entrevista entrevista = list.get(i);
+                String comentario = entrevista.getComentario();
+                String comentarioFormateado = marcarPalabraHTML(comentario, pal);
 //                if(pal==""){
-                    modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
+                modeloDefault.addRow(new Object[]{
+                    entrevista.getIdentificador(),
+                    entrevista.getEvaluador(),
+                    entrevista.getPuntaje(),
+                    comentarioFormateado
+                });
 //                }
 //                else{
 //                    int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
@@ -53,6 +60,19 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             }
         }
         tableTabla.setModel(modeloDefault);
+    }
+    
+    public String marcarPalabraHTML(String texto, String palabraBuscada) {
+        if (texto == null || palabraBuscada == null || palabraBuscada.isEmpty()) {
+            return texto;
+        }
+        // Usamos HTML para aplicar formato al texto.
+        // Se busca la palabra y se envuelve en una etiqueta de fuente con color rojo.
+        String palabraMarcada = "<font color='red'>" + palabraBuscada + "</font>";
+        String textoFormateado = texto.replaceAll("(?i)" + palabraBuscada, palabraMarcada);
+
+        // Envuelve todo el texto en etiquetas HTML para asegurar el formato.
+        return "<html>" + textoFormateado + "</html>";
     }
 
     public void cargarPostulantes(){
