@@ -1,13 +1,15 @@
 package interfaz;
 import dominio.*;
 import java.io.Serializable;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class IngresoEntrevista extends javax.swing.JFrame implements Serializable {
+public class IngresoEntrevista extends javax.swing.JFrame implements Serializable, Observer {
     private Sistema sistema;
 
     public IngresoEntrevista() {
@@ -17,6 +19,8 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
         this.sistema = unSistema;
         initComponents();
         objetoAPantalla();
+        sistema.addObserver(this);
+        update(null, null);
     }
     public void objetoAPantalla(){
         listEvaluador.setListData(sistema.getListaEvaluadores().toArray());
@@ -281,4 +285,9 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
     private javax.swing.JTextArea textComentarios;
     private javax.swing.JTextField textPuntaje;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -6,6 +6,11 @@ import java.util.*;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
+/**
+ *
+ * @author joaquinhernandez
+ */
+
 public class Postulante extends Persona implements Serializable{
     private String telefono;
     private String mail;

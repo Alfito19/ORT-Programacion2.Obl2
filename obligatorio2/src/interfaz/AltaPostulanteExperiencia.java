@@ -2,13 +2,15 @@ package interfaz;
 import dominio.*;
 import java.io.Serializable;
 import java.util.Iterator;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable{
+public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable,Observer{
 
      private Sistema sistema;
      private Postulante postulante;
@@ -22,6 +24,8 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         this.postulante = unPostulante;
         initComponents();
         mostrarTematicas();
+        sistema.addObserver(this);
+        update(null, null);
     }
     
     private void mostrarTematicas(){
@@ -297,4 +301,9 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     private javax.swing.JList listaExperiencia;
     private javax.swing.JSpinner spinnerNivel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

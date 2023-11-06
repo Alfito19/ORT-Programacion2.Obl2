@@ -1,13 +1,15 @@
 package interfaz;
 import dominio.*;
 import java.io.Serializable;
+import java.util.Observable;
+import java.util.Observer;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class BajaPostulante extends javax.swing.JFrame implements Serializable {
+public class BajaPostulante extends javax.swing.JFrame implements Serializable, Observer {
     private Sistema sistema;
 
     public BajaPostulante() {
@@ -17,6 +19,8 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
         this.sistema = unSistema;
         initComponents();
         objetoAPantalla();
+        sistema.addObserver(this);
+        update(null, null);
     }
     
     public void objetoAPantalla(){
@@ -168,4 +172,9 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
     private javax.swing.JLabel lblBajaPostulanteTitulo;
     private javax.swing.JList listaPostulantes;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
