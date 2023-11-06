@@ -39,10 +39,10 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         if(!(list.isEmpty())){
             pal = textBuscar.getText();
             for(int i = 0; i < list.size(); i++){
-            Entrevista entrevista = list.get(i);
-                if(pal==""){
+                Entrevista entrevista = list.get(i);
+//                if(pal==""){
                     modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
-                }
+//                }
 //                else{
 //                    int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
 //                    String medio = entrevista.getComentario().substring(0,index)+" ";
@@ -419,17 +419,17 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        lblPostulanteNombre.setText("---");
-        lblPostulanteCedula.setText("---");
-        lblPostulanteDireccion.setText("---");
-        lblPostulanteTelefono.setText("---");
-        lblPostulanteMail.setText("---");
-        lblPostulanteLinkedin.setText("---");
-        lblPostulanteFormato.setText("---");
-        listaExperiencia.setListData((new ArrayList<>()).toArray());
-        textBuscar.setText("");
+//        cargarPostulantes();
         this.llenarTabla(sistema.getListaEntrevistas(),"");
-        cargarPostulantes();
+//        lblPostulanteNombre.setText("---");
+//        lblPostulanteCedula.setText("---");
+//        lblPostulanteDireccion.setText("---");
+//        lblPostulanteTelefono.setText("---");
+//        lblPostulanteMail.setText("---");
+//        lblPostulanteLinkedin.setText("---");
+//        lblPostulanteFormato.setText("---");
+//        listaExperiencia.setListData((new ArrayList<>()).toArray());
+        textBuscar.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
 
