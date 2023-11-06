@@ -36,17 +36,20 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         modeloDefault.addColumn("Evaluador");
         modeloDefault.addColumn("Puntaje");
         modeloDefault.addColumn("Comentarios");
-        for(int i = 0; i < list.size(); i++){
+        if(!(list.isEmpty())){
+            pal = textBuscar.getText();
+            for(int i = 0; i < list.size(); i++){
             Entrevista entrevista = list.get(i);
-            if(pal==""){
-                modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
-            }
-            else{
-                int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
-                String medio = entrevista.getComentario().substring(0,index)+" ";
-                medio.concat("<b><font color='red'>" + pal + "</font></b>" + " ");
-                medio.concat(entrevista.getComentario().substring(index+1));
-                modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),medio});
+                if(pal==""){
+                    modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),entrevista.getComentario()});
+                }
+//                else{
+//                    int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
+//                    String medio = entrevista.getComentario().substring(0,index)+" ";
+//                    medio.concat("<b><font color='red'>" + pal + "</font></b>" + " ");
+//                    medio.concat(entrevista.getComentario().substring(index+pal.length()));
+//                    modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),medio});
+//                }
             }
         }
         tableTabla.setModel(modeloDefault);

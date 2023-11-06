@@ -207,6 +207,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
         btnAddRemove.setForeground(new java.awt.Color(220, 215, 201));
         btnAddRemove.setText("Agregar / Quitar");
         btnAddRemove.setBorderPainted(false);
+        btnAddRemove.setFocusPainted(false);
         btnAddRemove.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddRemoveActionPerformed(evt);

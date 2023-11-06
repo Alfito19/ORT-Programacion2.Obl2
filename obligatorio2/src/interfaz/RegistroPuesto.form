@@ -414,6 +414,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agregar / Quitar"/>
             <Property name="borderPainted" type="boolean" value="false"/>
+            <Property name="focusPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddRemoveActionPerformed"/>
