@@ -6,8 +6,6 @@ import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -17,7 +15,7 @@ import javax.swing.table.TableModel;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class HistoriaPostulante extends javax.swing.JFrame implements Serializable, Observer {
+public class HistoriaPostulante extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
     /**
      * Creates new form HistoriaPostulante
@@ -29,9 +27,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         initComponents();
         cargarPostulantes();
-        sistema.addObserver(this);
-        update(null, null);
-        llenarTabla(sistema.getListaEntrevistas(),"");     
+        llenarTabla(sistema.getListaEntrevistas(),"");
     }
     
     public void llenarTabla(ArrayList<Entrevista> list, String pal){        
@@ -521,9 +517,4 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     private javax.swing.JTable tableTabla;
     private javax.swing.JTextField textBuscar;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

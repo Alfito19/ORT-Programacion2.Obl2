@@ -6,10 +6,8 @@ package dominio;
 import java.awt.Label;
 import java.io.Serializable;
 import java.util.*;
-import java.util.Observer;
-import java.util.Observable;
 
-public class Sistema extends Observable implements Serializable {
+public class Sistema implements Serializable {
     private ArrayList<Entrevista> listaEntrevistas;
     private ArrayList<Postulante> listaPostulantes;
     private ArrayList<Evaluador> listaEvaluadores;
@@ -34,10 +32,6 @@ public class Sistema extends Observable implements Serializable {
             this.listaHabilidades.add(t);
         }
         return vuelta;
-        //ver altenativas recomendadas por el profesor
-        s
-        //setChanged();
-        //notifyObservers();
     }
     
     public boolean tematicaUnica(String unNombre){

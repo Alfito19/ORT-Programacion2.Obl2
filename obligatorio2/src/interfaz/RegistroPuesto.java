@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class RegistroPuesto extends javax.swing.JFrame implements Serializable,Observer{
+public class RegistroPuesto extends javax.swing.JFrame implements Serializable{
     private Sistema sistema;
     private ArrayList<Habilidad> seleccionados;
 
@@ -19,8 +19,6 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,O
         this.seleccionados = new ArrayList<>();
         initComponents();
         objetoAPantalla();
-        sistema.addObserver(this);
-        update(null, null);
     }
     
     public ArrayList<Habilidad> getSeleccionados(){
@@ -343,9 +341,4 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,O
     private javax.swing.JRadioButton radioRemoto;
     private javax.swing.JTextField textNombrePuesto;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

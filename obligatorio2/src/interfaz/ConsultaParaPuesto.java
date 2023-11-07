@@ -6,13 +6,11 @@ import java.util.Formatter;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializable, Observer {
+public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializable {
     private Sistema sistema;
     private ArrayList<Postulante> consultActual;
     /**
@@ -26,8 +24,6 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         this.consultActual = new ArrayList<>();
         initComponents();
         objetoAPantalla();
-        sistema.addObserver(this);
-        update(null, null);
     }
     
     public void objetoAPantalla(){
@@ -274,9 +270,4 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
     private javax.swing.JList listaPuestos;
     private javax.swing.JSpinner spinnerNivel;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void update(Observable o, Object arg) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
