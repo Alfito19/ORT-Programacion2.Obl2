@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.Iterator;
 import javax.swing.JFrame;
@@ -8,7 +10,7 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable{
+public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Serializable,PropertyChangeListener{
 
      private Sistema sistema;
      private Postulante postulante;
@@ -19,8 +21,14 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     
     public AltaPostulanteExperiencia(Sistema unSistema, Postulante unPostulante) {
         this.sistema = unSistema;
+        this.sistema.addPropertyChangeListener(this);
         this.postulante = unPostulante;
         initComponents();
+        mostrarTematicas();
+    }
+    
+     @Override
+    public void propertyChange(PropertyChangeEvent evt){
         mostrarTematicas();
     }
     
@@ -245,6 +253,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
+        sistema.removePropertyChangeListener(this);
     }//GEN-LAST:event_formWindowClosed
 
     /**

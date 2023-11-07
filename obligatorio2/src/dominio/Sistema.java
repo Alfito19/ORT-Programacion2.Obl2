@@ -4,6 +4,8 @@ package dominio;
 //Alfonso Saizar (305968)
 
 import java.awt.Label;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.*;
 
@@ -14,8 +16,10 @@ public class Sistema implements Serializable {
     private ArrayList<String> listaCedulas;
     private ArrayList<Habilidad> listaHabilidades;
     private ArrayList<Puesto> listaPuestos;
+    private PropertyChangeSupport manejador;
 
     public Sistema(){
+        manejador = new PropertyChangeSupport(this);
         listaEntrevistas = new ArrayList<>();
         listaPostulantes = new ArrayList<>();
         listaEvaluadores = new ArrayList<>();
@@ -28,10 +32,13 @@ public class Sistema implements Serializable {
     public boolean agregarTematica(String unNombre,String unaDescripcion){
         Habilidad t = new Habilidad(unNombre,unaDescripcion);
         boolean vuelta = this.tematicaUnica(unNombre);
+        ArrayList<Habilidad> anterior = this.getListaTematicas();
         if(vuelta){
             this.listaHabilidades.add(t);
+            manejador.firePropertyChange("listaHabilidades",anterior,this.listaHabilidades);
         }
         return vuelta;
+        
     }
     
     public boolean tematicaUnica(String unNombre){
@@ -264,4 +271,11 @@ public class Sistema implements Serializable {
         return vuelta;
     }
     
+    public void addPropertyChangeListener(PropertyChangeListener listener){
+        manejador.addPropertyChangeListener(listener);
+    }
+    
+    public void removePropertyChangeListener(PropertyChangeListener listener){
+        manejador.removePropertyChangeListener(listener);
+    }
 }
