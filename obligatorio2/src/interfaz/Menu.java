@@ -54,9 +54,9 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         lblMenuTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         lblMenuTitulo.setForeground(new java.awt.Color(220, 215, 201));
         lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMenuTitulo.setText("NOMBRE DE APP");
+        lblMenuTitulo.setText("LABUR.ER");
         jPanel1.add(lblMenuTitulo);
-        lblMenuTitulo.setBounds(10, 40, 790, 29);
+        lblMenuTitulo.setBounds(0, 40, 800, 29);
 
         btnRegistroTematica2.setBackground(new java.awt.Color(63, 78, 79));
         btnRegistroTematica2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N

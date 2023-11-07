@@ -61,11 +61,11 @@
               <Color blue="c9" green="d7" red="dc" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="NOMBRE DE APP"/>
+            <Property name="text" type="java.lang.String" value="LABUR.ER"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="40" width="790" height="-1"/>
+              <AbsoluteConstraints x="0" y="40" width="800" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
