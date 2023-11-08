@@ -1,7 +1,6 @@
 package interfaz;
 import dominio.*;
 import java.io.Serializable;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 

@@ -1,10 +1,9 @@
 package dominio;
+import java.io.Serializable;
+import java.util.*;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
-
-import java.io.Serializable;
-import java.util.*;
 
 public class Puesto implements Serializable{
     private String nombre;

@@ -7,12 +7,9 @@ import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)

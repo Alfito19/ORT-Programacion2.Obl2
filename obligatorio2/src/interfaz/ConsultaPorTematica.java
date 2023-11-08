@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-
 public class ConsultaPorTematica extends javax.swing.JFrame implements PropertyChangeListener{
     private Sistema sistema;
 

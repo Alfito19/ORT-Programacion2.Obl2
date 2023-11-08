@@ -1,9 +1,7 @@
 package dominio;
-
-//Joaquin Hernandez (257620)
-
 import java.io.Serializable;
 
+//Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
 public class Evaluador extends Persona implements Serializable{

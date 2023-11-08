@@ -262,9 +262,13 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
                     }
                 }
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
+                catch (NumberFormatException ex){
+                    JOptionPane.showMessageDialog(new JFrame(), "La cedula debe ser un numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                }
                 catch(Exception e){
                     //Ventana de error
-                    JOptionPane.showMessageDialog(new JFrame(), "La cedula debe ser un numero",
+                    JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }

@@ -1,13 +1,12 @@
 package dominio;
-
-//Joaquin Hernandez (257620)
-//Alfonso Saizar (305968)
-
 import java.awt.Label;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 import java.util.*;
+
+//Joaquin Hernandez (257620)
+//Alfonso Saizar (305968)
 
 public class Sistema implements Serializable {
     private ArrayList<Entrevista> listaEntrevistas;

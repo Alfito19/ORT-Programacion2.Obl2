@@ -1,10 +1,8 @@
 package dominio;
-
-//Joaquin Hernandez (257620)
-
 import java.io.Serializable;
 import java.util.Objects;
 
+//Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
 public class Habilidad implements Serializable {
