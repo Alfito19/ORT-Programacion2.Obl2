@@ -66,10 +66,12 @@ public class Sistema implements Serializable {
     public boolean altaPostulante(String unNombre,String unaCedula,String unaDireccion,String unTel,String unMail,String link,String unFormato,ArrayList<Habilidad> habs){
         boolean vuelta = this.cedulaUnica(unaCedula);
         //antes de agregar verifica que sea el unico con esa cedula
+        ArrayList<Postulante> anterior = this.getListaPostulantes();
         if (vuelta){
             Postulante p = new Postulante(unNombre, unaCedula, unaDireccion, unTel, unMail, link, unFormato, habs);
             this.listaPostulantes.add(p);
             this.listaCedulas.add(unaCedula);
+            manejador.firePropertyChange("listaPostulantes",anterior,this.listaPostulantes);
         }
         return vuelta;
     }
@@ -80,17 +82,21 @@ public class Sistema implements Serializable {
     }
     
     public void eliminarPostulante(Postulante unP){
+        ArrayList<Postulante> anterior = this.getListaPostulantes();
         this.eliminarEntrevistas(unP);
         this.listaPostulantes.remove(unP);
+        manejador.firePropertyChange("listaPostulantes",anterior,this.listaPostulantes);
     }
     
     //devuelve false si no lo puede agregar, y viceversa
     public boolean agregarEvaluador(String unNombre,String unaCedula,String unaDireccion,long unIngreso){
         boolean vuelta = this.cedulaUnica(unaCedula);
+        ArrayList<Evaluador> anterior = this.getListaEvaluadores();
         if (vuelta){
             Evaluador e = new Evaluador(unNombre, unaCedula, unaDireccion, unIngreso);
             this.listaEvaluadores.add(e);
             this.listaCedulas.add(unaCedula);
+            manejador.firePropertyChange("listaEvaluadores",anterior,this.listaEvaluadores);
         }
         return vuelta;
     }
@@ -112,26 +118,32 @@ public class Sistema implements Serializable {
 
     public void agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
         Entrevista e = new Entrevista(unEval,unPos,aScore,unComentario);
+        ArrayList<Entrevista> anterior = this.getListaEntrevistas();
         this.listaEntrevistas.add(e);
+        manejador.firePropertyChange("listaEntrevistas",anterior,this.listaEntrevistas);
         int indice = this.indicePostulante(unPos.getCedula());
         this.listaPostulantes.get(indice).agregarPuntaje(aScore);
     }
     
     //elimina entrevista cuando se elimina postulante
     public void eliminarEntrevistas(Postulante elPostulante){
+        ArrayList<Entrevista> anterior = this.getListaEntrevistas();
         for (Entrevista e : this.listaEntrevistas){
             if (e.getEntrevistado().equals(elPostulante)){
                 this.listaEntrevistas.remove(e);
             }
         }
+        manejador.firePropertyChange("listaEntrevistas",anterior,this.listaEntrevistas);
     }
     
     //retorna false si ya existe un puesto con ese nombre
     public boolean agregarPuesto(String aName, String tipo, ArrayList<Habilidad> temas){
         boolean vuelta = this.puestoUnico(aName);
         if(vuelta){
+            ArrayList<Puesto> anterior = this.getListaPuestos();
             Puesto nuevoPuesto = new Puesto(aName, tipo, temas);
             this.listaPuestos.add(nuevoPuesto);
+            manejador.firePropertyChange("listaPuestos",anterior,this.listaPuestos);
         }
         return vuelta;
     }

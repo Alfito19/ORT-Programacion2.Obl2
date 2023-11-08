@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -7,7 +9,7 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class BajaPostulante extends javax.swing.JFrame implements Serializable {
+public class BajaPostulante extends javax.swing.JFrame implements Serializable,PropertyChangeListener {
     private Sistema sistema;
 
     public BajaPostulante() {
@@ -15,6 +17,7 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
     }
     public BajaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
+        this.sistema.addPropertyChangeListener(this);
         initComponents();
         objetoAPantalla();
     }
@@ -22,6 +25,10 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
     public void objetoAPantalla(){
         //Muestra todos los postulantes en la lista
         listaPostulantes.setListData(sistema.getListaPostulantes().toArray());
+    }
+    @Override
+    public void propertyChange(PropertyChangeEvent evt){
+        objetoAPantalla();
     }
 
     @SuppressWarnings("unchecked")
@@ -36,6 +43,11 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
@@ -127,6 +139,11 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable {
         //Cierra la ventana
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        sistema.removePropertyChangeListener(this);
+    }//GEN-LAST:event_formWindowClosed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

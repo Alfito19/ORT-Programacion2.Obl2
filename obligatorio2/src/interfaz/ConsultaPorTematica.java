@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -7,7 +9,7 @@ import javax.swing.JOptionPane;
 //Alfonso Saizar (305968)
 
 
-public class ConsultaPorTematica extends javax.swing.JFrame {
+public class ConsultaPorTematica extends javax.swing.JFrame implements PropertyChangeListener{
     private Sistema sistema;
 
     public ConsultaPorTematica() {
@@ -15,7 +17,13 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
     }
     public ConsultaPorTematica(Sistema unSistema) {
         this.sistema = unSistema;
+        this.sistema.addPropertyChangeListener(this);
         initComponents();
+        objetoAPantalla();
+    }
+    
+    @Override
+    public void propertyChange(PropertyChangeEvent evt){
         objetoAPantalla();
     }
     
@@ -38,6 +46,11 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         lblResultado1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
@@ -145,6 +158,11 @@ public class ConsultaPorTematica extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        sistema.removePropertyChangeListener(this);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

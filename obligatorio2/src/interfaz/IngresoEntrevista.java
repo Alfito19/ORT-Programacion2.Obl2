@@ -1,5 +1,7 @@
 package interfaz;
 import dominio.*;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -7,7 +9,7 @@ import javax.swing.JOptionPane;
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
-public class IngresoEntrevista extends javax.swing.JFrame implements Serializable {
+public class IngresoEntrevista extends javax.swing.JFrame implements Serializable,PropertyChangeListener {
     private Sistema sistema;
 
     public IngresoEntrevista() {
@@ -15,6 +17,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
     }
     public IngresoEntrevista(Sistema unSistema) {
         this.sistema = unSistema;
+        this.sistema.addPropertyChangeListener(this);
         initComponents();
         objetoAPantalla();
     }
@@ -24,6 +27,10 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
         textPuntaje.setText("");
         textComentarios.setText("");
         
+    }
+    @Override
+    public void propertyChange(PropertyChangeEvent evt){
+        objetoAPantalla();
     }
 
     @SuppressWarnings("unchecked")
@@ -47,6 +54,11 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
         textPuntaje = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
@@ -228,6 +240,11 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
             "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        sistema.removePropertyChangeListener(this);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
