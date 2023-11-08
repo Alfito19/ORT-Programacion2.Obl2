@@ -77,8 +77,10 @@ public class Sistema implements Serializable {
     }
     
     public void agregarPostulante(Postulante p){
+        ArrayList<Postulante> anterior = this.getListaPostulantes();
         this.listaPostulantes.add(p);
         this.listaCedulas.add(p.getCedula());
+        manejador.firePropertyChange("listaPostulantes",anterior,this.listaPostulantes);
     }
     
     public void eliminarPostulante(Postulante unP){

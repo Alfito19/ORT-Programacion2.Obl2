@@ -228,7 +228,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
                     //Una vez chequeado que puntaje es numero, se genera la entrevista    
                 }    
                 //En caso de que puntaje no sea un numero entrara en la siguiente excepcion
-                catch(Exception e){
+                catch(NumberFormatException e){
                     //Ventana de error
                     JOptionPane.showMessageDialog(new JFrame(), "El puntaje ingresado debe ser un número",
                     "Error de input", JOptionPane.ERROR_MESSAGE);
