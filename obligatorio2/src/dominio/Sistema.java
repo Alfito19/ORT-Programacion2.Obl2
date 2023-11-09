@@ -1,5 +1,4 @@
 package dominio;
-import java.awt.Label;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
@@ -37,7 +36,6 @@ public class Sistema implements Serializable {
             manejador.firePropertyChange("listaHabilidades",anterior,this.listaHabilidades);
         }
         return vuelta;
-        
     }
     
     public boolean tematicaUnica(String unNombre){

@@ -279,15 +279,11 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
                 "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
-        //En caso de que los datos no esten completos entrara en la siguiente excepcion
         catch(Exception e){
             //Ventana de error
-            JOptionPane.showMessageDialog(new JFrame(), "Datos incompletos",
-            "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
-        
+            JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
+                "Error", JOptionPane.ERROR_MESSAGE);
+        }               
     }//GEN-LAST:event_btnSiguienteActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

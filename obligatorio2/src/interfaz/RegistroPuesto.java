@@ -16,6 +16,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
     public RegistroPuesto() {
         initComponents();
     }
+    
     public RegistroPuesto(Sistema unSistema) {
         this.sistema = unSistema;
         this.seleccionados = new ArrayList<>();
@@ -23,10 +24,12 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
         initComponents();
         objetoAPantalla();
     }
+    
     @Override
     public void propertyChange(PropertyChangeEvent evt){
         listaTemas.setListData(sistema.getListaTematicas().toArray());
     }
+    
     public ArrayList<Habilidad> getSeleccionados(){
         ArrayList<Habilidad> vuelta = new ArrayList<>();
         Iterator <Habilidad> it = this.seleccionados.iterator();
@@ -252,7 +255,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
         try{
             String nombre = textNombrePuesto.getText().trim();
             boolean rdbtnSelected = radioRemoto.isSelected() || radioPresencial.isSelected() || radioMixto.isSelected();
-            if(nombre.length()==0 || this.seleccionados.size()==0 || !rdbtnSelected){
+            if(nombre.length()==0 || this.seleccionados.isEmpty() || !rdbtnSelected){
                 JOptionPane.showMessageDialog(null, "Ningun campo puede quedar vacio", "Error"
                     , JOptionPane.ERROR_MESSAGE);
             }
@@ -270,16 +273,16 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
                 }
                 //uso un if para marcar si el trabajo ingresado es valido o no
                 if(!sistema.agregarPuesto(nombre,tipo,this.getSeleccionados())){                   
-                    JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente denuevo"
-                            , "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente denuevo", "Error"
+                    , JOptionPane.ERROR_MESSAGE);
                 }
                 dispose();
             }
         }
         catch(Exception e){
             //Ventana de error
-            JOptionPane.showMessageDialog(null, "Error al agregar"
-                            , "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error al agregar", "Error"
+            , JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

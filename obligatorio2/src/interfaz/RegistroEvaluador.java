@@ -13,6 +13,7 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
     public RegistroEvaluador() {
         initComponents();
     }
+    
     public RegistroEvaluador(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();
@@ -174,8 +175,9 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
-    //agrega evaluador confirmando el correcto ingreso de datos y que este no este repetido 
+   
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        //agrega evaluador confirmando el correcto ingreso de datos y que este no este repetido 
         String unNombre = textNombre.getText().trim();
         String unaCedula = textCedula.getText().trim();
         String unaDireccion = textDireccion.getText().trim();
@@ -186,20 +188,24 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
                "Error de input", JOptionPane.ERROR_MESSAGE);
         }
         else{
-             try{
-                    Long.parseLong(unaCedula);
-                    Long.parseLong(unIngreso);
-                    //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
-                    if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
-                        JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
-                        "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
-                    }
-                    dispose();
+            try{
+                Long.parseLong(unaCedula);
+                //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
+                if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
+                    JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
+                    "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
                 }
+                dispose();
+            }
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
+            catch(NumberFormatException e){
+                    //Ventana de error
+                    JOptionPane.showMessageDialog(new JFrame(), "La cedula y año de ingreso deben ser numeros",
+                    "Error de input", JOptionPane.ERROR_MESSAGE);
+                }
             catch(Exception e){
                 //Ventana de error
-                JOptionPane.showMessageDialog(new JFrame(), "La cedula y año de ingreso deben ser numeros",
+                JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }            
         }

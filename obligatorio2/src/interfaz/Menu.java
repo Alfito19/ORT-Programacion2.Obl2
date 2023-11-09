@@ -17,6 +17,7 @@ public class Menu extends javax.swing.JFrame implements Serializable {
     public Menu() {
         initComponents();
     }
+    
     public Menu(Sistema unSistema) {
         this.sistema = unSistema;
         initComponents();

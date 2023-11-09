@@ -52,16 +52,16 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         jPanel1 = new javax.swing.JPanel();
         btnRegistrar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JToggleButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listaExperiencia = new javax.swing.JList();
         lblExperiencia = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnAgregar = new javax.swing.JToggleButton();
         spinnerNivel = new javax.swing.JSpinner();
         lblNivel = new javax.swing.JLabel();
         comboTemas = new javax.swing.JComboBox();
         lblTema = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -107,20 +107,6 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         jPanel1.add(btnCancelar);
         btnCancelar.setBounds(80, 330, 220, 40);
 
-        btnEliminar.setBackground(new java.awt.Color(63, 78, 79));
-        btnEliminar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(220, 215, 201));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.setBorderPainted(false);
-        btnEliminar.setFocusPainted(false);
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnEliminar);
-        btnEliminar.setBounds(110, 230, 150, 40);
-
         jScrollPane1.setBorder(null);
 
         listaExperiencia.setBackground(new java.awt.Color(63, 78, 79));
@@ -144,20 +130,6 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         lblExperiencia.setBounds(110, 190, 150, 25);
         jPanel1.add(jSeparator1);
         jSeparator1.setBounds(20, 150, 760, 10);
-
-        btnAgregar.setBackground(new java.awt.Color(63, 78, 79));
-        btnAgregar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        btnAgregar.setForeground(new java.awt.Color(220, 215, 201));
-        btnAgregar.setText("Agregar");
-        btnAgregar.setBorderPainted(false);
-        btnAgregar.setFocusPainted(false);
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnAgregar);
-        btnAgregar.setBounds(465, 90, 150, 40);
 
         spinnerNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
@@ -184,6 +156,34 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         jPanel1.add(lblTema);
         lblTema.setBounds(180, 40, 100, 25);
 
+        btnEliminar.setBackground(new java.awt.Color(63, 78, 79));
+        btnEliminar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(220, 215, 201));
+        btnEliminar.setText("Eliminar");
+        btnEliminar.setBorderPainted(false);
+        btnEliminar.setFocusPainted(false);
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEliminar);
+        btnEliminar.setBounds(110, 230, 150, 40);
+
+        btnAgregar.setBackground(new java.awt.Color(63, 78, 79));
+        btnAgregar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(220, 215, 201));
+        btnAgregar.setText("Agregar");
+        btnAgregar.setBorderPainted(false);
+        btnAgregar.setFocusPainted(false);
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAgregar);
+        btnAgregar.setBounds(465, 90, 150, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -198,6 +198,25 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         setSize(new java.awt.Dimension(814, 427));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        sistema.agregarPostulante(postulante);
+        dispose();
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        sistema.removePropertyChangeListener(this);
+    }//GEN-LAST:event_formWindowClosed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        sistema.agregarPostulante(postulante);
+        dispose();
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         //Tratamos de obtener la habilidad que esta seleccionada y el nivel marcado
@@ -216,45 +235,17 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
                 "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+        catch(NullPointerException e){
+            //Ventana de error
+            JOptionPane.showMessageDialog(new JFrame(), "Debe agregar una habilidad.",
+            "Error", JOptionPane.ERROR_MESSAGE);
+        }
         catch(Exception e){
             //Ventana de error
-            JOptionPane.showMessageDialog(new JFrame(), "Error al agregar",
+            JOptionPane.showMessageDialog(new JFrame(), "Error inesperado",
             "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
-
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        try{
-            sistema.agregarPostulante(postulante);
-            dispose();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Error al registrar el postulante",
-            "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        dispose();
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        try{
-            //a ver si funca
-            Habilidad h = (Habilidad)listaExperiencia.getSelectedValue();
-            postulante.quitarHabilidad(h);
-            mostrarExperiencia();
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Error al eliminar",
-            "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // TODO add your handling code here:
-        sistema.removePropertyChangeListener(this);
-    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -292,9 +283,9 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnAgregar;
+    private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JToggleButton btnEliminar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JComboBox comboTemas;
     private javax.swing.JPanel jPanel1;

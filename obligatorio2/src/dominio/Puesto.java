@@ -12,7 +12,7 @@ public class Puesto implements Serializable{
     private ArrayList<Habilidad> temasRequeridos;
 
     public Puesto(){
-        this.nombre = "sd";
+        this.nombre = "";
         this.tipo = "Remoto";
         this.temasRequeridos = new ArrayList<>();
     }

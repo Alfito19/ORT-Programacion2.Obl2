@@ -26,8 +26,8 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
         listPostulante.setListData(sistema.getListaPostulantes().toArray());
         textPuntaje.setText("");
         textComentarios.setText("");
-        
     }
+    
     @Override
     public void propertyChange(PropertyChangeEvent evt){
         objetoAPantalla();
@@ -199,12 +199,10 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
         try{
             Evaluador unEval = (Evaluador)listEvaluador.getSelectedValue();
             Postulante unPost = (Postulante)listPostulante.getSelectedValue();
@@ -236,7 +234,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Error de input",
+            JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
             "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed

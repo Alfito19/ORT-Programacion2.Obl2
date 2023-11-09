@@ -1,9 +1,7 @@
 package dominio;
-
-//Joaquin Hernandez (257620)
-
 import java.io.Serializable;
 
+//Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
 
 public class Entrevista implements Serializable {
@@ -19,13 +17,8 @@ public class Entrevista implements Serializable {
         this.entrevistado = unPost;
         this.puntaje = unPuntaje;
         this.comentario = unCom;
-//        setIdentificador();
         this.numeroEntrevista = setIdentificador();
     }
-
-//    public static void setIdentificador(){
-//        identificador++;
-//    }
     
     public static int setIdentificador(){
         return ++identificador;

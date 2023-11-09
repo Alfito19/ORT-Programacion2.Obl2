@@ -4,8 +4,10 @@ import java.awt.Color;
 import java.awt.Desktop;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,9 +18,6 @@ import javax.swing.table.DefaultTableModel;
 
 public class HistoriaPostulante extends javax.swing.JFrame implements Serializable,PropertyChangeListener {
     private Sistema sistema;
-    /**
-     * Creates new form HistoriaPostulante
-     */
     public HistoriaPostulante() {
         initComponents();
     }
@@ -46,21 +45,12 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                 Entrevista entrevista = list.get(i);
                 String comentario = entrevista.getComentario();
                 String comentarioFormateado = marcarPalabraHTML(comentario, pal);
-//                if(pal==""){
                 modeloDefault.addRow(new Object[]{
                     entrevista.getIdentificador(),
                     entrevista.getEvaluador(),
                     entrevista.getPuntaje(),
                     comentarioFormateado
                 });
-//                }
-//                else{
-//                    int index = entrevista.getComentario().toLowerCase().indexOf(pal.toLowerCase());
-//                    String medio = entrevista.getComentario().substring(0,index)+" ";
-//                    medio.concat("<b><font color='red'>" + pal + "</font></b>" + " ");
-//                    medio.concat(entrevista.getComentario().substring(index+pal.length()));
-//                    modeloDefault.addRow(new Object[]{entrevista.getIdentificador(),entrevista.getEvaluador(),entrevista.getPuntaje(),medio});
-//                }
             }
         }
         tableTabla.setModel(modeloDefault);
@@ -338,6 +328,11 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         listaPostulantes.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         listaPostulantes.setSelectionBackground(new java.awt.Color(220, 215, 201));
         listaPostulantes.setSelectionForeground(new java.awt.Color(63, 78, 79));
+        listaPostulantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaPostulantesMouseClicked(evt);
+            }
+        });
         listaPostulantes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 listaPostulantesValueChanged(evt);
@@ -399,13 +394,10 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-      
         dispose();
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void listaPostulantesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaPostulantesValueChanged
-        Postulante post = (Postulante)listaPostulantes.getSelectedValue();
-        cambiarDatosPostulantes(post);
     }//GEN-LAST:event_listaPostulantesValueChanged
 
     private void lblPostulanteLinkedinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPostulanteLinkedinMouseClicked
@@ -415,9 +407,16 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                 url = "http://" + url;
             }
             Desktop.getDesktop().browse(new URI(url));
-        } catch (Exception e) {
-            e.printStackTrace();
+        } 
+        catch (IOException | URISyntaxException e) {
+            JOptionPane.showMessageDialog(new JFrame(), "Hubo un error al abrir el link.",
+            "Error", JOptionPane.ERROR_MESSAGE);
         }
+        catch(Exception e){
+                    //Ventana de error
+                    JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                }
     }//GEN-LAST:event_lblPostulanteLinkedinMouseClicked
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -439,7 +438,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                     this.llenarTabla(entFilter,pal);
                 }
             }
-            
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(new JFrame(), "Error al mostrar",
@@ -448,23 +446,28 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-//        cargarPostulantes();
         this.llenarTabla(sistema.getListaEntrevistas(),"");
-//        lblPostulanteNombre.setText("---");
-//        lblPostulanteCedula.setText("---");
-//        lblPostulanteDireccion.setText("---");
-//        lblPostulanteTelefono.setText("---");
-//        lblPostulanteMail.setText("---");
-//        lblPostulanteLinkedin.setText("---");
-//        lblPostulanteFormato.setText("---");
-//        listaExperiencia.setListData((new ArrayList<>()).toArray());
+        lblPostulanteNombre.setText("---");
+        lblPostulanteCedula.setText("---");
+        lblPostulanteDireccion.setText("---");
+        lblPostulanteTelefono.setText("---");
+        lblPostulanteMail.setText("---");
+        lblPostulanteLinkedin.setText("---");
+        lblPostulanteLinkedin.setForeground(new Color(220,215,201));
+        lblPostulanteFormato.setText("---");
+        listaExperiencia.setListData((new ArrayList<>()).toArray());
+        listaPostulantes.setListData(sistema.getListaPostulantes().toArray());
         textBuscar.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // TODO add your handling code here:
         sistema.removePropertyChangeListener(this);
     }//GEN-LAST:event_formWindowClosed
+
+    private void listaPostulantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaPostulantesMouseClicked
+        Postulante post = (Postulante)listaPostulantes.getSelectedValue();
+        cambiarDatosPostulantes(post);
+    }//GEN-LAST:event_listaPostulantesMouseClicked
 
 
     public static void main(String args[]) {

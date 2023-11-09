@@ -3,8 +3,6 @@ import dominio.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -122,15 +120,8 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable,P
     
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         //Intenta obtener el postulante seleccionado de la lista y eliminarlo
-        try{
-            Postulante unP = (Postulante)listaPostulantes.getSelectedValue();
-            sistema.eliminarPostulante(unP);
-        }
-        //En caso de que no poder obtener el postulante o eliminarlo entra al siguiente catch
-        catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Error al eliminar el postulante",
-            "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        Postulante unP = (Postulante)listaPostulantes.getSelectedValue();
+        sistema.eliminarPostulante(unP);
         //Muestra nuevamente todos los postulantes (actualizado, sin el postulante eliminado)
         objetoAPantalla();
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -141,7 +132,6 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable,P
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // TODO add your handling code here:
         sistema.removePropertyChangeListener(this);
     }//GEN-LAST:event_formWindowClosed
 

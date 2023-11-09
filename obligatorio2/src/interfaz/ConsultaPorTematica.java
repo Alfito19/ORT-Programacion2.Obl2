@@ -147,8 +147,13 @@ public class ConsultaPorTematica extends javax.swing.JFrame implements PropertyC
             lblResultado1.setText(sistema.consultaTematicaPostulantes(unaT));
             lblResultado2.setText(sistema.consultaTematicaPuestos(unaT));
         }
+        catch(NullPointerException e){
+            //Ventana de error
+            JOptionPane.showMessageDialog(new JFrame(), "Debe seleccionar una habilidad.",
+            "Error", JOptionPane.ERROR_MESSAGE);
+        }
         catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Debe seleccionar una tematica",
+            JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
                             "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnConsultaActionPerformed
