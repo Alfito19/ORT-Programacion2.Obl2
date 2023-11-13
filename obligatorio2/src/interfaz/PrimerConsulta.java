@@ -103,8 +103,8 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
             dispose();
             in.close();
         } catch (IOException|ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(new JFrame(), "No se pudo recuperar correctamente, se iniciara un sistema vacio",
-            "Error de recuperacion", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), "No se pudo recuperar correctamente, se iniciará un sistema vacio",
+            "Error de recuperación", JOptionPane.ERROR_MESSAGE);
             Sistema controlador = new Sistema();
             Menu vent = new Menu(controlador);
             vent.setVisible(true);

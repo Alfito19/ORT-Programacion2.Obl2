@@ -140,7 +140,7 @@ public class RegistroTematica extends javax.swing.JFrame implements Serializable
             "Error de input", JOptionPane.ERROR_MESSAGE);
         }
         else if(!sistema.agregarTematica(nombre, descripcion)){
-            JOptionPane.showMessageDialog(new JFrame(), "La tematica ingresada debe ser única",
+            JOptionPane.showMessageDialog(new JFrame(), "La temática ingresada debe ser única",
             "Tematica repetida", JOptionPane.ERROR_MESSAGE);
         }
         else{

@@ -256,7 +256,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
             String nombre = textNombrePuesto.getText().trim();
             boolean rdbtnSelected = radioRemoto.isSelected() || radioPresencial.isSelected() || radioMixto.isSelected();
             if(nombre.length()==0 || this.seleccionados.isEmpty() || !rdbtnSelected){
-                JOptionPane.showMessageDialog(null, "Ningun campo puede quedar vacio", "Error"
+                JOptionPane.showMessageDialog(null, "Ningún campo puede quedar vacio", "Error"
                     , JOptionPane.ERROR_MESSAGE);
             }
             else{
@@ -273,7 +273,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
                 }
                 //uso un if para marcar si el trabajo ingresado es valido o no
                 if(!sistema.agregarPuesto(nombre,tipo,this.getSeleccionados())){                   
-                    JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente denuevo", "Error"
+                    JOptionPane.showMessageDialog(null, "Puesto de trabajo ya ingresado, intente de nuevo", "Error"
                     , JOptionPane.ERROR_MESSAGE);
                 }
                 dispose();
@@ -295,7 +295,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
             this.usoSelect((Habilidad)listaTemasSelect.getSelectedValue());
         }
         else{
-            JOptionPane.showMessageDialog(null, "Debe seleccionar una tematica", "Error"
+            JOptionPane.showMessageDialog(null, "Debe seleccionar una temática", "Error"
                 , JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAddRemoveActionPerformed

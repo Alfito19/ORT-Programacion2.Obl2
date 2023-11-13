@@ -209,7 +209,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
             String puntaje = textPuntaje.getText().trim();
             String comentarios = textComentarios.getText().trim();
             if(unEval == null || unPost == null || puntaje.length()==0 || comentarios.length()==0){
-                JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacios",
+                JOptionPane.showMessageDialog(new JFrame(), "No deje campos vacíos",
                "Error de input", JOptionPane.ERROR_MESSAGE);
             }
             else{
@@ -234,7 +234,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
             }
         }
         catch(Exception e){
-            JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
+            JOptionPane.showMessageDialog(new JFrame(), "Ocurrió un error inesperado",
             "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed

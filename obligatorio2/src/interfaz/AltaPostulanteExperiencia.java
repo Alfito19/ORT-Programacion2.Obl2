@@ -231,7 +231,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             //En caso de que el postulante ya tenga la habilidad retorna el siguiente error
             else{
                 //Ventana de error
-                JOptionPane.showMessageDialog(new JFrame(), "Habilidad ya ingesada",
+                JOptionPane.showMessageDialog(new JFrame(), "Habilidad ya ingresada",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }
         }

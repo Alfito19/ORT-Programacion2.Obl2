@@ -200,12 +200,12 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
             catch(NumberFormatException e){
                     //Ventana de error
-                    JOptionPane.showMessageDialog(new JFrame(), "La cedula y año de ingreso deben ser numeros",
+                    JOptionPane.showMessageDialog(new JFrame(), "La cédula y año de ingreso deben ser números",
                     "Error de input", JOptionPane.ERROR_MESSAGE);
                 }
             catch(Exception e){
                 //Ventana de error
-                JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
+                JOptionPane.showMessageDialog(new JFrame(), "Ocurrió un error inesperado",
                 "Error", JOptionPane.ERROR_MESSAGE);
             }            
         }
