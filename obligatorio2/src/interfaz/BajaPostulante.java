@@ -3,6 +3,7 @@ import dominio.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
+import javax.swing.ImageIcon;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -16,6 +17,7 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable,P
     public BajaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

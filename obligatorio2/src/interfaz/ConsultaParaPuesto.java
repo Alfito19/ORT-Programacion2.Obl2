@@ -6,6 +6,7 @@ import java.io.Serializable;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 //Joaquin Hernandez (257620)
 //Alfonso Saizar (305968)
@@ -23,6 +24,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         this.consultActual = new ArrayList<>();
         this.sistema.addPropertyChangeListener(this);
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

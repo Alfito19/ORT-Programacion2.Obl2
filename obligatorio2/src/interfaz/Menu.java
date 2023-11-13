@@ -5,6 +5,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -20,6 +21,7 @@ public class Menu extends javax.swing.JFrame implements Serializable {
     
     public Menu(Sistema unSistema) {
         this.sistema = unSistema;
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
     }
     
@@ -54,9 +56,9 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         lblMenuTitulo.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 24)); // NOI18N
         lblMenuTitulo.setForeground(new java.awt.Color(220, 215, 201));
         lblMenuTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMenuTitulo.setText("LABUR.ER");
+        lblMenuTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/main logo.png"))); // NOI18N
         jPanel1.add(lblMenuTitulo);
-        lblMenuTitulo.setBounds(0, 40, 800, 29);
+        lblMenuTitulo.setBounds(0, 30, 800, 70);
 
         btnRegistroTematica2.setBackground(new java.awt.Color(63, 78, 79));
         btnRegistroTematica2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N

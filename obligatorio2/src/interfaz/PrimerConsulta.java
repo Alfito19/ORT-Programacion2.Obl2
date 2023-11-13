@@ -5,6 +5,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -15,6 +16,7 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
 
     public PrimerConsulta() {
         initComponents();
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
     }
 
     @SuppressWarnings("unchecked")

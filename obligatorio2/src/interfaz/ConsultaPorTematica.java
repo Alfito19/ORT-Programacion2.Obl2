@@ -2,6 +2,7 @@ package interfaz;
 import dominio.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -17,6 +18,7 @@ public class ConsultaPorTematica extends javax.swing.JFrame implements PropertyC
     public ConsultaPorTematica(Sistema unSistema) {
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

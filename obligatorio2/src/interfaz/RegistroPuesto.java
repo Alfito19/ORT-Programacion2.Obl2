@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 //Joaquin Hernandez (257620)
@@ -21,6 +22,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
         this.sistema = unSistema;
         this.seleccionados = new ArrayList<>();
         this.sistema.addPropertyChangeListener(this);
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

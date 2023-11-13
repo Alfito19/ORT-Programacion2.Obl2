@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.Iterator;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -23,6 +24,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
         this.postulante = unPostulante;
+        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         mostrarTematicas();
     }
