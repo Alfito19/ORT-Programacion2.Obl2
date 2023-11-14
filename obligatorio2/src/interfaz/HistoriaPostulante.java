@@ -28,14 +28,14 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
         initComponents();
         cargarPostulantes();
-        llenarTabla(sistema.getListaEntrevistas(),"");
+        llenarTabla(sistema.getListaEntrevistas(),"", new ArrayList<Integer>());
     }
     @Override
     public void propertyChange(PropertyChangeEvent evt){
         cargarPostulantes();
     }
     
-    public void llenarTabla(ArrayList<Entrevista> list, String pal){        
+    public void llenarTabla(ArrayList<Entrevista> list, String pal,ArrayList<Integer> indices){        
         DefaultTableModel modeloDefault = new DefaultTableModel();
         modeloDefault.addColumn("Nro.");
         modeloDefault.addColumn("Evaluador");
@@ -43,16 +43,28 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         modeloDefault.addColumn("Comentarios");
         if(!(list.isEmpty())){
             pal = textBuscar.getText();
+            int j = 0;
             for(int i = 0; i < list.size(); i++){
                 Entrevista entrevista = list.get(i);
                 String comentario = entrevista.getComentario();
-                String comentarioFormateado = marcarPalabraHTML(comentario, pal);
-                modeloDefault.addRow(new Object[]{
-                    entrevista.getIdentificador(),
-                    entrevista.getEvaluador(),
-                    entrevista.getPuntaje(),
-                    comentarioFormateado
-                });
+                if(!(indices.isEmpty()) && indices.size()-1>j && i == indices.get(j)){
+                    String comentarioFormateado = marcarPalabraHTML(comentario, pal);
+                    modeloDefault.addRow(new Object[]{
+                        entrevista.getIdentificador(),
+                        entrevista.getEvaluador(),
+                        entrevista.getPuntaje(),
+                        comentarioFormateado
+                    });
+                    j++;                  
+                }
+                else{
+                    modeloDefault.addRow(new Object[]{
+                        entrevista.getIdentificador(),
+                        entrevista.getEvaluador(),
+                        entrevista.getPuntaje(),
+                        comentario
+                    });
+                }
             }
         }
         tableTabla.setModel(modeloDefault);
@@ -85,7 +97,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setForeground(new Color(51,102,255));
         lblPostulanteFormato.setText(post.getFormato());
         listaExperiencia.setListData(post.darHabilidades().toArray());
-        this.llenarTabla(sistema.entrevistasPostulante(post),"");
+        this.llenarTabla(sistema.entrevistasPostulante(post),"", new ArrayList<Integer>());
         textBuscar.setText("");
     }
     
@@ -426,7 +438,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             String pal = textBuscar.getText().trim();
             Postulante p = (Postulante)listaPostulantes.getSelectedValue();
             if(pal.length()==0 || listaPostulantes.getSelectedValue()==null){
-                JOptionPane.showMessageDialog(new JFrame(), "Ningun campo debe quedar vacío",
+                JOptionPane.showMessageDialog(new JFrame(), "Ningún campo debe quedar vacío",
                             "Error", JOptionPane.ERROR_MESSAGE);
             }
             else{
@@ -436,8 +448,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                             "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    ArrayList<Entrevista> entFilter = sistema.entrevistasPal(entrevistasPost, pal);
-                    this.llenarTabla(entFilter,pal);
+                    this.llenarTabla(sistema.entrevistasPostulante(p),pal,sistema.entrevistasPal(sistema.entrevistasPostulante(p), pal));
                 }
             }
         }
@@ -448,7 +459,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        this.llenarTabla(sistema.getListaEntrevistas(),"");
+        this.llenarTabla(sistema.getListaEntrevistas(),"", new ArrayList<Integer>());
         lblPostulanteNombre.setText("---");
         lblPostulanteCedula.setText("---");
         lblPostulanteDireccion.setText("---");

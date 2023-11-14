@@ -216,8 +216,8 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     }//GEN-LAST:event_formWindowClosed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        sistema.agregarPostulante(postulante);
-        dispose();
+        postulante.quitarHabilidad((Habilidad)listaExperiencia.getSelectedValue());
+        listaExperiencia.setListData(postulante.darHabilidades().toArray());
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed

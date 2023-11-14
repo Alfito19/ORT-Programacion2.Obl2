@@ -199,13 +199,14 @@ public class Sistema implements Serializable {
         }
         return vuelta;
     }
-    
+    //cambiar metodo para que, con la lista de entrevistas, modifique las que tienen la palabra en cuestion
     //metodo que retorna entrevistas con palabra determinada
-    public ArrayList<Entrevista> entrevistasPal(ArrayList<Entrevista> entrevistasPost, String pal){
-        ArrayList<Entrevista> vuelta = new ArrayList<>();
-        for(Entrevista e : entrevistasPost){
+    public ArrayList<Integer> entrevistasPal(ArrayList<Entrevista> entrevistasPost, String pal){
+        ArrayList<Integer> vuelta = new ArrayList<>();
+        for(int i=0;i<entrevistasPost.size();i++){
+            Entrevista e = entrevistasPost.get(i);
             if(e.getComentario().toLowerCase().contains(pal.toLowerCase())){
-                vuelta.add(e);
+                vuelta.add(i);
             }
         }
         return vuelta;
