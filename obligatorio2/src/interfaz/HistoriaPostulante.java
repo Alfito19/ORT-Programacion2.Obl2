@@ -28,14 +28,14 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         cargarPostulantes();
-        llenarTabla(sistema.getListaEntrevistas(),"", new ArrayList<Integer>());
+        llenarTabla(sistema.getListaEntrevistas(),"");
     }
     @Override
     public void propertyChange(PropertyChangeEvent evt){
         cargarPostulantes();
     }
     
-    public void llenarTabla(ArrayList<Entrevista> list, String pal,ArrayList<Integer> indices){        
+    public void llenarTabla(ArrayList<Entrevista> list, String pal){        
         DefaultTableModel modeloDefault = new DefaultTableModel();
         modeloDefault.addColumn("Nro.");
         modeloDefault.addColumn("Evaluador");
@@ -47,7 +47,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
             for(int i = 0; i < list.size(); i++){
                 Entrevista entrevista = list.get(i);
                 String comentario = entrevista.getComentario();
-                if(!(indices.isEmpty()) && indices.size()-1>j && i == indices.get(j)){
+                if(!(pal.equals("")) && comentario.toLowerCase().contains(pal.toLowerCase())){
                     String comentarioFormateado = marcarPalabraHTML(comentario, pal);
                     modeloDefault.addRow(new Object[]{
                         entrevista.getIdentificador(),
@@ -97,7 +97,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteLinkedin.setForeground(new Color(51,102,255));
         lblPostulanteFormato.setText(post.getFormato());
         listaExperiencia.setListData(post.darHabilidades().toArray());
-        this.llenarTabla(sistema.entrevistasPostulante(post),"", new ArrayList<Integer>());
+        this.llenarTabla(sistema.entrevistasPostulante(post),"");
         textBuscar.setText("");
     }
     
@@ -448,7 +448,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                             "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 else{
-                    this.llenarTabla(sistema.entrevistasPostulante(p),pal,sistema.entrevistasPal(sistema.entrevistasPostulante(p), pal));
+                    this.llenarTabla(sistema.entrevistasPostulante(p),pal);
                 }
             }
         }
@@ -459,7 +459,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        this.llenarTabla(sistema.getListaEntrevistas(),"", new ArrayList<Integer>());
+        this.llenarTabla(sistema.getListaEntrevistas(),"");
         lblPostulanteNombre.setText("---");
         lblPostulanteCedula.setText("---");
         lblPostulanteDireccion.setText("---");
