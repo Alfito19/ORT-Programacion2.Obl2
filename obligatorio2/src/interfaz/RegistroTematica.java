@@ -16,7 +16,7 @@ public class RegistroTematica extends javax.swing.JFrame implements Serializable
     }
     public RegistroTematica(Sistema unSistema) {
         this.sistema = unSistema;
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
     }
 

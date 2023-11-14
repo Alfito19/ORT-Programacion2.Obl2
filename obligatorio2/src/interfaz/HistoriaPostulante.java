@@ -25,7 +25,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     public HistoriaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         cargarPostulantes();
         llenarTabla(sistema.getListaEntrevistas(),"", new ArrayList<Integer>());

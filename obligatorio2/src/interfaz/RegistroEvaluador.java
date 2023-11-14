@@ -17,7 +17,7 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
     
     public RegistroEvaluador(Sistema unSistema) {
         this.sistema = unSistema;
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
     }
     

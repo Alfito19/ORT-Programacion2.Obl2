@@ -24,7 +24,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
         this.sistema = unSistema;
         this.consultActual = new ArrayList<>();
         this.sistema.addPropertyChangeListener(this);
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

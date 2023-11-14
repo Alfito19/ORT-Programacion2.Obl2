@@ -19,7 +19,7 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
     public IngresoEntrevista(Sistema unSistema) {
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

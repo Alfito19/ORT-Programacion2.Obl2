@@ -22,7 +22,7 @@ public class RegistroPuesto extends javax.swing.JFrame implements Serializable,P
         this.sistema = unSistema;
         this.seleccionados = new ArrayList<>();
         this.sistema.addPropertyChangeListener(this);
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }

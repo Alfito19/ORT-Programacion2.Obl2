@@ -17,7 +17,7 @@ public class BajaPostulante extends javax.swing.JFrame implements Serializable,P
     public BajaPostulante(Sistema unSistema) {
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
-        setIconImage(new ImageIcon(getClass().getResource("../Resources/icon.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
         initComponents();
         objetoAPantalla();
     }
