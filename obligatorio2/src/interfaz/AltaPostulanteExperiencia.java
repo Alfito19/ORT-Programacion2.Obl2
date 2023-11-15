@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.Iterator;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -37,7 +38,9 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     
     private void mostrarTematicas(){
         //Muestra las habilidades en el combo
-        Iterator <Habilidad> it = sistema.getListaTematicas().iterator();
+        DefaultComboBoxModel<Habilidad> nuevoModelo = new DefaultComboBoxModel<>();
+        this.comboTemas.setModel(nuevoModelo);
+        Iterator <Habilidad> it = sistema.getListaTematicas().iterator();     
         while(it.hasNext()){
             this.comboTemas.addItem(it.next());
         }
