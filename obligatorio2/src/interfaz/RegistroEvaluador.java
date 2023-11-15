@@ -192,8 +192,13 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
         else{
             try{
                 Long.parseLong(unaCedula);
+                long anio = Long.parseLong(unIngreso);
+                if (unIngreso.length()!=4 || anio<1970 || anio>2023){
+                    JOptionPane.showMessageDialog(new JFrame(), "El año de ingreso debe ser realista",
+                    "Año de ingreso incorrecto", JOptionPane.ERROR_MESSAGE);
+                }
                 //Una vez chequeado que cedula es numero, generamos el postulante y abrimos la ventana de habilidades/experiencia del usuario y cerramos la ventana de alta de postulante.
-                if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
+                else if(!sistema.agregarEvaluador(unNombre, unaCedula, unaDireccion, Long.parseLong(unIngreso))){
                     JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
                     "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
                 }

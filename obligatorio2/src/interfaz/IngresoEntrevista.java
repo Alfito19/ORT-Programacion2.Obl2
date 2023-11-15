@@ -223,6 +223,8 @@ public class IngresoEntrevista extends javax.swing.JFrame implements Serializabl
                     }
                     else{
                         sistema.agregarEntrevista(unEval, unPost, puntaje2, comentarios);
+                        JOptionPane.showMessageDialog(new JFrame(), "El número de la entrevista es: ",
+                    "Error de input", JOptionPane.INFORMATION_MESSAGE);
                         dispose();
                     }
                     //Una vez chequeado que puntaje es numero, se genera la entrevista    

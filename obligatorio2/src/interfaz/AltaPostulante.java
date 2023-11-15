@@ -249,7 +249,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
             }
             
             //Si todos los datos estan completos intentaremos pasar a long la cedula, verificando asi si es numero.
-            if(puede && !(nombre.isEmpty() || cedula.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || mail.isEmpty() || linkedin.isEmpty())){
+            if(puede && !(nombre.isEmpty() || cedula.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || mail.isEmpty() || linkedin.isEmpty() || formato.isEmpty())){
                 try{
                     Long.parseLong(cedula);
                     //Una vez chequeado que cedula es numero y unica en sistema, abrimos la ventana de habilidades/experiencia del usuario pasando los datos recopilados y cerramos la ventana de alta de postulante.

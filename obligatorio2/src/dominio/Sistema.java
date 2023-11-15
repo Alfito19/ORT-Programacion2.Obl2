@@ -178,13 +178,20 @@ public class Sistema implements Serializable {
     //verifica que el postulante cumpla con todos los requisitos de todas las habilidades
     public boolean cumpleCondiciones(Postulante p, Puesto unPuesto, int nivel){
         boolean cond = true;
-        for (Habilidad h : unPuesto.getTemasRequeridos()){
-            for (Habilidad hPostulante : p.getHabilidades()){
-                if (hPostulante.getNombre().equalsIgnoreCase(h.getNombre()) && !(hPostulante.getNivel()>=nivel)){
-                    cond = false;
+        if(!p.getPuntajesEntrevistas().isEmpty() && unPuesto.getTipo().equalsIgnoreCase(p.getFormato())){
+            for (Habilidad h : unPuesto.getTemasRequeridos()){
+                for (Habilidad hPostulante : p.getHabilidades()){
+                    if (hPostulante.getNombre().equalsIgnoreCase(h.getNombre()) 
+                            && !(hPostulante.getNivel()>=nivel)){
+                        cond = false;
+                    }
                 }
             }
         }
+        else{
+            cond = false;
+        }
+        
         return cond;
     }
 

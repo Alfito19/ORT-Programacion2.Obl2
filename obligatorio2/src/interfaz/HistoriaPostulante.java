@@ -43,7 +43,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         modeloDefault.addColumn("Comentarios");
         if(!(list.isEmpty())){
             pal = textBuscar.getText();
-            int j = 0;
             for(int i = 0; i < list.size(); i++){
                 Entrevista entrevista = list.get(i);
                 String comentario = entrevista.getComentario();
@@ -54,8 +53,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
                         entrevista.getEvaluador(),
                         entrevista.getPuntaje(),
                         comentarioFormateado
-                    });
-                    j++;                  
+                    });                 
                 }
                 else{
                     modeloDefault.addRow(new Object[]{
@@ -459,6 +457,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        textBuscar.setText("");
         this.llenarTabla(sistema.getListaEntrevistas(),"");
         lblPostulanteNombre.setText("---");
         lblPostulanteCedula.setText("---");
@@ -470,7 +469,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteFormato.setText("---");
         listaExperiencia.setListData((new ArrayList<>()).toArray());
         listaPostulantes.setListData(sistema.getListaPostulantes().toArray());
-        textBuscar.setText("");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
