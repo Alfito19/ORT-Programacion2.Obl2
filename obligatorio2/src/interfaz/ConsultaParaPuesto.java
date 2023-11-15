@@ -218,6 +218,7 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
                     "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             ArchivoGrabacion arch = new ArchivoGrabacion("PostulantesAptos.txt");
+            arch.grabarLinea(((Puesto)listaPuestos.getSelectedValue()).toString() + "\n");
             for(Postulante p : this.consultActual){
                 arch.grabarLinea(p.toString());
             }
