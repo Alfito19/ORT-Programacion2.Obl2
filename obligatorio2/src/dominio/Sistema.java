@@ -115,13 +115,14 @@ public class Sistema implements Serializable {
         return this.listaPostulantes.get(this.indicePostulante(cedula));
     }
 
-    public void agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
+    public int agregarEntrevista(Evaluador unEval,Postulante unPos,int aScore,String unComentario){
         Entrevista e = new Entrevista(unEval,unPos,aScore,unComentario);
         ArrayList<Entrevista> anterior = this.getListaEntrevistas();
         this.listaEntrevistas.add(e);
         manejador.firePropertyChange("listaEntrevistas",anterior,this.listaEntrevistas);
         int indice = this.indicePostulante(unPos.getCedula());
         this.listaPostulantes.get(indice).agregarPuntaje(aScore);
+        return e.getIdentificador();
     }
     
     //elimina entrevista cuando se elimina postulante

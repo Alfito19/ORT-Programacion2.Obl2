@@ -224,6 +224,8 @@ public class ConsultaParaPuesto extends javax.swing.JFrame implements Serializab
                 arch.grabarLinea(p.toString());
             }
             arch.cerrar();
+            JOptionPane.showMessageDialog(new JFrame(), "Datos exportados exitosamente",
+                    "Éxito al exportar", JOptionPane.INFORMATION_MESSAGE);
             objetoAPantalla();
         }
     }//GEN-LAST:event_btnExportarActionPerformed

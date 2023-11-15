@@ -203,7 +203,9 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
                     JOptionPane.showMessageDialog(new JFrame(), "El evaluador ingresado debe ser único",
                     "Evaluador repetido", JOptionPane.ERROR_MESSAGE);
                 }
-                dispose();
+                else{
+                    dispose();
+                }               
             }
                 //En caso de que Cedula no sea un numero entrara en la siguiente excepcion
             catch(NumberFormatException e){

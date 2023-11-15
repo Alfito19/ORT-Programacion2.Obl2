@@ -33,6 +33,7 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     @Override
     public void propertyChange(PropertyChangeEvent evt){
         cargarPostulantes();
+        resetDatos();
     }
     
     public void llenarTabla(ArrayList<Entrevista> list, String pal){        
@@ -42,7 +43,6 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         modeloDefault.addColumn("Puntaje");
         modeloDefault.addColumn("Comentarios");
         if(!(list.isEmpty())){
-            pal = textBuscar.getText();
             for(int i = 0; i < list.size(); i++){
                 Entrevista entrevista = list.get(i);
                 String comentario = entrevista.getComentario();
@@ -72,12 +72,8 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         if (texto == null || palabraBuscada == null || palabraBuscada.isEmpty()) {
             return texto;
         }
-        // Usamos HTML para aplicar formato al texto.
-        // Se busca la palabra y se envuelve en una etiqueta de fuente con color rojo.
         String palabraMarcada = "<font color='red'>" + palabraBuscada + "</font>";
         String textoFormateado = texto.replaceAll("(?i)" + palabraBuscada, palabraMarcada);
-
-        // Envuelve todo el texto en etiquetas HTML para asegurar el formato.
         return "<html>" + textoFormateado + "</html>";
     }
 
@@ -458,6 +454,10 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        resetDatos();
+    }//GEN-LAST:event_btnResetActionPerformed
+    
+    private void resetDatos(){
         textBuscar.setText("");
         this.llenarTabla(sistema.getListaEntrevistas(),"");
         lblPostulanteNombre.setText("---");
@@ -470,8 +470,8 @@ public class HistoriaPostulante extends javax.swing.JFrame implements Serializab
         lblPostulanteFormato.setText("---");
         listaExperiencia.setListData((new ArrayList<>()).toArray());
         listaPostulantes.setListData(sistema.getListaPostulantes().toArray());
-    }//GEN-LAST:event_btnResetActionPerformed
-
+    }
+    
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         sistema.removePropertyChangeListener(this);
     }//GEN-LAST:event_formWindowClosed
