@@ -49,6 +49,7 @@ public class RegistroEvaluador extends javax.swing.JFrame implements Serializabl
         btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nuevo evaluador");
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);

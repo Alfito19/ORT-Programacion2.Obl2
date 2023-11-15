@@ -49,6 +49,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
         lblDireccion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Registro de postulante");
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
@@ -272,6 +273,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
                     //Ventana de error
                     JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
                         "Error", JOptionPane.ERROR_MESSAGE);
+                    System.out.println(e);
                 }
             }
             //En caso de que los datos no esten completos entrara en la siguiente excepcion
@@ -285,6 +287,7 @@ public class AltaPostulante extends javax.swing.JFrame implements Serializable{
             //Ventana de error
             JOptionPane.showMessageDialog(new JFrame(), "Ocurrio un error inesperado",
                 "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println(e);
         }               
     }//GEN-LAST:event_btnSiguienteActionPerformed
 

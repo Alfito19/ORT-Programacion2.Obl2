@@ -30,6 +30,7 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Labur.er");
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);

@@ -36,7 +36,7 @@ public class Postulante extends Persona implements Serializable{
     public String getTelefono() {
         return telefono;
     }
-
+    
     public String getMail() {
         return mail;
     }

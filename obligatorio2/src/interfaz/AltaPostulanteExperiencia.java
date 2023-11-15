@@ -21,15 +21,16 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     }
     
     public AltaPostulanteExperiencia(Sistema unSistema, Postulante unPostulante) {
+        initComponents();
         this.sistema = unSistema;
         this.sistema.addPropertyChangeListener(this);
         this.postulante = unPostulante;
         setIconImage(new ImageIcon(getClass().getResource("/Resources/icon.png")).getImage());
-        initComponents();
+        lblPostulantes.setText("POSTULANTE: " + unPostulante.getNombre());
         mostrarTematicas();
     }
     
-     @Override
+    @Override
     public void propertyChange(PropertyChangeEvent evt){
         mostrarTematicas();
     }
@@ -61,12 +62,13 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         spinnerNivel = new javax.swing.JSpinner();
         lblNivel = new javax.swing.JLabel();
         comboTemas = new javax.swing.JComboBox();
-        lblTema = new javax.swing.JLabel();
+        lblPostulantes = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
+        lblTema = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Alta Postulante Experiencia");
+        setTitle("Registro de postulante");
         setAlwaysOnTop(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
@@ -92,7 +94,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             }
         });
         jPanel1.add(btnRegistrar);
-        btnRegistrar.setBounds(500, 330, 220, 40);
+        btnRegistrar.setBounds(500, 370, 220, 40);
 
         btnCancelar.setBackground(new java.awt.Color(63, 78, 79));
         btnCancelar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -109,7 +111,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             }
         });
         jPanel1.add(btnCancelar);
-        btnCancelar.setBounds(80, 330, 220, 40);
+        btnCancelar.setBounds(80, 370, 220, 40);
 
         jScrollPane1.setBorder(null);
 
@@ -123,7 +125,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         jScrollPane1.setViewportView(listaExperiencia);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(300, 180, 350, 110);
+        jScrollPane1.setBounds(300, 220, 350, 110);
 
         lblExperiencia.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         lblExperiencia.setForeground(new java.awt.Color(220, 215, 201));
@@ -131,34 +133,35 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         lblExperiencia.setText("EXPERIENCIA");
         lblExperiencia.setToolTipText("");
         jPanel1.add(lblExperiencia);
-        lblExperiencia.setBounds(110, 190, 150, 25);
+        lblExperiencia.setBounds(110, 230, 150, 25);
         jPanel1.add(jSeparator1);
-        jSeparator1.setBounds(20, 150, 760, 10);
+        jSeparator1.setBounds(20, 190, 760, 10);
 
         spinnerNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         spinnerNivel.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
         spinnerNivel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
         jPanel1.add(spinnerNivel);
-        spinnerNivel.setBounds(295, 90, 130, 25);
+        spinnerNivel.setBounds(300, 130, 130, 25);
 
         lblNivel.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
         lblNivel.setForeground(new java.awt.Color(220, 215, 201));
         lblNivel.setText("NIVEL:");
         jPanel1.add(lblNivel);
-        lblNivel.setBounds(180, 90, 100, 25);
+        lblNivel.setBounds(180, 130, 100, 25);
 
         comboTemas.setBackground(new java.awt.Color(63, 78, 79));
         comboTemas.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         comboTemas.setForeground(new java.awt.Color(220, 215, 201));
         comboTemas.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(162, 123, 92), 1, true));
         jPanel1.add(comboTemas);
-        comboTemas.setBounds(295, 40, 320, 25);
+        comboTemas.setBounds(300, 80, 320, 25);
 
-        lblTema.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
-        lblTema.setForeground(new java.awt.Color(220, 215, 201));
-        lblTema.setText("TEMA:");
-        jPanel1.add(lblTema);
-        lblTema.setBounds(180, 40, 100, 25);
+        lblPostulantes.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        lblPostulantes.setForeground(new java.awt.Color(220, 215, 201));
+        lblPostulantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPostulantes.setText("-");
+        jPanel1.add(lblPostulantes);
+        lblPostulantes.setBounds(180, 30, 440, 25);
 
         btnEliminar.setBackground(new java.awt.Color(63, 78, 79));
         btnEliminar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -172,7 +175,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             }
         });
         jPanel1.add(btnEliminar);
-        btnEliminar.setBounds(110, 230, 150, 40);
+        btnEliminar.setBounds(110, 270, 150, 40);
 
         btnAgregar.setBackground(new java.awt.Color(63, 78, 79));
         btnAgregar.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
@@ -186,7 +189,13 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             }
         });
         jPanel1.add(btnAgregar);
-        btnAgregar.setBounds(465, 90, 150, 40);
+        btnAgregar.setBounds(470, 130, 150, 40);
+
+        lblTema.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 16)); // NOI18N
+        lblTema.setForeground(new java.awt.Color(220, 215, 201));
+        lblTema.setText("TEMA:");
+        jPanel1.add(lblTema);
+        lblTema.setBounds(180, 80, 100, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -196,10 +205,10 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(814, 427));
+        setSize(new java.awt.Dimension(814, 458));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,7 +222,6 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        // TODO add your handling code here:
         sistema.removePropertyChangeListener(this);
     }//GEN-LAST:event_formWindowClosed
 
@@ -248,6 +256,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
             //Ventana de error
             JOptionPane.showMessageDialog(new JFrame(), "Error inesperado",
             "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println(e);
         }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -297,6 +306,7 @@ public class AltaPostulanteExperiencia extends javax.swing.JFrame implements Ser
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblExperiencia;
     private javax.swing.JLabel lblNivel;
+    private javax.swing.JLabel lblPostulantes;
     private javax.swing.JLabel lblTema;
     private javax.swing.JList listaExperiencia;
     private javax.swing.JSpinner spinnerNivel;

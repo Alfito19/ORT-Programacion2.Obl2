@@ -43,6 +43,7 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         btnIngresoEntrevista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Labur.er");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -225,6 +226,9 @@ public class Menu extends javax.swing.JFrame implements Serializable {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(new JFrame(), "Error al guardar el archivo",
             "Error al guardar el archivo", JOptionPane.ERROR_MESSAGE);
+        }
+        finally{
+            System.exit(0);
         }
 
     }//GEN-LAST:event_formWindowClosed

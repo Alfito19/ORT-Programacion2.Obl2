@@ -35,6 +35,7 @@ public class RegistroTematica extends javax.swing.JFrame implements Serializable
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nueva temática");
 
         jPanel1.setBackground(new java.awt.Color(44, 54, 57));
         jPanel1.setLayout(null);
