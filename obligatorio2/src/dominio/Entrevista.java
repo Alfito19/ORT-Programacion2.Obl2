@@ -23,7 +23,11 @@ public class Entrevista implements Serializable {
     public static int setIdentificador(){
         return ++identificador;
     }
-
+    //se llama cada vez que se serializa sistema
+    public static void setIdentificador(int ident){
+        identificador = ident;
+    }
+    
     public Postulante getEntrevistado(){
         return this.entrevistado;
     }
@@ -42,5 +46,9 @@ public class Entrevista implements Serializable {
     
     public String getComentario(){
         return this.comentario;
+    }
+    
+    public static int identFinal(){
+        return identificador;
     }
 }

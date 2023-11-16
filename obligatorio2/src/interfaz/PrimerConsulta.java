@@ -101,6 +101,7 @@ public class PrimerConsulta extends javax.swing.JFrame implements Serializable{
             ObjectInputStream(
             Files.newInputStream(Paths.get("datos.ser")));
             Sistema controlador = (Sistema) in.readObject();
+            controlador.setNumeroEntrevistaFinal();
             Menu vent = new Menu(controlador);
             vent.setVisible(true);
             dispose();

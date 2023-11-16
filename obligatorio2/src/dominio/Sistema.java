@@ -15,6 +15,7 @@ public class Sistema implements Serializable {
     private ArrayList<Habilidad> listaHabilidades;
     private ArrayList<Puesto> listaPuestos;
     private PropertyChangeSupport manejador;
+    private int numEntrevistaFinal;
 
     public Sistema(){
         manejador = new PropertyChangeSupport(this);
@@ -122,7 +123,12 @@ public class Sistema implements Serializable {
         manejador.firePropertyChange("listaEntrevistas",anterior,this.listaEntrevistas);
         int indice = this.indicePostulante(unPos.getCedula());
         this.listaPostulantes.get(indice).agregarPuntaje(aScore);
+        this.numEntrevistaFinal = Entrevista.identFinal();
         return e.getIdentificador();
+    }
+    
+    public void setNumeroEntrevistaFinal(){
+        Entrevista.setIdentificador(numEntrevistaFinal);
     }
     
     //elimina entrevista cuando se elimina postulante
